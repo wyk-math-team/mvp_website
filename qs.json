@@ -186,24 +186,24 @@
   {
     "id": 24,
     "name": "IMOPrelim-2024-Q4",
-    "statement": "Mike wrote down m consecutive integers with sum 2m, while Kent wrote down 2m consecutive integers with sum m. If the difference between the largest integer written by Mike and the largest integer written by Kent is 2024, find m.",
+    "statement": "Mike wrote down m consecutive integers with sum 2m, while Kent wrote down 2m consecutive integers with sum m. $$$$If the difference between the largest integer written by Mike and the largest integer written by Kent is 2024, find m.",
     "ans": "4051",
-    "difficulty": 0,
+    "difficulty": 3.1,
     "tags": ["algebra"]
   },
   {
     "id": 25,
     "name": "IMOPrelim-2024-Q5",
     "statement": "ABCD is a convex quadrilateral in which AB = BC = CD. If ∠ABC = 48° and ∠BCD = 108°, find ∠CAD.",
-    "ans": "84^{\\circ}",
-    "difficulty": 0,
+    "ans": "84",
+    "difficulty": 8.2,
     "tags": ["geometry"]
   },
   {
     "id": 26,
     "name": "IMOPrelim-2024-Q6",
-    "statement": "Let A be a point on the graph of y = |x|, and B be a point on the graph of x = y^2 + 2. Find the smallest possible distance between A and B.",
-    "ans": "7\\sqrt{2}",
+    "statement": "Let A be a point on the graph of $y = |x|$ , and B be a point on the graph of $x = y^2 + 2$. Find the smallest possible distance between A and B. $$$$ Note that the answer contains surds like $\\frac{a \\sqrt{b}}{c}$. $$$$ Write your answer as $a+b+c$",
+    "ans": "17",
     "difficulty": 0,
     "tags": ["geometry"]
   },
