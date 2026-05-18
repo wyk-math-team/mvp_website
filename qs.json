@@ -204,7 +204,7 @@
     "name": "IMOPrelim-2024-Q6",
     "statement": "Let A be a point on the graph of $y = |x|$ , and B be a point on the graph of $x = y^2 + 2$. Find the smallest possible distance between A and B. $$$$ Note that the answer contains surds like $\\frac{a \\sqrt{b}}{c}$. $$$$ Write your answer as $a+b+c$",
     "ans": "17",
-    "difficulty": 0,
+    "difficulty": 2.3,
     "tags": ["geometry"]
   },
   {
@@ -228,7 +228,7 @@
     "name": "IMOPrelim-2024-Q9",
     "statement": "In a language, there are 5 vowels and 8 consonants in the alphabet. Each word is made up of exactly 5 (not necessarily distinct) letters, with at least 2 vowels and at least 1 consonant. What is the maximum number of words in this language?",
     "ans": "233000",
-    "difficulty": 0,
+    "difficulty": 2.7,
     "tags": ["combinatorics"]
   },
   {
@@ -236,21 +236,21 @@
     "name": "IMOPrelim-2024-Q10",
     "statement": "A 3x3 grid is printed on a card. It is made up of 4 horizontal lines and 4 vertical lines. Each cell has width 2 and height 1. Mandy drew along the gridlines in a single pen stroke such that no point is visited more than once except at intersections. Find the maximum possible length of the figure drawn.",
     "ans": "32",
-    "difficulty": 0,
+    "difficulty": 3.2,
     "tags": ["combinatorics"]
   },
   {
     "id": 31,
     "name": "IMOPrelim-2024-Q11",
-    "statement": "A frog is at an arbitrary point inside an equilateral triangle with area 1. Each time the frog picks one of the vertices that has not been picked before, and jumps halfway towards the chosen vertex. After three jumps, the frog is at point X. What is the total area of the region formed by all possible positions of X?",
-    "ans": "3",
-    "difficulty": 0,
+    "statement": "A frog is at an arbitrary point inside an equilateral triangle with area 1. Each time the frog picks one of the vertices that has not been picked before, and jumps halfway towards the chosen vertex. After three jumps, the frog is at point X. What is the total area of the region formed by all possible positions of X?$$$$The answer is a fraction $\\frac{a}{b}$, write your answer as $a+b$.",
+    "ans": "35",
+    "difficulty": 4.0,
     "tags": ["geometry"]
   },
   {
     "id": 32,
     "name": "IMOPrelim-2024-Q12",
-    "statement": "The equation x^3 - 1/x = 4 has two real roots a and b. Find a^2 + b^2.",
+    "statement": "The equation $x^3 - \\frac{1}{x} = 4$ has two real roots a and b. Find $a^2 + b^2$.",
     "ans": "2\\sqrt{2}",
     "difficulty": 0,
     "tags": ["algebra"]
