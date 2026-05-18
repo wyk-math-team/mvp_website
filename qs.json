@@ -2078,5 +2078,1805 @@
     "ans": "7",
     "difficulty": 0,
     "tags": ["algebra"]
+  },
+  {
+    "id": 261,
+    "name": "IMOPrelim-2012-Q1",
+    "statement": "Let $n$ be a two-digit number such that the square of the sum of digits of $n$ is equal to the sum of digits of $n^2$. Find the sum of all possible values of $n$.",
+    "ans": "170",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 262,
+    "name": "IMOPrelim-2012-Q2",
+    "statement": "A positive integer $n$ is said to be 'good' if $n^2 - 1$ can be written as the product of three distinct prime numbers. Find the sum of the five smallest 'good' integers.",
+    "ans": "104",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 263,
+    "name": "IMOPrelim-2012-Q3",
+    "statement": "There are 13 students in a class (one of them being the monitor) and 13 seats in the classroom. Every day, the 13 students line up in random order and then enter the classroom one by one. Except for the monitor, each student will randomly choose an unoccupied seat and sit down. The monitor, however, prefers the seat next to the door and chooses it if possible. What is the probability that the monitor can choose his favourite seat?",
+    "ans": "7/13",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 264,
+    "name": "IMOPrelim-2012-Q4",
+    "statement": "For positive integer $n$, let $D(n)$ be the eventual value obtained when the digits of $n$ (in base 10) are added up recursively until a one-digit number is obtained. For example $D(4)=4$, $D(2012)=D(5)=5$ and $D(1997)=D(26)=D(8)=8$. If $x$ denotes the 2012th Fibonacci number, find $D(x)$.",
+    "ans": "6",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 265,
+    "name": "IMOPrelim-2012-Q5",
+    "statement": "In a school there are 300 boys and 300 girls, divided into 5 classes, each with the same number of students. It is known that there are at least 33 boys and 33 girls in each class. A boy and a girl from the same class may form a group to enter a contest, and each student may only belong to one group. What is the maximum number of groups that can be guaranteed to form?",
+    "ans": "192",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 266,
+    "name": "IMOPrelim-2012-Q6",
+    "statement": "If $x^3 - 3\\sqrt{2}x^2 + 6x - 2\\sqrt{2} - 8 = 0$, find the value of $x^5 - 41x^2 + 2012$.",
+    "ans": "1998",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 267,
+    "name": "IMOPrelim-2012-Q7",
+    "statement": "Find the smallest positive integer which cannot be expressed in the form $\\frac{2^a - 2^b}{2^c - 2^d}$ where $a,b,c,d$ are non-negative integers.",
+    "ans": "11",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 268,
+    "name": "IMOPrelim-2012-Q8",
+    "statement": "Let $f(x)=x^2+12x+30$. Find the largest real root of the equation $f(f(f(x)))=0$.",
+    "ans": "$-6 + \\sqrt[8]{6}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 269,
+    "name": "IMOPrelim-2012-Q9",
+    "statement": "How many different ways are there to rearrange the letters in the word 'BRILLIANT' so that no two adjacent letters are the same after the rearrangement?",
+    "ans": "55440",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 270,
+    "name": "IMOPrelim-2012-Q10",
+    "statement": "If $\\frac{\\sin x}{\\sin y}=3$ and $\\frac{\\cos x}{\\cos y}=\\frac{1}{2}$, find $\\frac{\\sin 2x}{\\sin 2y} + \\frac{\\cos 2x}{\\cos 2y}$.",
+    "ans": "$\\frac{49}{58}$",
+    "difficulty": 0,
+    "tags": ["trigonometry"]
+  },
+  {
+    "id": 271,
+    "name": "IMOPrelim-2012-Q11",
+    "statement": "An $n$-digit number $x$ has the following property: if the last digit of $x$ is moved to the front, the result is $2x$. Find the smallest possible value of $n$.",
+    "ans": "18",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 272,
+    "name": "IMOPrelim-2012-Q12",
+    "statement": "In $\\triangle ABC$, $AB=3$, $BC=4$, $CA=5$. A circle cuts $AB$ at $C_1,C_2$, cuts $BC$ at $A_1,A_2$, and cuts $CA$ at $B_1,B_2$. If $A_1A_2=B_1B_2=C_1C_2=x$, and the area of the hexagon formed by $A_1,A_2,B_1,B_2,C_1,C_2$ is $4$, find $x$.",
+    "ans": "$\\frac{11-\\sqrt{37}}{3}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 273,
+    "name": "IMOPrelim-2012-Q13",
+    "statement": "$ABCD$ is a convex quadrilateral with $AC$ and $BD$ meeting at $P$. Given $PA=1$, $PB=2$, $PC=6$, $PD=3$. Let $O$ be the circumcentre of $\\triangle PBC$. If $OA\\perp AD$, find the circumradius of $\\triangle PBC$.",
+    "ans": "3",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 274,
+    "name": "IMOPrelim-2012-Q14",
+    "statement": "Given $a<b<c<d$ are positive integers not exceeding $2012$, and they form an arithmetic sequence. How many different sets $(a,b,c,d)$ are there?",
+    "ans": "673685",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 275,
+    "name": "IMOPrelim-2012-Q15",
+    "statement": "$ABCD$ is a convex quadrilateral, $E,F$ midpoints of $BC,CD$. $AE,AF,EF$ divide $ABCD$ into four triangles with areas four consecutive integers. Find the greatest possible area of $\\triangle ABD$.",
+    "ans": "6",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 276,
+    "name": "IMOPrelim-2012-Q16",
+    "statement": "Let $D$ be a point inside $\\triangle ABC$ such that $\\angle BAD = \\angle BCD$ and $\\angle BDC = 90^\\circ$. If $AB=5$, $BC=6$, $M$ midpoint of $AC$, find $DM$.",
+    "ans": "$\\frac{\\sqrt{11}}{2}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 277,
+    "name": "IMOPrelim-2012-Q17",
+    "statement": "In $\\triangle ABC$, $\\angle C=90^\\circ$, $\\angle BAC<45^\\circ$, $AB=7$. $P$ on $AB$ such that $\\angle APC = 2\\angle ACP$ and $CP=1$. Find $\\frac{AP}{BP}$.",
+    "ans": "$6+\\sqrt{35}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 278,
+    "name": "IMOPrelim-2012-Q18",
+    "statement": "In how many different ways can we rearrange the twelve integers $1$ to $12$ on the face of a clock so that the sum of any three adjacent integers after the rearrangement is divisible by $3$?",
+    "ans": "82944",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 279,
+    "name": "IMOPrelim-2012-Q19",
+    "statement": "Find a factor of $100140001$ which lies between $8000$ and $9000$.",
+    "ans": "8221",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 280,
+    "name": "IMOPrelim-2012-Q20",
+    "statement": "How many different triangles with integer side lengths are there such that the sum of the lengths of any two sides exceeds the length of the third side by at least $5$ units, and that the area is numerically twice the perimeter? (Congruent triangles considered the same.)",
+    "ans": "8",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 281,
+    "name": "IMOPrelim-2011-Q1",
+    "statement": "Find the sum of all fractions in lowest terms with value greater than $10$ but smaller than $100$ and with denominator equal to $3$.",
+    "ans": "9900",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 282,
+    "name": "IMOPrelim-2011-Q2",
+    "statement": "For positive integer $n$, let $f(n)$ denote the unit digit of $1+2+\\dots+n$. Find $f(1)+f(2)+\\dots+f(2011)$.",
+    "ans": "7046",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 283,
+    "name": "IMOPrelim-2011-Q3",
+    "statement": "Find a positive integer $k$ whose product of digits is equal to $\\frac{11k}{4}-199$.",
+    "ans": "84",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 284,
+    "name": "IMOPrelim-2011-Q4",
+    "statement": "Find a factor of $1464101210001$, such that it lies between $1210000$ and $1220000$.",
+    "ans": "1211101",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 285,
+    "name": "IMOPrelim-2011-Q5",
+    "statement": "The $11$ letters of 'IMOHKPRELIM' are written on $11$ cards. If three cards are randomly drawn, how many different combinations of the three letters are there? (Order not considered.)",
+    "ans": "100",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 286,
+    "name": "IMOPrelim-2011-Q6",
+    "statement": "The parabola $y=ax^2+bx+c$ has vertex at $(\\frac14,-\\frac98)$. If $a>0$ and $a+b+c$ is an integer, find the minimum possible value of $a$.",
+    "ans": "$\\frac{2}{9}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 287,
+    "name": "IMOPrelim-2011-Q7",
+    "statement": "Four points are randomly chosen from the vertices of a regular $12$-sided polygon. Find the probability that the four chosen points form a rectangle (including square).",
+    "ans": "$\\frac{1}{33}$",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 288,
+    "name": "IMOPrelim-2011-Q8",
+    "statement": "In $\\triangle ABC$, $BC=5$, $AC=4$ and $\\cos(A-B)=\\frac78$. Find $\\cos C$.",
+    "ans": "$\\frac{11}{16}$",
+    "difficulty": 0,
+    "tags": ["trigonometry"]
+  },
+  {
+    "id": 289,
+    "name": "IMOPrelim-2011-Q9",
+    "statement": "On the coordinate plane, a point $P$ is randomly chosen on the segment joining $(0,-1)$ and $(0,1)$. Another point $Q$ is randomly chosen on the segment joining $(1,-1)$ and $(1,1)$. Two circles of radius $1$ are drawn with centres $P$ and $Q$. Find the probability that the two circles intersect.",
+    "ans": "$\\frac{4\\sqrt3-3}{4}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 290,
+    "name": "IMOPrelim-2011-Q10",
+    "statement": "In $\\triangle ABC$, $AB=9$, $BC=8$, $AC=7$. The bisector of $\\angle A$ meets $BC$ at $D$. The circle through $A$ tangent to $BC$ at $D$ cuts $AB$ and $AC$ at $M$ and $N$. Find $MN$.",
+    "ans": "6",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 291,
+    "name": "IMOPrelim-2011-Q11",
+    "statement": "The lengths of the three altitudes of a triangle are in the ratio $3:4:6$. If the inradius is $1$, find the circumradius.",
+    "ans": "$\\frac{16}{5}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 292,
+    "name": "IMOPrelim-2011-Q12",
+    "statement": "$ABCD$ is a square of side $1$. $P$ on $AC$, circumcircle of $\\triangle BPC$ cuts $CD$ at $Q$. If $[CPQ]=\\frac{6}{25}$, find $CQ$.",
+    "ans": "$\\frac35$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 293,
+    "name": "IMOPrelim-2011-Q13",
+    "statement": "If the digits $1,2,3,4,5,6,7,8$ are randomly permuted, what is the probability that the resulting eight-digit number is divisible by $8$?",
+    "ans": "$\\frac18$",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 294,
+    "name": "IMOPrelim-2011-Q14",
+    "statement": "$2011$ cards are arranged in a row, each labelled $1$, $2$, or $3$. There is at least one card between any two $1$'s, at least two cards between any two $2$'s, and at least three cards between any two $3$'s. If $m$ and $M$ are the smallest and greatest possible numbers of $3$'s, find $m+M$.",
+    "ans": "1005",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 295,
+    "name": "IMOPrelim-2011-Q15",
+    "statement": "A teacher asked each student to write down the number of classmates with the same surname, and the number with the same birthday. Among the answers, each of $0,1,\\dots,10$ has appeared. Find the minimum number of students.",
+    "ans": "33",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 296,
+    "name": "IMOPrelim-2011-Q16",
+    "statement": "Let $a,b,c$ be reals with $c\\ne1$. The equations $x^2+ax+1=0$ and $x^2+bx+c=0$ have a common real root, and so do $x^2+x+a=0$ and $x^2+cx+b=0$. Find $a+b+c$.",
+    "ans": "-3",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 297,
+    "name": "IMOPrelim-2011-Q17",
+    "statement": "In $\\triangle ABC$, $AB=2AC$ and $\\angle BAC=112^\\circ$. $P,Q$ on $BC$ such that $AB^2+BC\\cdot CP=BC^2$ and $3AC^2+2BC\\cdot CQ=BC^2$. Find $\\angle PAQ$.",
+    "ans": "$22^\\circ$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 298,
+    "name": "IMOPrelim-2011-Q18",
+    "statement": "How many ways to arrange $10$ identical red, $5$ identical green, $5$ identical blue balls in a row so that no two adjacent balls are the same colour?",
+    "ans": "1764",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 299,
+    "name": "IMOPrelim-2011-Q19",
+    "statement": "A bank issues ATM cards with a $6$-digit password, no three consecutive digits the same. No two cards have the same password. What is the maximum number of cards issued?",
+    "ans": "963090",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 300,
+    "name": "IMOPrelim-2011-Q20",
+    "statement": "Let $(x_1,y_1),(x_2,y_2),(x_3,y_3)$ be three different real solutions to $\\begin{cases}x^3-5xy^2=21\\\\ y^3-5x^2y=28\\end{cases}$. Find $\\left(11-\\frac{x_1}{y_1}\\right)\\left(11-\\frac{x_2}{y_2}\\right)\\left(11-\\frac{x_3}{y_3}\\right)$.",
+    "ans": "1729",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 301,
+    "name": "IMOPrelim-2010-Q1",
+    "statement": "Let $f(n)=3n^2-3n+1$. Find the last four digits of $f(1)+f(2)+\\dots+f(2010)$.",
+    "ans": "1000",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 302,
+    "name": "IMOPrelim-2010-Q2",
+    "statement": "Let $n$ be a positive integer divisible by $2010$ and exactly one of its digits is even. Find the smallest possible $n$.",
+    "ans": "311550",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 303,
+    "name": "IMOPrelim-2010-Q3",
+    "statement": "Let $n>1$ be an integer greater than $1200$ times any of its prime factors. Find the smallest possible $n$.",
+    "ans": "3888",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 304,
+    "name": "IMOPrelim-2010-Q4",
+    "statement": "There are $111$ balls each red, green, blue or white. If $100$ balls are drawn, we can ensure getting all four colours. Find the smallest integer $N$ such that drawing $N$ balls ensures at least three different colours.",
+    "ans": "88",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 305,
+    "name": "IMOPrelim-2010-Q5",
+    "statement": "Positive integers $a>b>c>d$ satisfy $a+b+c+d=2010$ and $a^2-b^2+c^2-d^2=2010$. How many sets $(a,b,c,d)$ are possible?",
+    "ans": "501",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 306,
+    "name": "IMOPrelim-2010-Q6",
+    "statement": "Let $P(x)$ be a quadratic polynomial with real coefficients such that $P(11)=181$ and $x^2-2x+2\\le P(x)\\le 2x^2-4x+3$ for all real $x$. Find $P(21)$.",
+    "ans": "721",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 307,
+    "name": "IMOPrelim-2010-Q7",
+    "statement": "Find the largest integer which cannot be expressed as a sum of some of the numbers $135,136,\\dots,144$ (each can be used any number of times).",
+    "ans": "2024",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 308,
+    "name": "IMOPrelim-2010-Q8",
+    "statement": "Let $n$ be a positive integer such that removing its last three digits gives its cube root. Find a possible $n$.",
+    "ans": "32768",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 309,
+    "name": "IMOPrelim-2010-Q9",
+    "statement": "Let $p,q$ be integers with $p+q=2010$. If both roots of $10x^2+px+q=0$ are positive integers, find the sum of all possible $p$.",
+    "ans": "-3100",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 310,
+    "name": "IMOPrelim-2010-Q10",
+    "statement": "A plane slices a cube of side $2$ with a cross section a regular hexagon. The inscribed sphere of the cube intersects the plane in a circle. Find the area inside the hexagon but outside the circle.",
+    "ans": "$3\\sqrt3-\\pi$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 311,
+    "name": "IMOPrelim-2010-Q11",
+    "statement": "$ABCD$ is a square of side $1$. $P,Q$ are points such that $Q$ is the circumcentre of $\\triangle BPC$ and $D$ is the circumcentre of $\\triangle PQA$. Find the largest possible value of $PQ^2$. Express in form $a+\\sqrt b$.",
+    "ans": "$2+\\sqrt3$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 312,
+    "name": "IMOPrelim-2010-Q12",
+    "statement": "$ABCD$ is a square of side $3$. $P$ is a point such that each of $\\angle APB,\\angle BPC,\\angle CPD,\\angle DPA\\ge60^\\circ$. The set of such $P$ is painted red. Find the area of the red region.",
+    "ans": "$2\\pi+3-3\\sqrt3$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 313,
+    "name": "IMOPrelim-2010-Q13",
+    "statement": "Six points, no three collinear. Each pair joined by a red or blue line such that if $AB$ and $AC$ are red then $BC$ is also red. How many colourings are possible?",
+    "ans": "203",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 314,
+    "name": "IMOPrelim-2010-Q14",
+    "statement": "Let $[x]$ be greatest integer $\\le x$. Define $f(0)=0$, $f(n)=f(\\lfloor n/2\\rfloor)+n-2\\lfloor n/2\\rfloor$ for $n\\ge1$. For $m\\le2010$, find the maximum possible $f(m)$.",
+    "ans": "10",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 315,
+    "name": "IMOPrelim-2010-Q15",
+    "statement": "An equiangular hexagon has side lengths $6,7,8,9,10,11$ (not necessarily in order). Its area is $k\\sqrt3$. Find the sum of all possible $k$.",
+    "ans": "213",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 316,
+    "name": "IMOPrelim-2010-Q16",
+    "statement": "Two triangles with side lengths $18,24,30$ share the same circumcircle and the same incircle but do not completely overlap. Find the area of their intersection.",
+    "ans": "132",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 317,
+    "name": "IMOPrelim-2010-Q17",
+    "statement": "$ABCD$ is a rectangle, $P,Q$ midpoints of $AB,BC$. $AQ$ and $CP$ meet at $R$. If $AC=6$ and $\\angle ARC=150^\\circ$, find the area of $ABCD$.",
+    "ans": "$8\\sqrt3$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 318,
+    "name": "IMOPrelim-2010-Q18",
+    "statement": "Let $p,q,r,s$ be the four roots of $2(10x+13)^2(5x+8)(x+1)=1$. If $pq+rs$ is real, find its value.",
+    "ans": "$\\frac{329}{100}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 319,
+    "name": "IMOPrelim-2010-Q19",
+    "statement": "Define $a\\circ b = \\frac{\\sqrt{a^2+3ab+b^2-2a-2b+4}}{ab+4}$. Find $(\\dots(2010\\circ2009)\\circ2008)\\circ\\dots\\circ2)\\circ1$.",
+    "ans": "$\\frac{\\sqrt{15}}{9}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 320,
+    "name": "IMOPrelim-2010-Q20",
+    "statement": "Let $x\\ne0$ be real such that $\\sqrt[3]{x^3}+20x = \\sqrt[3]{x^5}-20x$. Find the product of all possible $x$.",
+    "ans": "-5",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 321,
+    "name": "IMOPrelim-2009-Q1",
+    "statement": "Find $\\frac{1^4+2009^4+2010^4}{1^2+2009^2+2010^2}$.",
+    "ans": "4038091",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 322,
+    "name": "IMOPrelim-2009-Q2",
+    "statement": "In pentagon $ABCDE$, $AB=BC=CD=DE$, $\\angle B=96^\\circ$, $\\angle C=\\angle D=108^\\circ$. Find $\\angle E$.",
+    "ans": "$102^\\circ$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 323,
+    "name": "IMOPrelim-2009-Q3",
+    "statement": "Grandfather distributed candies to Donald, Henry, John: $70\\%,25\\%,5\\%$. Donald gave John $20$, then Henry and John shared equally. Then Donald had three times Henry. Next day grandfather gave each $x$ candies, then Donald had twice Henry. Find $x$.",
+    "ans": "40",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 324,
+    "name": "IMOPrelim-2009-Q4",
+    "statement": "Let $n>1$ be an integer such that all digits of $9997n$ are odd. Find the smallest possible $n$.",
+    "ans": "3335",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 325,
+    "name": "IMOPrelim-2009-Q5",
+    "statement": "Let $\\{x_n\\}$ be positive reals with $x_1=3/2$ and $x_{n+1}-x_n^2 = \\frac1{(n+2)^2}-\\frac1{n^2}$. Find $x_1+\\dots+x_{2009}$.",
+    "ans": "$\\frac{4040099}{2010}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 326,
+    "name": "IMOPrelim-2009-Q6",
+    "statement": "In $\\triangle ABC$, $AB=AC=13$, $BC=10$. $P$ on $BC$ with $BP<PC$, $H,K$ orthocentres of $\\triangle APB$ and $\\triangle APC$. If $HK=2$, find $PC$.",
+    "ans": "$\\frac{37}{5}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 327,
+    "name": "IMOPrelim-2009-Q7",
+    "statement": "$\\triangle ABC$ is equilateral with side $4$. $D$ on $BC$ with $BD=1$. $r,s$ are inradii of $\\triangle ADB$ and $\\triangle ADC$. Find $rs$.",
+    "ans": "$4-\\sqrt{13}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 328,
+    "name": "IMOPrelim-2009-Q8",
+    "statement": "$ABCD$ is a square of side $1$. $X,Y$ on $BC,CD$ with $CX=CY=m$. Extended $AB$ meets $DX$ at $P$; $AD$ meets $BY$ at $Q$; $AX$ meets $DC$ at $R$; $AY$ meets $BC$ at $S$. If $P,Q,R,S$ are collinear, find $m$.",
+    "ans": "$\\frac{3-\\sqrt5}{2}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 329,
+    "name": "IMOPrelim-2009-Q9",
+    "statement": "A lattice point is randomly chosen inside the square with vertices $(0,0),(101,0),(101,101),(0,101)$ (excluding boundary). What is the probability that the segment joining $(0,2010)$ to the chosen point contains an even number of lattice points (excluding endpoints)?",
+    "ans": "$\\frac34$",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 330,
+    "name": "IMOPrelim-2009-Q10",
+    "statement": "Four mathematicians, two physicists, one chemist, one biologist take part in a table tennis tournament. The eight players are paired randomly. What is the probability that no two mathematicians play each other?",
+    "ans": "$\\frac{8}{35}$",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 331,
+    "name": "IMOPrelim-2009-Q11",
+    "statement": "Find $\\tan\\left(\\tan^{-1}\\frac12 + \\tan^{-1}\\frac{1}{2\\cdot2^2} + \\dots + \\tan^{-1}\\frac{1}{2\\cdot2009^2}\\right)$.",
+    "ans": "$\\frac{2009}{2010}$",
+    "difficulty": 0,
+    "tags": ["trigonometry"]
+  },
+  {
+    "id": 332,
+    "name": "IMOPrelim-2009-Q12",
+    "statement": "In an $n\\times n$ chessboard there are $2009$ coins. In any two neighbouring cells, the numbers of coins differ by $1$. Find the largest possible $n$.",
+    "ans": "63",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 333,
+    "name": "IMOPrelim-2009-Q13",
+    "statement": "$ABCD$ is a trapezium with $AB\\parallel DC$, $AB>DC$. $E$ on $AB$ such that $AE=DC$. $AC$ meets $DE$ at $F$ and $DB$ at $G$. Find $AB/CD$ that maximises $\\frac{[\\triangle DFG]}{[ABCD]}$.",
+    "ans": "3",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 334,
+    "name": "IMOPrelim-2009-Q14",
+    "statement": "In a quiz, no two people had the same score and each score equals $n+2-2k$ where $n$ is constant and $k$ is rank. Total score is $2009$. Find the smallest possible $n$.",
+    "ans": "89",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 335,
+    "name": "IMOPrelim-2009-Q15",
+    "statement": "Let $[x]$ be greatest integer $\\le x$. Evaluate $[\\sqrt{2009^2+1}]+[\\sqrt{2009^2+2}]+\\dots+[\\sqrt{2009^2+4018}]$.",
+    "ans": "8074171",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 336,
+    "name": "IMOPrelim-2009-Q16",
+    "statement": "Let $f(n)$ be the number of positive integer solutions to $4x+3y+2z=n$. Find $f(2009)-f(2000)$.",
+    "ans": "1000",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 337,
+    "name": "IMOPrelim-2009-Q17",
+    "statement": "If $6$ colours are available, in how many ways can one paint each face of a cube with one colour so that adjacent faces have different colours? (Two colourings are the same if they are identical upon rotation.)",
+    "ans": "230",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 338,
+    "name": "IMOPrelim-2009-Q18",
+    "statement": "In $\\triangle ABC$, $\\angle A=90^\\circ$, $\\angle B=\\angle C=45^\\circ$. $P$ on $BC$, $Q,R$ circumcentres of $\\triangle APB$, $\\triangle APC$. If $BP=\\sqrt2$ and $QR=2$, find $PC$.",
+    "ans": "$\\sqrt6$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 339,
+    "name": "IMOPrelim-2009-Q19",
+    "statement": "Let $x,y,z,w$ be different positive reals such that $x+\\frac1y = y+\\frac1z = z+\\frac1w = w+\\frac1x = t$. Find $t$.",
+    "ans": "$\\sqrt2$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 340,
+    "name": "IMOPrelim-2009-Q20",
+    "statement": "Let $a,b,c,d$ be positive integers such that the LCM of any three of them is $3^3\\cdot7^5$. How many ordered quadruples $(a,b,c,d)$ are possible?",
+    "ans": "11457",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 341,
+    "name": "IMOPrelim-2008-Q1",
+    "statement": "If $x,y$ are real with $\\frac{x+22}{y}+\\frac{290}{xy}=\\frac{26-y}{x}$, find $xy$.",
+    "ans": "-143",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 342,
+    "name": "IMOPrelim-2008-Q2",
+    "statement": "Let $a,b,c$ be pairwise distinct positive integers such that $a+b$, $b+c$, $c+a$ are all squares. Find the smallest possible $a+b+c$.",
+    "ans": "55",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 343,
+    "name": "IMOPrelim-2008-Q3",
+    "statement": "In a competition there are four problems worth $1,2,3,4$ marks. Full score for correct, else $0$. Total score multiplied by time bonus $4,3,2,1$, and if all correct add $20$ more. How many different final scores are possible?",
+    "ans": "27",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 344,
+    "name": "IMOPrelim-2008-Q4",
+    "statement": "Let $\\overline{ab}$ denote a two-digit number. Find $\\overline{xy}$ satisfying $\\overline{xy} = (x-y)!\\,(\\overline{yx}-3)$.",
+    "ans": "42",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 345,
+    "name": "IMOPrelim-2008-Q5",
+    "statement": "A parallelogram has diagonals making an angle of $60^\\circ$ and sides of lengths $6$ and $8$. Find its area.",
+    "ans": "$14\\sqrt3$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 346,
+    "name": "IMOPrelim-2008-Q6",
+    "statement": "Let $x,y$ be non-negative integers with $69x+54y\\le2008$. Find the maximum possible $xy$.",
+    "ans": "270",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 347,
+    "name": "IMOPrelim-2008-Q7",
+    "statement": "If $n$ is a positive integer such that $n^6+206$ is divisible by $n^2+2$, find the sum of all possible $n$.",
+    "ans": "32",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 348,
+    "name": "IMOPrelim-2008-Q8",
+    "statement": "Given that $n!$ has exactly $57$ trailing zeros in decimal, find the sum of all possible $n$.",
+    "ans": "1185",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 349,
+    "name": "IMOPrelim-2008-Q9",
+    "statement": "In $\\triangle ABC$, $D$ on $BC$ such that $AD$ bisects $\\angle BAC$. $AC=2$, $BD=2$, $DC=1$. Find $\\cos\\angle ABC$.",
+    "ans": "$\\frac78$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 350,
+    "name": "IMOPrelim-2008-Q10",
+    "statement": "The non-zero recurring decimal $0.xyz$ (digits $x,y,z$) is converted to a fraction in lowest terms. How many different possible numerators are there?",
+    "ans": "660",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 351,
+    "name": "IMOPrelim-2008-Q11",
+    "statement": "In a drawer there are $x$ white gloves and $y$ red gloves, $x>y$, $x+y\\le2008$. When two gloves are drawn at random, the probability they are the same colour is exactly $1/2$. Find the maximum possible $x$.",
+    "ans": "990",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 352,
+    "name": "IMOPrelim-2008-Q12",
+    "statement": "In $\\triangle ABC$, $AB=2$, $BC=\\sqrt3$, $\\angle ABC=150^\\circ$. $P$ is a point such that $\\angle APB=45^\\circ$ and $\\angle BPC=120^\\circ$. Find $BP$.",
+    "ans": "$\\frac{2}{\\sqrt5}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 353,
+    "name": "IMOPrelim-2008-Q13",
+    "statement": "On the plane, $A=(-1,0)$, $B=(1,0)$, $P=(0,t)$ with $0\\le t\\le1$. As $t$ varies, $C$ is variable such that $P$ is the circumcentre of $\\triangle ABC$. Points $C$ are coloured red. Find the total area of the red region.",
+    "ans": "$\\pi+2$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 354,
+    "name": "IMOPrelim-2008-Q14",
+    "statement": "Find the infinite sum $\\frac{1^3}{3^1}+\\frac{2^3}{3^2}+\\frac{3^3}{3^3}+\\frac{4^3}{3^4}+\\cdots$.",
+    "ans": "$\\frac{33}{8}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 355,
+    "name": "IMOPrelim-2008-Q15",
+    "statement": "Let $L$ be the LCM of $1,2,\\dots,20$. How many positive factors of $L$ are divisible by exactly $18$ of the numbers $1,\\dots,20$?",
+    "ans": "13",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 356,
+    "name": "IMOPrelim-2008-Q16",
+    "statement": "$\\triangle ABC$ is equilateral with side $2$. $O$ inside, $P,Q,R$ such that $OAP$, $OBQ$, $OCR$ are isosceles with vertical angles $30^\\circ$ (clockwise). Find $[PQR]$.",
+    "ans": "$2\\sqrt3-3$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 357,
+    "name": "IMOPrelim-2008-Q17",
+    "statement": "Let $p,q$ be positive integers with $\\frac{72}{487}<\\frac{p}{q}<\\frac{18}{121}$. Find the smallest possible $q$.",
+    "ans": "27",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 358,
+    "name": "IMOPrelim-2008-Q18",
+    "statement": "In $\\triangle ABC$, $AB=13$, $BC=14$, $CA=15$. $P$ inside such that $\\angle PAB=\\angle PBC=\\angle PCA$. Find $\\tan\\angle PAB$.",
+    "ans": "$\\frac{168}{295}$",
+    "difficulty": 0,
+    "tags": ["trigonometry"]
+  },
+  {
+    "id": 359,
+    "name": "IMOPrelim-2008-Q19",
+    "statement": "If $\\sqrt{9-8\\sin50^\\circ}=a+b\\csc50^\\circ$ with integers $a,b$, find $ab$.",
+    "ans": "-3",
+    "difficulty": 0,
+    "tags": ["trigonometry"]
+  },
+  {
+    "id": 360,
+    "name": "IMOPrelim-2008-Q20",
+    "statement": "When $(1+x)^{38}$ is expanded, $N_1$ coefficients leave remainder $1$ mod $3$, $N_2$ leave remainder $2$ mod $3$. Find $N_1-N_2$.",
+    "ans": "4",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 361,
+    "name": "IMOPrelim-2007-Q1",
+    "statement": "Someone forms an integer by writing the integers from $1$ to $82$ in ascending order: $1234567891011\\dots808182$. Find the sum of its digits.",
+    "ans": "667",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 362,
+    "name": "IMOPrelim-2007-Q2",
+    "statement": "Find the smallest positive integer $n$ such that the last three digits of $2007n$ are $837$.",
+    "ans": "691",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 363,
+    "name": "IMOPrelim-2007-Q3",
+    "statement": "$ABCD$ is a parallelogram with $\\angle D$ obtuse. $M,N$ feet from $D$ to $AB$ and $BC$. $DB=DC=50$, $DA=60$. Find $DM+DN$.",
+    "ans": "88",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 364,
+    "name": "IMOPrelim-2007-Q4",
+    "statement": "A truck driver drove through a tunnel. The next day a container added increased length from $6$m to $12$m. Speed reduced by $20\\%$, time increased by half. Find tunnel length (m).",
+    "ans": "24",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 365,
+    "name": "IMOPrelim-2007-Q5",
+    "statement": "$\\triangle ABC$ has area $1$. $E,F$ on $AB,AC$ with $EF\\parallel BC$. $\\triangle AEF$ and $\\triangle EBC$ have equal area. Find area of $\\triangle EFC$.",
+    "ans": "$\\sqrt5-2$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 366,
+    "name": "IMOPrelim-2007-Q6",
+    "statement": "Let $[x]$ be greatest integer $\\le x$. For positive $p,q,r$, find the minimum of $\\left[\\frac{p+q}{r}\\right]+\\left[\\frac{q+r}{p}\\right]+\\left[\\frac{r+p}{q}\\right]$.",
+    "ans": "4",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 367,
+    "name": "IMOPrelim-2007-Q7",
+    "statement": "Let $n=999\\dots999$ (2007 digits). How many $9$'s are in the decimal representation of $n^3$?",
+    "ans": "4015",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 368,
+    "name": "IMOPrelim-2007-Q8",
+    "statement": "Let $x,y$ be nonnegative integers such that $x+2y$ is multiple of $5$, $x+y$ multiple of $3$, and $2x+y\\ge99$. Find the minimum of $7x+5y$.",
+    "ans": "366",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 369,
+    "name": "IMOPrelim-2007-Q9",
+    "statement": "The three-digit number $\\overline{abc}$ consists of three non-zero digits. The sum of the other five three-digit numbers formed by rearranging $a,b,c$ is $2017$. Find $\\overline{abc}$.",
+    "ans": "425",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 370,
+    "name": "IMOPrelim-2007-Q10",
+    "statement": "Find the sum of the greatest odd factor of each of the numbers $2007,2008,\\dots,4012$.",
+    "ans": "4024036",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 371,
+    "name": "IMOPrelim-2007-Q11",
+    "statement": "$A_1,A_2,\\dots,A_{11}$ are points on a line in order with $A_1A_{11}=56$. Given $A_iA_{i+2}\\le12$ for $i=1,\\dots,9$ and $A_jA_{j+3}\\ge17$ for $j=1,\\dots,8$, find $A_2A_{11}$.",
+    "ans": "29",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 372,
+    "name": "IMOPrelim-2007-Q12",
+    "statement": "In $\\triangle ABC$, $AB=\\sqrt5$, $BC=1$, $AC=2$. $I$ is the incenter, circumcircle of $\\triangle IBC$ cuts $AB$ at $P$. Find $BP$.",
+    "ans": "$\\sqrt5-2$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 373,
+    "name": "IMOPrelim-2007-Q13",
+    "statement": "Let $x_1,\\dots,x_5$ be nonnegative reals summing to $300$. Let $M=\\max\\{x_1+x_2, x_2+x_3, x_3+x_4, x_4+x_5\\}$. Find the least possible $M$.",
+    "ans": "100",
+    "difficulty": 0,
+    "tags": ["optimization"]
+  },
+  {
+    "id": 374,
+    "name": "IMOPrelim-2007-Q14",
+    "statement": "$ABCD$ is a square of side $9$. $P$ on $AB$ with $AP:PB=7:2$. Quarter circle centre $C$ radius $CB$. Tangent from $P$ meets circle at $E$ and $AD$ at $Q$. $CE$ and $DB$ meet at $K$, $AK$ and $PQ$ meet at $M$. Find $AM$.",
+    "ans": "$\\frac{85}{22}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 375,
+    "name": "IMOPrelim-2007-Q15",
+    "statement": "$ABCD$ is a rectangle with $AB=2$, $BC=1$. A point $P$ is randomly chosen on $CD$. Find the probability that $\\angle APB$ is the largest angle in $\\triangle PAB$.",
+    "ans": "$\\sqrt3-1$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 376,
+    "name": "IMOPrelim-2007-Q16",
+    "statement": "Let $a,b,c$ be positive integers such that $ab+bc-ca=0$ and $a-c=101$. Find $b$.",
+    "ans": "2550",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 377,
+    "name": "IMOPrelim-2007-Q17",
+    "statement": "A bag contains $15$ balls marked $2^0,2^1,\\dots,2^{14}$, each red or blue, at least one of each. Let $a$ be sum on red, $b$ on blue, $d=\\gcd(a,b)$. Find the maximum possible $d$.",
+    "ans": "4681",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 378,
+    "name": "IMOPrelim-2007-Q18",
+    "statement": "Find the sum of all real roots of $3\\tan^2x+8\\tan x+3=0$ in $(0,2\\pi)$.",
+    "ans": "$5\\pi$",
+    "difficulty": 0,
+    "tags": ["trigonometry"]
+  },
+  {
+    "id": 379,
+    "name": "IMOPrelim-2007-Q19",
+    "statement": "For $0\\le x\\le1$, define $f_0(x)=|1-2x|$, $f_n(x)=f_0(f_{n-1}(x))$. How many solutions to $f_{10}(x)=x$ in $[0,1]$?",
+    "ans": "2048",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 380,
+    "name": "IMOPrelim-2007-Q20",
+    "statement": "Determine the number of ordered pairs $(x,y)$ of positive integers satisfying $x\\sqrt y + y\\sqrt x - \\sqrt{2007x} - \\sqrt{2007y} + \\sqrt{2007xy} = 2007$.",
+    "ans": "6",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 381,
+    "name": "IMOPrelim-2007-Q21",
+    "statement": "How many nine-digit positive integers consist of nine pairwise distinct digits and are divisible by $4950$?",
+    "ans": "576",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 382,
+    "name": "IMOPrelim-2007-Q22",
+    "statement": "Let $S$ be points with integer coordinates $0\\le x\\le2$, $0\\le y\\le3$, $0\\le z\\le4$. Two distinct points are randomly chosen from $S$. Find the probability that their midpoint also belongs to $S$.",
+    "ans": "$\\frac{23}{177}$",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 383,
+    "name": "IMOPrelim-2007-Q23",
+    "statement": "If $x>0$, find the minimum of $\\frac{\\sqrt{x^4+x^2+2x+1}+\\sqrt{x^4-2x^3+5x^2-4x+1}}{x}$.",
+    "ans": "$\\sqrt{10}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 384,
+    "name": "IMOPrelim-2007-Q24",
+    "statement": "A bag contains $999$ balls marked $\\frac12,\\frac13,\\dots,\\frac1{1000}$. Each ball is red or blue, and the number of red balls is a positive even integer. Let $S$ be the product of numbers on red balls. Find the sum of all possible values of $S$.",
+    "ans": "$\\frac{498501}{2000}$",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 385,
+    "name": "IMOPrelim-2007-Q25",
+    "statement": "Find the minimum value of $|\\sin x+\\cos x+\\tan x+\\cot x+\\sec x+\\csc x|$ for real $x$.",
+    "ans": "$2\\sqrt2-1$",
+    "difficulty": 0,
+    "tags": ["trigonometry"]
+  },
+  {
+    "id": 386,
+    "name": "IMOPrelim-2006-Q1",
+    "statement": "There are two positive integers, one a square. Their sum is $2006$ less than their product. Find the difference between the two numbers.",
+    "ans": "666",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 387,
+    "name": "IMOPrelim-2006-Q2",
+    "statement": "Find a positive integer $n<2006$ such that $2006n$ is a multiple of $2006+n$.",
+    "ans": "1475",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 388,
+    "name": "IMOPrelim-2006-Q3",
+    "statement": "Peter walks on a moving escalator. At normal speed it takes $40$ seconds, at twice normal speed it takes $30$ seconds. How many seconds if he stands still?",
+    "ans": "60",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 389,
+    "name": "IMOPrelim-2006-Q4",
+    "statement": "Quadrilateral $ABCD$ has $BC=CD=DA=1$, $\\angle DAB=135^\\circ$, $\\angle ABC=75^\\circ$. Find $AB$.",
+    "ans": "$\\frac{\\sqrt6-\\sqrt2}{2}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 390,
+    "name": "IMOPrelim-2006-Q5",
+    "statement": "In $\\triangle ABC$, $BC=4$, $\\angle BAC=60^\\circ$. $I$ is the incenter. Circle through $B,I,C$ meets the perpendicular bisector of $BC$ at $X$ inside $\\triangle ABC$. Find $AX$.",
+    "ans": "$\\frac{4\\sqrt3}{3}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 391,
+    "name": "IMOPrelim-2006-Q6",
+    "statement": "If $x$ is real and $-1\\le x\\le1$, find the maximum of $x+\\sqrt{1-x^2}$.",
+    "ans": "$\\sqrt2$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 392,
+    "name": "IMOPrelim-2006-Q7",
+    "statement": "Given arithmetic sequences $\\{a_n\\},\\{b_n\\}$ such that $(3n+1)a_n=(2n-1)b_n$ for all $n$. Let $S_n=a_1+\\dots+a_n$, $T_n=b_1+\\dots+b_n$. Find $\\frac{S_9}{T_6}$.",
+    "ans": "$\\frac{27}{23}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 393,
+    "name": "IMOPrelim-2006-Q8",
+    "statement": "$A,B,G$ on a circle with $\\angle AGB=48^\\circ$. Chord $AB$ is trisected by $C,D$ ($C$ closer to $A$). Minor arc $AB$ is trisected by $E,F$ ($E$ closer to $A$). Lines $EC$ and $FD$ meet at $H$. Find $\\angle AHB$.",
+    "ans": "32",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 394,
+    "name": "IMOPrelim-2006-Q9",
+    "statement": "Investment funds A,B,C claim profits $200\\%,300\\%,500\\%$ per year. Tommy has $\\$90000$. Only one fund achieves its claim, the others close. He plans to guarantee a profit of at least $\\$n$. Find the greatest possible $n$.",
+    "ans": "30000",
+    "difficulty": 0,
+    "tags": ["optimization"]
+  },
+  {
+    "id": 395,
+    "name": "IMOPrelim-2006-Q10",
+    "statement": "Balls A,B,C,D,E are put into seven boxes numbered $1$ to $7$, each at most one ball. Box numbers for A,B must be consecutive, and for C,D also consecutive. How many ways?",
+    "ans": "240",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 396,
+    "name": "IMOPrelim-2006-Q11",
+    "statement": "Two concentric circles radii $2006$ and $2007$. $ABC$ equilateral inscribed in smaller circle. $P$ on larger circle. Triangle with sides $PA,PB,PC$ has area $\\frac{a\\sqrt b}{c}$ with $\\gcd(a,c)=1$, $b$ squarefree. Find $a+b+c$.",
+    "ans": "4020",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 397,
+    "name": "IMOPrelim-2006-Q12",
+    "statement": "A sphere is placed inside a regular octahedron of side $6$. Find the greatest possible radius of the sphere.",
+    "ans": "$\\sqrt6$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 398,
+    "name": "IMOPrelim-2006-Q13",
+    "statement": "Let $[x]$ be greatest integer $\\le x$. How many different integers are in the sequence $\\left[\\frac{1^2}{2006}\\right],\\left[\\frac{2^2}{2006}\\right],\\dots,\\left[\\frac{2006^2}{2006}\\right]$?",
+    "ans": "1505",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 399,
+    "name": "IMOPrelim-2006-Q14",
+    "statement": "How many $10$-digit positive integers have all ten digits distinct and are multiples of $11111$?",
+    "ans": "3456",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 400,
+    "name": "IMOPrelim-2006-Q15",
+    "statement": "$A=(0,0)$, $B=(b,2)$. $ABCDEF$ is a convex equilateral hexagon with $\\angle FAB=120^\\circ$, $AB\\parallel ED$, $BC\\parallel FE$, $CD\\parallel AF$. The $y$-coordinates of $C,D,E,F$ are a permutation of $4,6,8,10$. Its area is $m\\sqrt n$ with $n$ squarefree. Find $m+n$.",
+    "ans": "51",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 401,
+    "name": "IMOPrelim-2006-Q16",
+    "statement": "In $\\triangle ABC$, $AB=33$, $AC=21$, $BC=x$ integer. $D$ on $AB$, $E$ on $AC$ such that $AD=DE=EC=y$ integer. Find $x$.",
+    "ans": "30",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 402,
+    "name": "IMOPrelim-2006-Q17",
+    "statement": "If a square can completely cover a triangle with sides $3,4,5$, find the smallest possible side length of the square.",
+    "ans": "$\\frac{16\\sqrt{17}}{17}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 403,
+    "name": "IMOPrelim-2006-Q18",
+    "statement": "For $n$ positive integer, $f(n)=n^2+70$, $g(n)=\\gcd(f(n),f(n+1))$. Find the greatest possible value of $g(n)$.",
+    "ans": "281",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 404,
+    "name": "IMOPrelim-2006-Q19",
+    "statement": "Let $a_1,\\dots,a_{11}$ be positive integers with $a_1<a_2<\\dots<a_{11}$. If $a_1^{-1},a_2^{-1},\\dots,a_{11}^{-1}$ form an arithmetic sequence, find the smallest possible $a_1$.",
+    "ans": "2310",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 405,
+    "name": "IMOPrelim-2006-Q20",
+    "statement": "$2005$ children numbered $1$ to $2005$, cards numbered $2$ to $2006$. Each child gets one card, and the card number must be a multiple of the child's number. How many ways?",
+    "ans": "13",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 406,
+    "name": "IMOPrelim-2005-Q1",
+    "statement": "Let $a_1,\\dots,a_n$ be integers $(n>1)$ satisfying $a_1+\\dots+a_n=a_1\\cdots a_n=2005$. Find the smallest possible $n$.",
+    "ans": "5",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 407,
+    "name": "IMOPrelim-2005-Q2",
+    "statement": "$ABC$ acute, $D$ on $BC$ with $BD:DC=2:3$, $E$ on $AC$ with $AE:EC=3:4$. $AD$ and $BE$ meet at $F$. Find $\\frac{AF}{FD}\\times\\frac{BF}{FE}$.",
+    "ans": "$\\frac{35}{12}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 408,
+    "name": "IMOPrelim-2005-Q3",
+    "statement": "Find $\\frac{1}{1+1^2+1^4}+\\frac{2}{1+2^2+2^4}+\\dots+\\frac{100}{1+100^2+100^4}$.",
+    "ans": "$\\frac{5050}{10101}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 409,
+    "name": "IMOPrelim-2005-Q4",
+    "statement": "A student has budget $\\$10000$ for a rectangular banner with integer length and width (m). Length costs $\\$330$ per m, width $\\$450$ per m. Find the maximum area (m$^2$) possible.",
+    "ans": "165",
+    "difficulty": 0,
+    "tags": ["optimization"]
+  },
+  {
+    "id": 410,
+    "name": "IMOPrelim-2005-Q5",
+    "statement": "On the $xy$-plane, find the number of triangles whose vertices have integer coordinates $(x,y)$ with $1\\le x\\le4$, $1\\le y\\le4$.",
+    "ans": "516",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 411,
+    "name": "IMOPrelim-2005-Q6",
+    "statement": "If $m$ is a positive integer $\\le1000$ and $\\frac{m+4}{m^2+7}$ is in lowest terms, how many possible $m$ are there?",
+    "ans": "957",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 412,
+    "name": "IMOPrelim-2005-Q7",
+    "statement": "A triangle has two medians of lengths $9$ and $12$. Find the largest possible area of the triangle.",
+    "ans": "72",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 413,
+    "name": "IMOPrelim-2005-Q8",
+    "statement": "Find the smallest positive integer $k$ such that $2xy-3x-5y=k$ has an odd number of positive integer solutions.",
+    "ans": "5",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 414,
+    "name": "IMOPrelim-2005-Q9",
+    "statement": "In $\\triangle ABC$, $\\angle B=60^\\circ$, $\\angle C=90^\\circ$, $AB=1$. $BCP,CAQ,ABR$ are equilateral triangles outside $\\triangle ABC$. $QR$ meets $AB$ at $T$. Find area of $\\triangle PRT$.",
+    "ans": "$\\frac{9\\sqrt3}{32}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 415,
+    "name": "IMOPrelim-2005-Q10",
+    "statement": "Find the number of triples $(a,b,c)$ of real numbers such that $|ax+by+cz|+|bx+cy+az|+|cx+ay+bz|=|x|+|y|+|z|$ holds for all real $x,y,z$.",
+    "ans": "6",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 416,
+    "name": "IMOPrelim-2005-Q11",
+    "statement": "When $n$ fair dice are thrown, the probability of sum $2005$ and the probability of sum $S$ are both equal to a positive number $p$. Find the smallest possible $S$.",
+    "ans": "340",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 417,
+    "name": "IMOPrelim-2005-Q12",
+    "statement": "$ABCD$ and $EFGH$ are squares of side $1$, $AB\\parallel EF$. Their overlap area is $1/16$. Find the minimum distance between their centres.",
+    "ans": "$\\frac{\\sqrt{14}}{4}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 418,
+    "name": "IMOPrelim-2005-Q13",
+    "statement": "An ant crawls along edges of a unit cube, starting at a vertex. Each minute it moves to an adjacent vertex. After $7$ minutes, it is at distance $\\sqrt3$ from start. How many possible routes?",
+    "ans": "546",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 419,
+    "name": "IMOPrelim-2005-Q14",
+    "statement": "In a school of $1000$ students numbered $1$ to $1000$, a group of $500$ is 'good' if some student's number divides another's. A 'good student' is one not in any 'bad group'. Find the largest student number among good students.",
+    "ans": "333",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 420,
+    "name": "IMOPrelim-2005-Q15",
+    "statement": "$ABCD$ is a rhombus with $\\angle B=60^\\circ$. $P$ inside such that $\\angle APC=120^\\circ$, $BP=3$, $DP=2$. Find the difference between $AP$ and $CP$.",
+    "ans": "$\\frac{\\sqrt{21}}{3}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 421,
+    "name": "IMOPrelim-2005-Q16",
+    "statement": "Let $n$ be a positive integer. When divided by $902,802,702$, the remainders are $602,502,402$ respectively. Find the minimum remainder when $n$ is divided by $2005$.",
+    "ans": "101",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 422,
+    "name": "IMOPrelim-2005-Q17",
+    "statement": "$5555$ children numbered $1$ to $5555$ sit around a circle. Each has an integer. Child $1$ has $1$, $12$ has $21$, $123$ has $321$, $1234$ has $4321$. Sum of any $2005$ consecutive children's integers is $2005$. What is the integer held by child $5555$?",
+    "ans": "-4659",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 423,
+    "name": "IMOPrelim-2005-Q18",
+    "statement": "If $\\frac{a(b-c)}{b(c-a)}=\\frac{b(c-a)}{c(b-a)}=r$ and $r>0$, find $r$.",
+    "ans": "$\\frac{\\sqrt5-1}{2}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 424,
+    "name": "IMOPrelim-2005-Q19",
+    "statement": "Let $O$ be origin, $A_n$ on $y=\\sqrt x$, $B_n$ on positive $x$-axis, triangles $OB_1A_1,B_1B_2A_2,\\dots$ are equilateral with side lengths $l_1,l_2,\\dots$. Find $l_1+\\dots+l_{2005}$.",
+    "ans": "$\\frac{4022030}{3}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 425,
+    "name": "IMOPrelim-2005-Q20",
+    "statement": "Let $x,y$ be acute angles such that $\\sin y = 2005\\cos(x+y)\\sin x$. Find the greatest possible value of $\\tan y$.",
+    "ans": "$\\frac{2005\\sqrt{2006}}{4012}$",
+    "difficulty": 0,
+    "tags": ["trigonometry"]
+  },
+  {
+    "id": 426,
+    "name": "IMOPrelim-2004-Q1",
+    "statement": "Let $ABCDEFGH$ be a rectangular cuboid. How many acute-angled triangles are formed by joining any three vertices?",
+    "ans": "8",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 427,
+    "name": "IMOPrelim-2004-Q2",
+    "statement": "A collector has $N$ precious stones. Removing the three heaviest reduces total weight by $35\\%$. From the remaining, removing the three lightest reduces total weight by another $5/13$. Find $N$.",
+    "ans": "10",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 428,
+    "name": "IMOPrelim-2004-Q3",
+    "statement": "Let $[a]$ be greatest integer $\\le a$. For integer $N$, solve $\\begin{cases}[x]+2y=N+2\\\\ [y]+2x=3-N\\end{cases}$ and express $x$ in terms of $N$.",
+    "ans": "$\\frac32 - N$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 429,
+    "name": "IMOPrelim-2004-Q4",
+    "statement": "Find the largest five-digit palindrome divisible by $101$.",
+    "ans": "49894",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 430,
+    "name": "IMOPrelim-2004-Q5",
+    "statement": "Evaluate $\\frac{3}{1!+2!+3!}+\\frac{4}{2!+3!+4!}+\\dots+\\frac{2004}{2002!+2003!+2004!}$.",
+    "ans": "$\\frac12 - \\frac{1}{2004!}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 431,
+    "name": "IMOPrelim-2004-Q6",
+    "statement": "If $\\frac{(a-b)(b-c)(c-a)}{(a+b)(b+c)(c+a)} = \\frac{2004}{2005}$, find $\\frac{a}{a+b}+\\frac{b}{b+c}+\\frac{c}{c+a}$.",
+    "ans": "$\\frac{4011}{4010}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 432,
+    "name": "IMOPrelim-2004-Q7",
+    "statement": "$D$ is inside $\\triangle ABC$ such that $AB=DC$, $\\angle DCA=24^\\circ$, $\\angle DAC=31^\\circ$, $\\angle ABC=55^\\circ$. Find $\\angle DAB$.",
+    "ans": "$63^\\circ$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 433,
+    "name": "IMOPrelim-2004-Q8",
+    "statement": "It is known that $999973$ has exactly three distinct prime factors. Find the sum of these prime factors.",
+    "ans": "171",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 434,
+    "name": "IMOPrelim-2004-Q9",
+    "statement": "A person picks $n$ different primes less than $150$ that form an arithmetic sequence. Find the greatest possible $n$.",
+    "ans": "5",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 435,
+    "name": "IMOPrelim-2004-Q10",
+    "statement": "For positive integer $n$, let $p(n)$ be the product of non-zero digits of $n$. Let $S=p(1)+p(2)+\\dots+p(999)$. What is the largest prime factor of $S$?",
+    "ans": "103",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 436,
+    "name": "IMOPrelim-2004-Q11",
+    "statement": "If $A=\\frac1{1\\times2}+\\frac1{3\\times4}+\\dots+\\frac1{2003\\times2004}$, $B=\\frac1{1003\\times2004}+\\frac1{1004\\times2003}+\\dots+\\frac1{2004\\times1003}$, find $A/B$.",
+    "ans": "$\\frac{3007}{2}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 437,
+    "name": "IMOPrelim-2004-Q12",
+    "statement": "Find the number of $6$-digit positive integers $\\overline{abcdef}$ with non-zero digits such that $a\\times b + c\\times d + e\\times f$ is even.",
+    "ans": "280616",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 438,
+    "name": "IMOPrelim-2004-Q13",
+    "statement": "Find the area enclosed by the graph $x^2+y^2=|x|+|y|$ on the $xy$-plane.",
+    "ans": "$\\pi+2$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 439,
+    "name": "IMOPrelim-2004-Q14",
+    "statement": "Determine the number of ordered integer pairs $(m,n)$ with $mn\\ge0$ and $m^3+n^3+99mn=33^3$.",
+    "ans": "35",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 440,
+    "name": "IMOPrelim-2004-Q15",
+    "statement": "A natural number $n$ is lucky if $2^{-n}$ and $2^{-n-1}$ have the same number of significant figures. Given $\\log2=0.301$ (to 3 sig fig), how many lucky numbers are less than $2004$?",
+    "ans": "603",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 441,
+    "name": "IMOPrelim-2004-Q16",
+    "statement": "A positive integer $n$ is good if $3n$ is a re-ordering of the digits of $n$. Find a four-digit good integer divisible by $11$.",
+    "ans": "2475",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 442,
+    "name": "IMOPrelim-2004-Q17",
+    "statement": "From any $n$-digit number $a$ ($n>1$) we obtain $b$ by writing two copies of $a$ together. If $b/a^2$ is an integer, find this integer.",
+    "ans": "7",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 443,
+    "name": "IMOPrelim-2004-Q18",
+    "statement": "Find the sum of all $x$ with $0\\le x\\le360$ such that $\\cos12x^\\circ = 5\\sin3x^\\circ + 9\\tan^2x^\\circ + \\cot^2x^\\circ$.",
+    "ans": "540",
+    "difficulty": 0,
+    "tags": ["trigonometry"]
+  },
+  {
+    "id": 444,
+    "name": "IMOPrelim-2004-Q19",
+    "statement": "$ABC$ and $GBD$ are straight lines. $E$ on $CD$ produced, $AD$ meets $EG$ at $F$. $\\angle CAD = \\angle EGD$, $EF=FG$, $AB:BC=1:2$, $CD:DE=3:2$. Find $BD:DF$.",
+    "ans": "$\\sqrt3:2$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 445,
+    "name": "IMOPrelim-2004-Q20",
+    "statement": "For positive integer $n$, let $f(n)$ be the exponent of the highest power of $2$ dividing $n!$. Find $f(1)+f(2)+\\dots+f(1023)$.",
+    "ans": "518656",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 446,
+    "name": "IMOPrelim-2003-Q1",
+    "statement": "Let $x = \\sqrt[3]{4}+\\sqrt[3]{2}+1$. Find $\\left(1+\\frac1x\\right)^3$.",
+    "ans": "2",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 447,
+    "name": "IMOPrelim-2003-Q2",
+    "statement": "15 students, every day 3 are on duty. After the course, every pair of students have been on duty together exactly once. How many days does the course last?",
+    "ans": "35",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 448,
+    "name": "IMOPrelim-2003-Q3",
+    "statement": "Find the number of pairs of consecutive integers in $\\{1000,1001,\\dots,2000\\}$ such that no carrying is required when they are added.",
+    "ans": "156",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 449,
+    "name": "IMOPrelim-2003-Q4",
+    "statement": "A positive integer $x$ is magic if its binary representation has an even number of $1$'s. The first five magic numbers are $3,5,6,9,10$. Find, in decimal, the sum of the first $2003$ magic numbers.",
+    "ans": "4015014",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 450,
+    "name": "IMOPrelim-2003-Q5",
+    "statement": "$n$ is increasing if reversing its digits gives a larger number. How many four-digit positive integers are increasing?",
+    "ans": "4005",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 451,
+    "name": "IMOPrelim-2003-Q6",
+    "statement": "The sides of a triangle inscribed in a circle of radius $2\\sqrt3$ are in ratio $3:5:7$. Find its area.",
+    "ans": "$\\frac{135}{49}\\sqrt3$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 452,
+    "name": "IMOPrelim-2003-Q7",
+    "statement": "A group of farmers shared apples (<1000). In turn, each took either one-half or one-third of the remaining apples (integer amounts). After each farmer took his share, the rest went to charity. Find the greatest number of farmers possible.",
+    "ans": "12",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 453,
+    "name": "IMOPrelim-2003-Q8",
+    "statement": "Let $a,b$ be positive integers with $90<a+b<99$ and $0.9<\\frac{a}{b}<0.91$. Find $ab$.",
+    "ans": "2346",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 454,
+    "name": "IMOPrelim-2003-Q9",
+    "statement": "Find an integer $x$ such that $\\left(1+\\frac1x\\right)^{x+1} = \\left(1+\\frac1{2003}\\right)^{2003}$.",
+    "ans": "-2004",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 455,
+    "name": "IMOPrelim-2003-Q10",
+    "statement": "Simplify $(\\cos42^\\circ+\\cos102^\\circ+\\cos114^\\circ+\\cos174^\\circ)^2$ into a rational number.",
+    "ans": "$\\frac34$",
+    "difficulty": 0,
+    "tags": ["trigonometry"]
+  },
+  {
+    "id": 456,
+    "name": "IMOPrelim-2003-Q11",
+    "statement": "On a certain planet there are $100$ countries. They form unions, each with at most $50$ countries, and each country joins several unions so that every two different countries belong to some common union. At least how many unions must be formed?",
+    "ans": "6",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 457,
+    "name": "IMOPrelim-2003-Q12",
+    "statement": "Find the last two digits of $7\\times19\\times31\\times\\dots\\times1999$ (arithmetic progression with common difference $12$).",
+    "ans": "75",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 458,
+    "name": "IMOPrelim-2003-Q13",
+    "statement": "$ABCDEFGH$ is a cube with $ABCD$ top face, $H,G,F,E$ below $A,B,C,D$ respectively. Real numbers assigned to vertices. The average of the three adjacent vertices at each vertex is computed, giving $1,2,3,4,5,6,7,8$ at $A,B,C,D,E,F,G,H$. Find the number assigned to $F$.",
+    "ans": "13",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 459,
+    "name": "IMOPrelim-2003-Q14",
+    "statement": "A regular $201$-sided polygon is inscribed in a circle with centre $C$. Triangles are formed by connecting any three vertices. How many of these triangles contain $C$ inside?",
+    "ans": "338350",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 460,
+    "name": "IMOPrelim-2003-Q15",
+    "statement": "Rectangle $ABCD$, $X$ on $AB$, $Y$ on $BC$. Areas of $\\triangle ADX$, $\\triangle BXY$, $\\triangle DYC$ are $5,4,3$ respectively. Find area of $\\triangle DXY$.",
+    "ans": "$2\\sqrt{21}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 461,
+    "name": "IMOPrelim-2003-Q16",
+    "statement": "$\\triangle ABC$ acute, $BC=5$, $E$ on $AC$ with $BE\\perp AC$, $F$ on $AB$ with $AF=BF$. $BE=CF=4$. Find the area of $\\triangle ABC$.",
+    "ans": "$8\\sqrt3-6$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 462,
+    "name": "IMOPrelim-2003-Q17",
+    "statement": "$\\triangle ABC$ with $\\angle ABC=80^\\circ$, $\\angle ACB=70^\\circ$, $BC=2$. Perpendiculars from $A$ to $BC$ and from $B$ to $AC$ meet at $H$. Find $AH$.",
+    "ans": "$2\\sqrt3$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 463,
+    "name": "IMOPrelim-2003-Q18",
+    "statement": "Let $A$ be a set of positive integers such that for any $x,y\\in A$, $|x-y|\\ge\\frac{xy}{30}$. What is the maximum possible number of elements in $A$?",
+    "ans": "10",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 464,
+    "name": "IMOPrelim-2003-Q19",
+    "statement": "A man chooses two positive integers $m,n$. A positive integer $k$ is good if a triangle with side lengths $\\log m,\\log n,\\log k$ exists. He finds exactly $100$ good numbers. Find the maximum possible $mn$.",
+    "ans": "134",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 465,
+    "name": "IMOPrelim-2003-Q20",
+    "statement": "In $\\triangle ABC$ ($AB<AC$), perimeter is $7$ times $BC$. The incircle touches $BC$ at $E$, and diameter $DE$ of the incircle cuts the median from $A$ to $BC$ at $F$. Find $DF/FE$.",
+    "ans": "$\\frac57$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 466,
+    "name": "IMOPrelim-2002-Q1",
+    "statement": "Let $n$ be a positive integer such that no matter how $10^n$ is expressed as a product of two positive integers, at least one of them contains the digit $0$. Find the smallest possible $n$.",
+    "ans": "8",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 467,
+    "name": "IMOPrelim-2002-Q2",
+    "statement": "A clock has hour hand length $3$ and minute hand length $4$. From 1:00 am to 1:00 pm, find the number of occurrences when the distance between the tips is an integer.",
+    "ans": "132",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 468,
+    "name": "IMOPrelim-2002-Q3",
+    "statement": "Find the sum of all integers from $1$ to $1000$ which contain at least one digit $7$.",
+    "ans": "157842",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 469,
+    "name": "IMOPrelim-2002-Q4",
+    "statement": "A multiple choice test has $100$ questions. Correct: $4$ marks, wrong: $-1$, unanswered: $0$. Determine the number of different total marks possible (including negative).",
+    "ans": "495",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 470,
+    "name": "IMOPrelim-2002-Q5",
+    "statement": "A palindrome reads the same forwards and backwards. Find the sum of all $4$-digit palindromes.",
+    "ans": "495000",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 471,
+    "name": "IMOPrelim-2002-Q6",
+    "statement": "Points $A$ and $B$ lie on a plane. A line through $A$ divides the plane into $2$ regions. Another line through $B$ divides into $4$ regions, etc. If $1002$ lines pass through $A$ and $1000$ lines through $B$, what is the maximum number of regions formed?",
+    "ans": "1006003",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 472,
+    "name": "IMOPrelim-2002-Q7",
+    "statement": "In $\\triangle ABC$, $X,Y$ on $BC$ with $BX=XY=YC$, $M,N$ on $AC$ with $AM=MN=NC$. $BM$ and $BN$ intersect $AY$ at $S$ and $R$. If $[ABC]=1$, find $[SMNR]$.",
+    "ans": "$\\frac{5}{42}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 473,
+    "name": "IMOPrelim-2002-Q8",
+    "statement": "Given $0.3010<\\log2<0.3011$ and $0.4771<\\log3<0.4772$. Find the leftmost digit of $12^{37}$.",
+    "ans": "8",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 474,
+    "name": "IMOPrelim-2002-Q9",
+    "statement": "Let $x_1,y_1,x_2,y_2$ be real numbers satisfying $x_1^2+5x_2^2=10$, $x_2y_1-x_1y_2=5$, $x_1y_1+5x_2y_2=\\sqrt{105}$. Find $y_1^2+5y_2^2$.",
+    "ans": "$\\frac{23}{2}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 475,
+    "name": "IMOPrelim-2002-Q10",
+    "statement": "How many positive integers less than $500$ have exactly $15$ positive integer factors?",
+    "ans": "3",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 476,
+    "name": "IMOPrelim-2002-Q11",
+    "statement": "Find the $2002$nd positive integer that is not the difference of two square integers.",
+    "ans": "8006",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 477,
+    "name": "IMOPrelim-2002-Q12",
+    "statement": "In trapezium $ABCD$, $BC\\perp AB$, $BC\\perp CD$, $AC\\perp BD$. $AB=\\sqrt{11}$, $AD=\\sqrt{1001}$. Find $BC$.",
+    "ans": "$\\sqrt{110}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 478,
+    "name": "IMOPrelim-2002-Q13",
+    "statement": "$ABCD$ is a square of side $5$, $E$ on $BC$ with $BE=3$, $EC=2$. $P$ is a variable point on diagonal $BD$. Determine $PB$ when $PE+PC$ is minimised.",
+    "ans": "$\\frac{15\\sqrt2}{8}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 479,
+    "name": "IMOPrelim-2002-Q14",
+    "statement": "In $\\triangle ABC$, $\\angle ACB = 3\\angle BAC$, $BC=5$, $AB=11$. Find $AC$.",
+    "ans": "$\\frac{24\\sqrt5}{5}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 480,
+    "name": "IMOPrelim-2002-Q15",
+    "statement": "In $\\triangle ABC$, $D,E,F$ are midpoints of $AB,BC,CA$. $AB=10$, $CD=9$, $CD\\perp AE$. Find $BF$.",
+    "ans": "$3\\sqrt{13}$",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 481,
+    "name": "IMOPrelim-2002-Q16",
+    "statement": "Each face and vertex of a regular tetrahedron is coloured red or blue. How many different colourings are there? (Rotations considered the same.)",
+    "ans": "36",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 482,
+    "name": "IMOPrelim-2002-Q17",
+    "statement": "Let $a_0=2$, $a_n=\\frac{\\sqrt3 a_{n-1}+1}{\\sqrt3 - a_{n-1}}$ for $n\\ge1$. Find $a_{2002}$ in the form $p+q\\sqrt3$ with rational $p,q$.",
+    "ans": "$\\frac{5\\sqrt3-8}{11}$",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 483,
+    "name": "IMOPrelim-2002-Q18",
+    "statement": "Let $A_1A_2\\dots A_{2002}$ be a regular $2002$-gon. Each vertex $A_i$ is associated with a positive integer $a_i$. If $j_1,\\dots,j_k$ ($k<500$) form a regular $k$-gon, then $a_{j_1},\\dots,a_{j_k}$ are all different. Find the smallest possible $a_1+\\dots+a_{2002}$.",
+    "ans": "287287",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 484,
+    "name": "IMOPrelim-2002-Q19",
+    "statement": "There are $5$ points on the plane. Step 1: connect all pairs (no two lines parallel/perpendicular, no three concurrent). Step 2: from each point draw perpendiculars to lines joining any two of the other four points. What is the maximum number of intersection points of the lines drawn in step 2 (including the $5$ given points)?",
+    "ans": "315",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 485,
+    "name": "IMOPrelim-2002-Q20",
+    "statement": "A rectangular piece of paper has integer sides. It is folded so that a pair of diagonally opposite vertices coincide, and the crease length is $65$. Find a possible perimeter of the paper.",
+    "ans": "408",
+    "difficulty": 0,
+    "tags": ["geometry"]
   }
 ]
