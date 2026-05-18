@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>WYK Maths Team - Dev Terminal</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="auth.js"></script>
+    <script src="app.js" defer></script>
+    <style>
+        .terminal-container {
+            background: #1e1e2f;
+            color: #c5c8c6;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            border-radius: 8px;
+            padding: 1rem;
+            min-height: 500px;
+        }
+        .terminal-output {
+            background: #0a0a12;
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-size: 0.85rem;
+        }
+        .terminal-line {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .terminal-prompt {
+            color: #4af;
+            font-weight: bold;
+        }
+        .terminal-input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-family: monospace;
+            font-size: 0.9rem;
+            flex: 1;
+            outline: none;
+        }
+        .info-note {
+            background: #2a2a3a;
+            padding: 0.5rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+        button {
+            background: var(--accent);
+            border: none;
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover { background: var(--accent-hover); }
+    </style>
+</head>
+<body class="index-body">
+    <div id="appContainer">
+        <header class="topbar">
+            <div class="topbar-left"><span class="brand-name"><a href="/index.html">WYK Maths Team</a></span></div>
+            <div class="topbar-right">
+                <div class="user-menu" id="userMenu" style="cursor: pointer;">
+                    <span class="username-display"><span class="user-icon">👤</span><span id="currentUsername">Guest</span><span class="dropdown-arrow">▾</span></span>
+                    <div class="logout-dropdown"><button class="logout-btn" id="logoutBtn">Logout</button></div>
+                </div>
+                <div class="clock"><span class="clock-time" id="clockTime">00:00:00</span></div>
+            </div>
+        </header>
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav"><ul>
+                <li><a href="./problems.html" class="sidebar-link require-login">Problems</a></li>
+                <li><a href="./submissions.html" class="sidebar-link require-login">Your submissions</a></li>
+                <li><a href="./ssubmissions.html" class="sidebar-link require-login">All submissions</a></li>
+                <li><a href="./resources.html" class="sidebar-link require-login">Resources</a></li>
+                <li><a href="./ranklist.html" class="sidebar-link require-login">Leaderboard</a></li>
+                <li><a href="./terminal.html" class="sidebar-link require-login active">(Dev)Terminal</a></li>
+                <li><a href="./admin.html" class="sidebar-link require-login">Messages</a></li>
+                <li><a href="./template.html" class="sidebar-link require-login">Settings</a></li>
+            </ul></nav>
+        </aside>
+        <main class="main-content" id="mainContent">
+            <div class="updates-panel" style="padding:1rem;">
+                <div class="updates-header"><h2>Developer Terminal</h2></div>
+                
+                <div class="terminal-container">
+                    <div class="terminal-output" id="terminalOutput">
+                        > Terminal ready. Type 'help' for commands.<br>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">$&nbsp;</span>
+                        <input type="text" id="terminalInput" class="terminal-input" autofocus>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">☰</button>
+    </div>
+
+    <div id="loginModal" class="modal-overlay" style="display: none;"><!-- 与之前相同 --></div>
+
+    <script>
+      // 登录检查：未登录则跳转到首页
+if (typeof isLoggedIn === 'function' && !isLoggedIn()) {
+    window.location.href = 'index.html';
+}
+        // 定义 remove 函数（与 problems.html 中暴露的全局函数对接）
+        // 注意：problems.html 已经暴露了 window.removeProblemState，本页面只需调用即可。
+        // 为了确保功能，我们直接实现一个本地版本，同时也会尝试调用 problems 页面的函数。
+        
+        // 获取所有题目 ID（从 localStorage 中读取，或者从 problemsData 获取，但这里无法直接获取 problemsData）
+        // 为了 remove 能检测 ID 是否存在，我们需要知道有效的题目 ID 列表。
+        // 由于题目数据定义在 problems.html 中，这里我们采用一种简单方式：从 localStorage 中读取状态，但 ID 集合需要在 problems.html 中暴露。
+        // 更好的做法：在 problems.html 中暴露一个 getAllProblemIds 函数，或者我们在这里硬编码题目 ID 范围（1-5）。
+        // 为简单且保证正确，我们假设题目 ID 为 1-5（根据 problemsData）。
+        const VALID_IDS = [1,2,3,4,5];
+        
+        function removeProblemState(id) {
+            const states = localStorage.getItem('problemStates');
+            if (!states) return -1;
+            let obj;
+            try { obj = JSON.parse(states); } catch(e) { return -1; }
+            if (!obj.hasOwnProperty(id)) return -1;
+            delete obj[id];
+            localStorage.setItem('problemStates', JSON.stringify(obj));
+            return 0;
+        }
+        
+        // 列出所有题目状态
+        function listStates() {
+            const states = localStorage.getItem('problemStates');
+            if (!states) return "No states stored.";
+            try {
+                const obj = JSON.parse(states);
+                let lines = [];
+                for (let id in obj) {
+                    lines.push(`Problem ${id}: ${obj[id]}`);
+                }
+                if (lines.length === 0) lines.push("No problem states found.");
+                return lines.join('\n');
+            } catch(e) { return "Error parsing states."; }
+        }
+        
+        const outputDiv = document.getElementById('terminalOutput');
+        const inputField = document.getElementById('terminalInput');
+        
+        function appendOutput(text) {
+            outputDiv.innerHTML += text + '\n';
+            outputDiv.scrollTop = outputDiv.scrollHeight;
+        }
+        
+        function processCommand(cmd) {
+            const parts = cmd.trim().split(/\s+/);
+            const command = parts[0].toLowerCase();
+            if (command === 'remove') {
+                if (parts.length < 2) {
+                    appendOutput("Usage: remove <id>");
+                    return;
+                }
+                const id = parseInt(parts[1]);
+                if (isNaN(id)) {
+                    appendOutput("Error: ID must be a number.");
+                    return;
+                }
+                const result = removeProblemState(id);
+                if (result === -1) {
+                    appendOutput(`remove(${id}) returned -1: Problem ID ${id} not found.`);
+                } else {
+                    appendOutput(`remove(${id}) returned 0: State removed successfully.`);
+                }
+            } else if (command === 'list') {
+                appendOutput(listStates());
+            } else if (command === 'clear') {
+                outputDiv.innerHTML = "";
+                appendOutput("> Terminal cleared.");
+            } else if (command === 'help') {
+                appendOutput("Available commands:\n  remove <id>  - Remove problem state (returns 0 or -1)\n  list         - Show all problem states\n  clear        - Clear terminal output\n  help         - Show this help");
+            } else {
+                appendOutput(`Unknown command: ${command}. Type 'help' for commands.`);
+            }
+        }
+        
+        inputField.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const cmd = inputField.value;
+                if (cmd.trim() === "") return;
+                appendOutput(`$ ${cmd}`);
+                processCommand(cmd);
+                inputField.value = "";
+            }
+        });
+        
+        // 补充：如果 problems.html 暴露了全局函数，也将其别名绑定（但这里独立实现即可）
+        window.remove = removeProblemState;  // 可选
+    </script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>WYK Maths Team - Submissions</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="auth.js"></script>
+    <script src="app.js" defer></script>
+    <style>
+        /* 紧凑表格样式 */
+        .submissions-panel {
+            background: var(--card-bg);
+            border-radius: 4px;
+            padding: 0;
+            box-shadow: var(--shadow-sm);
+            overflow-x: auto;
+        }
+        .submissions-header {
+            background: #f8f9fa;
+            padding: 0.5rem 0.8rem;
+            border-bottom: 2px solid var(--border-color);
+            display: grid;
+            grid-template-columns: 160px 1fr 120px 90px;
+            font-weight: 700;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+        }
+        .submissions-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .submission-item {
+            display: grid;
+            grid-template-columns: 160px 1fr 120px 90px;
+            align-items: center;
+            padding: 0.5rem 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            transition: background 0.1s;
+        }
+        .submission-item:last-child { border-bottom: none; }
+        .submission-item:hover { background: #f8f9fa; }
+        .submission-time {
+            color: var(--text-secondary);
+            font-family: monospace;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .submission-problem-link a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .submission-problem-link a:hover { text-decoration: underline; }
+        .submission-answer {
+            font-family: monospace;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .submission-status {
+            font-weight: bold;
+            text-align: right;
+        }
+        .submission-correct { color: #2e7d32; }
+        .submission-wrong { color: var(--danger); }
+        .filter-info {
+            background: #eef2ff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 0.5rem 0.8rem;
+            display: inline-block;
+        }
+        .back-link {
+            color: var(--accent);
+            text-decoration: none;
+            margin-left: 0.5rem;
+        }
+        .updates-header {
+            padding: 0.8rem 0.8rem 0 0.8rem;
+        }
+        @media (max-width: 650px) {
+            .submissions-header, .submission-item {
+                grid-template-columns: 130px 1fr 90px 75px;
+            }
+            .submission-time { font-size: 0.7rem; }
+        }
+        @media (max-width: 550px) {
+            .submissions-header, .submission-item {
+                grid-template-columns: 110px 1fr 70px 65px;
+            }
+            .submission-answer { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body class="index-body">
+    <div id="appContainer">
+        <header class="topbar">
+            <div class="topbar-left"><span class="brand-name"><a href="/index.html">WYK Maths Team</a></span></div>
+            <div class="topbar-right">
+                <div class="user-menu" id="userMenu" style="cursor: pointer;">
+                    <span class="username-display"><span class="user-icon">👤</span><span id="currentUsername">Guest</span><span class="dropdown-arrow">▾</span></span>
+                    <div class="logout-dropdown"><button class="logout-btn" id="logoutBtn">Logout</button></div>
+                </div>
+                <div class="clock"><span class="clock-time" id="clockTime">00:00:00</span></div>
+            </div>
+        </header>
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav"><ul>
+                <li><a href="./problems.html" class="sidebar-link require-login">Problems</a></li>
+                <li><a href="./submissions.html" class="sidebar-link require-login active">Your submissions</a></li>
+                <li><a href="./ssubmissions.html" class="sidebar-link require-login">All submissions</a></li>
+                <li><a href="./resources.html" class="sidebar-link require-login">Resources</a></li>
+                <li><a href="./ranklist.html" class="sidebar-link require-login">Leaderboard</a></li>
+                <li><a href="./terminal.html" class="sidebar-link require-login">(Dev)Terminal</a></li>
+                <li><a href="./admin.html" class="sidebar-link require-login">Messages</a></li>
+                <li><a href="./template.html" class="sidebar-link require-login">Settings</a></li>
+            </ul></nav>
+        </aside>
+        <main class="main-content" id="mainContent">
+            <div class="submissions-panel" id="submissionsContainer">
+                <!-- 动态内容 -->
+            </div>
+        </main>
+        <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">☰</button>
+    </div>
+
+    <!-- 登录模态框（与 problems.html 相同，此处省略完整内容，实际使用时需保留） -->
+    <div id="loginModal" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-header"><h2>Sign In Required</h2><button class="modal-close" id="closeModalBtn">&times;</button></div>
+            <form id="modalLoginForm">
+                <div class="form-group"><label for="modalUsername">Username</label><input type="text" id="modalUsername" placeholder="Username" required></div>
+                <div class="form-group"><label for="modalPassword">Password</label><input type="password" id="modalPassword" placeholder="Password" required></div>
+                <div id="modalLoginError" class="login-error hidden"></div>
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+      // 登录检查：未登录则跳转到首页
+if (typeof isLoggedIn === 'function' && !isLoggedIn()) {
+    window.location.href = 'index.html';
+}
+        (function() {
+            const STORAGE_KEY_SUBMISSIONS = 'submissions';
+            function getSubmissions() {
+                const stored = localStorage.getItem(STORAGE_KEY_SUBMISSIONS);
+                if (!stored) return [];
+                try { return JSON.parse(stored); } catch(e) { return []; }
+            }
+
+            // 获取 URL 参数 problem_id
+            function getProblemIdFromUrl() {
+                const params = new URLSearchParams(window.location.search);
+                const id = params.get('problem_id');
+                return id ? parseInt(id) : null;
+            }
+
+            const problemIdFilter = getProblemIdFromUrl();
+            let submissions = getSubmissions();
+            let filtered = problemIdFilter ? submissions.filter(s => s.problemId === problemIdFilter) : submissions;
+            // 按时间倒序排列（最新的在前）
+            filtered.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+            const container = document.getElementById('submissionsContainer');
+            
+            // 构建表格
+            let html = `<div class="updates-header"><h2>Your Submissions</h2></div>`;
+            if (problemIdFilter) {
+                html += `<div class="filter-info">🔍 Showing submissions for Problem #${problemIdFilter} <a href="./problems.html" class="back-link">← Back to problems</a></div>`;
+            } else {
+                html += `<div class="filter-info">Your submissions <a href="./problems.html" class="back-link">← Back to problems</a></div>`;
+            }
+            
+            if (filtered.length === 0) {
+                html += `<p style="padding: 1rem; text-align: center; color: var(--text-secondary);">No submissions found.</p>`;
+            } else {
+                html += `<div class="submissions-list">
+                            <div class="submissions-header">
+                                <span>Time</span>
+                                <span>Problem</span>
+                                <span>Answer</span>
+                                <span>Status</span>
+                            </div>`;
+                filtered.forEach(sub => {
+                    const date = new Date(sub.timestamp).toLocaleString();
+                    const statusClass = sub.isCorrect ? 'submission-correct' : 'submission-wrong';
+                    const statusText = sub.isCorrect ? '✓ Correct' : '✗ Wrong';
+                    // 可点击的题目链接，跳转到 problems.html?problem_id=xxx（保留详情视图）
+                    html += `<div class="submission-item">
+                                <div class="submission-time" title="${date}">${escapeHtml(date)}</div>
+                                <div class="submission-problem-link"><a href="./problems.html?problem_id=${sub.problemId}">Problem #${sub.problemId}</a></div>
+                                <div class="submission-answer" title="${escapeHtml(sub.answer)}">${escapeHtml(sub.answer)}</div>
+                                <div class="submission-status ${statusClass}">${statusText}</div>
+                            </div>`;
+                });
+                html += `</div>`;
+            }
+            container.innerHTML = html;
+
+            function escapeHtml(str) {
+                return String(str).replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>WYK Maths Team</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="auth.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body class="index-body">
+    <!-- 主应用（始终可见，但受保护功能被拦截） -->
+    <div id="appContainer">
+        <!-- Top Bar -->
+        <header class="topbar">
+            <div class="topbar-left">
+                <span class="brand-name"><a href="/index.html">WYK Maths Team</a></span>
+            </div>
+            <div class="topbar-right">
+                <div class="user-menu" id="userMenu" style="cursor: pointer;">
+                    <span class="username-display" id="usernameDisplay">
+                        <span class="user-icon">👤</span>
+                        <span id="currentUsername">Guest</span>
+                        <span class="dropdown-arrow">▾</span>
+                    </span>
+                    <div class="logout-dropdown" id="logoutDropdown">
+                        <button class="logout-btn" id="logoutBtn">Logout</button>
+                    </div>
+                </div>
+                <div class="clock" id="clock">
+                    <span class="clock-time" id="clockTime">00:00:00</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./problems.html" class="sidebar-link require-login" data-href="./problems/index.html">Problems</a></li>
+                    <li><a href="./submissions.html" class="sidebar-link require-login" data-href="./submissions/index.html">Your submissions</a></li>
+                    <li><a href="./ssubmissions.html" class="sidebar-link require-login" data-href="./ssubmissions/index.html">All submissions</a></li>
+                    <li><a href="./resources.html" class="sidebar-link require-login" data-href="./resources/index.html">Resources</a></li>
+                    <li><a href="./ranklist.html" class="sidebar-link require-login" data-href="./ranklist/index.html">Leaderboard</a></li>
+                    <li><a href="./terminal.html" class="sidebar-link require-login" data-href="./terminal/index.html">(Dev)Terminal</a></li>
+                    <li><a href="./admin.html" class="sidebar-link require-login" data-href="./admin/index.html">Messages</a></li>
+                    <li><a href="./template.html" class="sidebar-link require-login" data-href="./template.html">Settings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="mainContent">
+            <div class="updates-panel">
+                <div class="updates-header">
+                    <h2>Recent Updates</h2>
+                    <span class="updates-date" id="currentDate"></span>
+                </div>
+                <div class="updates-body">
+                    <div class="update-card">
+                        <div class="update-card-header">
+                            <span class="update-badge new">New</span>
+                            <span class="update-time">Today</span>
+                        </div>
+                        <h3>Welcome to WYK Maths Team</h3>
+                        <p>You are browsing as a guest. Click any menu item to sign in and access full features.</p>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-card-header">
+                            <span class="update-badge info">Info</span>
+                            <span class="update-time">2 days ago</span>
+                        </div>
+                        <h3>Platform launched!</h3>
+                        <p>The platform is active as of 2nd May, 2026 19:52:00 GMT+8</p>
+                    </div>
+                    <div class="update-card placeholder-card">
+                        <div class="placeholder-icon"></div>
+                        <p>More updates will appear here...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Mobile sidebar toggle -->
+        <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">☰</button>
+    </div>
+
+    <!-- 全局登录模态框 (初始隐藏) -->
+    <div id="loginModal" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>Sign In Required</h2>
+                <button class="modal-close" id="closeModalBtn">&times;</button>
+            </div>
+            <form id="modalLoginForm">
+                <div class="form-group">
+                    <label for="modalUsername">Username</label>
+                    <input type="text" id="modalUsername" placeholder="Enter your username" autocomplete="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="modalPassword">Password</label>
+                    <input type="password" id="modalPassword" placeholder="Enter your password" autocomplete="current-password" required>
+                </div>
+                <div id="modalLoginError" class="login-error hidden"></div>
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2082 @@
+[
+  {
+    "id": 1,
+    "name": "IMOPrelim-2025-Q1",
+    "statement": "Let n be a nine-digit positive integer whose product of digits is equal to 10!. Find the greatest possible value of n.",
+    "ans": "998875541",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 2,
+    "name": "IMOPrelim-2025-Q2",
+    "statement": "Find the smallest positive integer n such that the first four digits of n^2 (from left to right) are 2, 0, 2, 5 while the fifth digit of n^2 is non-zero.",
+    "ans": "4501",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 3,
+    "name": "IMOPrelim-2025-Q3",
+    "statement": "Let m and n be positive integers where m > n. If m = (m - n)^2 and n is equal to 25 times the H.C.F. of m and n, find the L.C.M. of m and n.",
+    "ans": "16900",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 4,
+    "name": "IMOPrelim-2025-Q4",
+    "statement": "Find a negative number x such that (x^2 - 2\\sqrt{3} x)(x^2 - 3) = 2016.",
+    "ans": "\\frac{\\sqrt{3} - \\sqrt{195}}{2}",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 5,
+    "name": "IMOPrelim-2025-Q5",
+    "statement": "In triangle ABC, BC = 1 and ∠ACB = 90°. If the median of the triangle through A, the internal angle bisector of ∠ABC and the altitude of the triangle from C are concurrent, find AC.",
+    "ans": "\\sqrt{\\frac{1 + \\sqrt{5}}{2}}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 6,
+    "name": "IMOPrelim-2025-Q6",
+    "statement": "How many triples (a, b, c) of positive integers are there such that a is a factor of both b and c, and that a + b + c = 300?",
+    "ans": "833",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 7,
+    "name": "IMOPrelim-2025-Q7",
+    "statement": "In triangle ABC, AB = AC. M is the mid-point of BC and D is a point on segment AM such that AD = 10 and DM = 1. If ∠BDM = 3∠BAM, find the perimeter of triangle ABC.",
+    "ans": "11 + 11\\sqrt{5}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 8,
+    "name": "IMOPrelim-2025-Q8",
+    "statement": "In triangle ABC, ∠BAC = 12° and ∠ACB = 18°. D is a point on segment AC such that ∠ADB = 96°, while E is a point on the extension of BD such that AC = BE. Find ∠DEC.",
+    "ans": "24^{\\circ}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 9,
+    "name": "IMOPrelim-2025-Q9",
+    "statement": "In a game, m red balls and n blue balls are put into a bag, where m + n ≤ 2025. Sam and Devin each draws a ball from the bag at the same time. Sam wins if the two balls drawn are of the same colour; Devin wins if the two balls drawn are of different colours. If Sam and Devin have equal chance to win, find the greatest possible value of m.",
+    "ans": "1035",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 10,
+    "name": "IMOPrelim-2025-Q10",
+    "statement": "Let a, b, c be pairwise distinct two-digit positive integers, and x = a + b, y = b + c, z = c + a. Percy computed the sum of digits of each of a, b, c, and denotes the smallest sum by P. Queenie computed the sum of digits of each of x, y, z, and denotes the largest sum by Q. Find the greatest possible value of P/Q.",
+    "ans": "\\frac{10}{3}",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 11,
+    "name": "IMOPrelim-2025-Q11",
+    "statement": "In triangle ABC, ∠ACB = 103°. X and Y are points on segment AB (with X between A and Y) so that the perimeter of triangle CXY is equal to the length of AB. If the circumcenter of triangle ACY lies on the circumcircle of triangle ACY, find ∠ACY.",
+    "ans": "26^{\\circ}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 12,
+    "name": "IMOPrelim-2025-Q12",
+    "statement": "Let P(1,3) and Q(5,11) be two points on the coordinate plane. In a game, a frog is initially at (-7,1). There are four buttons: pressing A causes it to jump to Y such that X is the midpoint of PY; pressing B causes it to jump to Y such that Y is the midpoint of PX; pressing C causes it to jump to Y such that X is the midpoint of QY; pressing D causes it to jump to Y such that Y is the midpoint of QX. After pressing a series of buttons, the player found that button A has been pressed the same number of times as button B, and button C the same as button D. If the final position of the frog is at a distance s from the origin, find the smallest possible value of s.",
+    "ans": "3\\sqrt{5}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 13,
+    "name": "IMOPrelim-2025-Q13",
+    "statement": "The sequence 4, 13, 22, 31, ... lists the positive integers with sum of digits 4 in ascending order. What is the 200th term of the sequence?",
+    "ans": "2100100",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 14,
+    "name": "IMOPrelim-2025-Q14",
+    "statement": "A convex polyhedron P has 32 faces, each of which is either a triangle or a pentagon. Let x and y be constants such that every vertex of P is the intersection of exactly x triangular and y pentagonal faces. Find the number of vertices of P.",
+    "ans": "30",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 15,
+    "name": "IMOPrelim-2025-Q15",
+    "statement": "Find the smallest positive integer n such that the first two digits after the decimal point in the decimal representation of √n are 25 (i.e. the tenth digit is 2 and the hundredth digit is 5).",
+    "ans": "541",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 16,
+    "name": "IMOPrelim-2025-Q16",
+    "statement": "A teacher wants to set some questions for a test on addition. He prompts a generative AI engine to produce questions which involve adding m and n, where m, n are five-digit positive integers, such that the answer is a six-digit number. Furthermore, it is required that every digit of m is a prime number and every digit of n is a composite number (0 and 1 are neither prime nor composite). What is the maximum number of different questions that can be generated?",
+    "ans": "823856",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 17,
+    "name": "IMOPrelim-2025-Q17",
+    "statement": "In a game, a positive integer n not exceeding 2025 is written on the board at the beginning. Each operation involves erasing an integer k on the board which is greater than 1, and then replacing it by three integers with sum k and pairwise difference at most 1 (e.g. one may erase the integer 10 and replace it by 3, 3, 4). Suppose Amy and Betty play this game; starting with Amy they take turns to carry out an operation until someone fails to do so according to the rules, in which case the other player wins the game. If both players play perfectly and Amy eventually wins, how many possible values of n are there?",
+    "ans": "1205",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 18,
+    "name": "IMOPrelim-2025-Q18",
+    "statement": "The equality 1^9 + 2^9 + ... + n^9 = a_0 + a_1 n + a_2 n^2 + ... + a_{10} n^{10} holds for all positive integers n. Find the value of 5a_5 + 9a_6 + 14a_7 + 14a_8.",
+    "ans": "\\frac{21}{5}",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 19,
+    "name": "IMOPrelim-2025-Q19",
+    "statement": "The sides of triangle ABC have lengths √2, 3+√3 and 2√2+√6. Let P be the smallest regular polygon containing A, B, C as its (not necessarily consecutive) vertices. Find the area of P.",
+    "ans": "12 + 6\\sqrt{3}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 20,
+    "name": "IMOPrelim-2025-Q20",
+    "statement": "Let f(x) = x^{15} - 9x^{10} + 26x^5 - 24. Find the smallest positive integer n such that f(n)f(n+1)f(n+2) is divisible by 2187.",
+    "ans": "21",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 21,
+    "name": "IMOPrelim-2024-Q1",
+    "statement": "Find the highest common factor of 8^8 - 1 and 4^9 + 1.",
+    "ans": "65",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 22,
+    "name": "IMOPrelim-2024-Q2",
+    "statement": "Let n be a positive integer less than 100 such that the tens digit of n^2 is 7. Find the sum of all possible values of n.",
+    "ans": "200",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 23,
+    "name": "IMOPrelim-2024-Q3",
+    "statement": "Let a, b, c be integers such that 2^a + 2^b + 2^c = 37/64. Find the value of a^3 + b^3 + c^3.",
+    "ans": "-281",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 24,
+    "name": "IMOPrelim-2024-Q4",
+    "statement": "Mike wrote down m consecutive integers with sum 2m, while Kent wrote down 2m consecutive integers with sum m. If the difference between the largest integer written by Mike and the largest integer written by Kent is 2024, find m.",
+    "ans": "4051",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 25,
+    "name": "IMOPrelim-2024-Q5",
+    "statement": "ABCD is a convex quadrilateral in which AB = BC = CD. If ∠ABC = 48° and ∠BCD = 108°, find ∠CAD.",
+    "ans": "84^{\\circ}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 26,
+    "name": "IMOPrelim-2024-Q6",
+    "statement": "Let A be a point on the graph of y = |x|, and B be a point on the graph of x = y^2 + 2. Find the smallest possible distance between A and B.",
+    "ans": "7\\sqrt{2}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 27,
+    "name": "IMOPrelim-2024-Q7",
+    "statement": "ABCD is a square. P and Q are points on sides BC and CD respectively such that ∠PAQ = 45°, PQ = 4 and the area of triangle PCQ is 3. Find AB.",
+    "ans": "2 + \\sqrt{7}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 28,
+    "name": "IMOPrelim-2024-Q8",
+    "statement": "In triangle ABC, D and E are points on AB and AC respectively such that B, C, D, E lie on a common circle with centre O and that ADOE is a parallelogram. Suppose ∠BAC = x° and ∠BOC = y°. If x + y = 196, find the sum of all possible values of x.",
+    "ans": "131",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 29,
+    "name": "IMOPrelim-2024-Q9",
+    "statement": "In a language, there are 5 vowels and 8 consonants in the alphabet. Each word is made up of exactly 5 (not necessarily distinct) letters, with at least 2 vowels and at least 1 consonant. What is the maximum number of words in this language?",
+    "ans": "233000",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 30,
+    "name": "IMOPrelim-2024-Q10",
+    "statement": "A 3x3 grid is printed on a card. It is made up of 4 horizontal lines and 4 vertical lines. Each cell has width 2 and height 1. Mandy drew along the gridlines in a single pen stroke such that no point is visited more than once except at intersections. Find the maximum possible length of the figure drawn.",
+    "ans": "32",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 31,
+    "name": "IMOPrelim-2024-Q11",
+    "statement": "A frog is at an arbitrary point inside an equilateral triangle with area 1. Each time the frog picks one of the vertices that has not been picked before, and jumps halfway towards the chosen vertex. After three jumps, the frog is at point X. What is the total area of the region formed by all possible positions of X?",
+    "ans": "3",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 32,
+    "name": "IMOPrelim-2024-Q12",
+    "statement": "The equation x^3 - 1/x = 4 has two real roots a and b. Find a^2 + b^2.",
+    "ans": "2\\sqrt{2}",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 33,
+    "name": "IMOPrelim-2024-Q13",
+    "statement": "There is an arithmetic sequence with common difference d. When each term is rounded to the nearest integer, the first 7 terms are 12, 18, 25, 32, 39, 45, 52. The correct answer to the teacher's question is a < d < b where a and b are real numbers. Find the value of ab.",
+    "ans": "136",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 34,
+    "name": "IMOPrelim-2024-Q14",
+    "statement": "How many positive integers n are there such that n has exactly 2024 positive factors, and n is also a factor of 2024^{2024}?",
+    "ans": "90",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 35,
+    "name": "IMOPrelim-2024-Q15",
+    "statement": "Let a_1, a_2, a_3, ... be a sequence with a_1 = 1, and a_{2n} = a_n/2 + 3n/4, and a_{2n+1} given by a rational expression. If a is a term in the sequence with a > 100, find the smallest possible value of a.",
+    "ans": "40001",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 36,
+    "name": "IMOPrelim-2024-Q16",
+    "statement": "A, B, C, D, E are five points on a circle with AB × AD = 224 and AC × AE = 360. If BCDE is a square, find its area.",
+    "ans": "424",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 37,
+    "name": "IMOPrelim-2024-Q17",
+    "statement": "Betty, Cathy, Daisy and Emily played a game with 2, 3, 4, 5 balls respectively. Each wrote her name on each ball, all balls put in a bag, then drawn one by one and returned to the respective players. The first player who gets back all her balls wins. Find the probability that Emily wins.",
+    "ans": "661",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 38,
+    "name": "IMOPrelim-2024-Q18",
+    "statement": "AB is a diameter of a circle of radius 12. C and D are points on the circle such that chord CD meets AB at E. The tangent at A meets the extension of CD at F. If CE:ED:DF = 4:3:3, find AC.",
+    "ans": "8\\sqrt{5}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 39,
+    "name": "IMOPrelim-2024-Q19",
+    "statement": "There are 36 points on the rectangular coordinate plane whose x- and y-coordinates are both positive integers not exceeding 6. How many triangles have their circumcentres and vertices being among these 36 points?",
+    "ans": "792",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 40,
+    "name": "IMOPrelim-2024-Q20",
+    "statement": "Let n be a 4-digit positive integer. When (n+2)^2 (n^2+3^2) (n^3+4^2) ... (n^{2023}+2024^2) is expressed in binary, at most how many ending zeros can there be?",
+    "ans": "4045",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 41,
+    "name": "IMOPrelim-2023-Q1",
+    "statement": "Someone extracted n consecutive digits in the infinite decimal representation of 1/13 and found that the sum of the n digits is equal to 2023. Find n.",
+    "ans": "449",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 42,
+    "name": "IMOPrelim-2023-Q2",
+    "statement": "Let m and n be positive integers such that √m + √n = √2023. Find the greatest possible value of m + n.",
+    "ans": "1799",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 43,
+    "name": "IMOPrelim-2023-Q3",
+    "statement": "There is a 20×20 table and 400 cards numbered 1 to 400. Cards are distributed one per cell. On each row, a red sticker is put on the largest number; on each column, a blue sticker on the largest number. Let A be the smallest red number, B the smallest blue number. How many different possible values of |A-B| are there?",
+    "ans": "362",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 44,
+    "name": "IMOPrelim-2023-Q4",
+    "statement": "Write down three consecutive positive integers not exceeding 2023 in ascending order, such that one is a multiple of 6, another a multiple of 7, and the remaining a multiple of 8. How many different correct answers?",
+    "ans": "24",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 45,
+    "name": "IMOPrelim-2023-Q5",
+    "statement": "ABCD is a square of side 1. BC is extended to E and DC extended to F such that BE = DF = 3. The circumcircle of triangle AEF meets the extensions of CB and CD at G and H respectively. Find GH.",
+    "ans": "3\\sqrt{2}/2",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 46,
+    "name": "IMOPrelim-2023-Q6",
+    "statement": "Let n be a positive integer such that 1^3+2^3+...+n^3 is divisible by n+3. Find the greatest possible value of n.",
+    "ans": "15",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 47,
+    "name": "IMOPrelim-2023-Q7",
+    "statement": "In triangle ABC, ∠BAC = 150° and BC = 74. D is a point on BC such that BD = 14 and ∠ADB = 60°. Find the area of triangle ABC.",
+    "ans": "111√3",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 48,
+    "name": "IMOPrelim-2023-Q8",
+    "statement": "How many solutions are there to the equation log_3 x = 3 sin(3π x)?",
+    "ans": "81",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 49,
+    "name": "IMOPrelim-2023-Q9",
+    "statement": "Find the largest real root to the equation ∛(x^3+3x^2-4) - x = ∛(x^3-3x+2) - 1.",
+    "ans": "(1+3√5)/4",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 50,
+    "name": "IMOPrelim-2023-Q10",
+    "statement": "Find the remainder when 1×2×3×4 + 2×3×4×5 + ... + 2023×2024×2025×2026 is divided by 1000.",
+    "ans": "120",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 51,
+    "name": "IMOPrelim-2023-Q11",
+    "statement": "In a school there are 2023 students numbered 1 to 2023. The teacher met students one by one in order, and gave a candy to each student except if that would mean three students whose numbers form an arithmetic sequence all got candies. Students 1 and 2 get candies, but not 3; then 4 and 5 get candies, but not 6 and 7; and so on. How many students got candies?",
+    "ans": "128",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 52,
+    "name": "IMOPrelim-2023-Q12",
+    "statement": "ABCD is a trapezium with AD // BC, AD > BC and AB = CD. P is a point on the plane whose distances to A, B, C, D are 1, 2, 3, 4 respectively. Find AD:BC.",
+    "ans": "3:1",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 53,
+    "name": "IMOPrelim-2023-Q13",
+    "statement": "In triangle ABC, AC = √3 AB and BC = 2. D is a point inside such that ∠BDC = 90°, ∠DAC = 18° and BD = 1. Find ∠DAB.",
+    "ans": "48^{\\circ}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 54,
+    "name": "IMOPrelim-2023-Q14",
+    "statement": "In a country there are four types of coins: 74, 87, 111, 124 dollars. In how many different ways can one pay exactly 2023 dollars using these coins?",
+    "ans": "14",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 55,
+    "name": "IMOPrelim-2023-Q15",
+    "statement": "There is a 3×3 table and 9 cards with numbers -4,-3,-2,-1,0,1,2,3,4. How many ways to distribute the cards so that the sum of the three numbers on each row, each column and each of the two diagonals is non-negative?",
+    "ans": "32",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 56,
+    "name": "IMOPrelim-2023-Q16",
+    "statement": "In a team game, 12 players stand at the 12 vertices of a regular 12-sided polygon. Each has a red and blue flag, and randomly puts up one flag. If there are four players who put up flags of the same colour and whose positions form a rectangle, the team loses. Otherwise they win. What is the probability for the team to win?",
+    "ans": "29/128",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 57,
+    "name": "IMOPrelim-2023-Q17",
+    "statement": "ABCD is a square. P is a point inside such that ∠APD + ∠BPC = 180° and ∠BPC is acute. If PB = 3 and PC = 4, find BC.",
+    "ans": "1 + 2√2",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 58,
+    "name": "IMOPrelim-2023-Q18",
+    "statement": "In a chess tournament, there were n contestants and any two played at most one game. Each contestant played exactly 100 games. For any two who played each other, there were exactly 50 others who played both; for any two who did not play, there were exactly 4 others who played both. Find n.",
+    "ans": "1326",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 59,
+    "name": "IMOPrelim-2023-Q19",
+    "statement": "There are 20 students numbered 1 to 20. They took a test with n questions. The teacher found that she could only pick all even-numbered students, or all multiples of 5, or any combination that includes all students from one of those two groups. Find the smallest possible n.",
+    "ans": "18",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 60,
+    "name": "IMOPrelim-2023-Q20",
+    "statement": "Let u, v, w be positive integers, with v,w ≤ 2023, such that u - v = 2w and (u^2+w^2)(v^2+w^2) is divisible by 289. How many sets (u,v,w) are there?",
+    "ans": "67473",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 61,
+    "name": "IMOPrelim-2022-Q1",
+    "statement": "If x^2 + y^2 = (3961xy)/1980 where x > y > 0, find (x+y)/(x-y).",
+    "ans": "89",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 62,
+    "name": "IMOPrelim-2022-Q2",
+    "statement": "Let a,b be roots of x^{4/3} - 2022 x^{2/3} + 2023 = 0. If p = a + 3a^{1/3}b^{1/3} and q = b + 3a^{2/3}b^{1/3}, find (p+q)^{2/3} + (p-q)^{2/3}.",
+    "ans": "4044",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 63,
+    "name": "IMOPrelim-2022-Q3",
+    "statement": "How many pairs of positive integers (m,n) satisfy m^2 n = 20^{22}?",
+    "ans": "276",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 64,
+    "name": "IMOPrelim-2022-Q4",
+    "statement": "Given that 22! = 1124000727777__680000, where the box contains three missing digits. Write down the missing digits from left to right.",
+    "ans": "607",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 65,
+    "name": "IMOPrelim-2022-Q5",
+    "statement": "One edge of a triangular pyramid has length 6 while every other edge has length 5. Find the volume of the pyramid.",
+    "ans": "5√39/2",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 66,
+    "name": "IMOPrelim-2022-Q6",
+    "statement": "Let P,Q,R be distinct digits. A positive integer n is equal to 1PQR in base 8 and RPQ in base 11. Find n in base 10.",
+    "ans": "766",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 67,
+    "name": "IMOPrelim-2022-Q7",
+    "statement": "A special calculator counts the number of even digits of an integer. Someone inputs a positive integer n and keeps pressing the button until 0 is displayed. If 0 is displayed after four presses, find the smallest possible n.",
+    "ans": "2×10^19",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 68,
+    "name": "IMOPrelim-2022-Q8",
+    "statement": "Find the largest real root of 2x^2+6x+9 = 7x√(2x+3).",
+    "ans": "9+6√3",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 69,
+    "name": "IMOPrelim-2022-Q9",
+    "statement": "ABCD is a square of side 1. P and Q are on AB and BC such that BP = BQ = 1/√2. N is the foot of perpendicular from B to CP. Find NQ^2.",
+    "ans": "(5-2√2)/6",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 70,
+    "name": "IMOPrelim-2022-Q10",
+    "statement": "In triangle ABC, D,E,F are on BC,CA,AB such that AD,BE,CF meet at G. If DG=1, EG=2, BG=3, AG=4, CF=5, find area of triangle ABC.",
+    "ans": "10√2",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 71,
+    "name": "IMOPrelim-2022-Q11",
+    "statement": "If x^2 - y^2 = 1/22 and x≠0, find the greatest possible value of (1-22xy)/x^2.",
+    "ans": "55/2",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 72,
+    "name": "IMOPrelim-2022-Q12",
+    "statement": "Let a,b,c be roots of 6x^3+5x^2+4x+3=0 and S_n = a^n+b^n+c^n. Find S_0+S_1+S_2+...",
+    "ans": "16/9",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 73,
+    "name": "IMOPrelim-2022-Q13",
+    "statement": "There are 50 rods of lengths 1,3,5,...,99. How many ways to pick three rods to form a triangle?",
+    "ans": "9500",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 74,
+    "name": "IMOPrelim-2022-Q14",
+    "statement": "A palindrome is a positive integer that reads the same forwards and backwards. Someone wrote a five-digit palindrome m and removed one digit to obtain a four-digit positive integer n (not starting with 0). How many possible values of n are there?",
+    "ans": "2358",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 75,
+    "name": "IMOPrelim-2022-Q15",
+    "statement": "Someone obtained n by concatenating 1 to 100000: n=123456789101112...9999899999100000. How many times does '2022' appear as consecutive digits?",
+    "ans": "44",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 76,
+    "name": "IMOPrelim-2022-Q16",
+    "statement": "ABCD is a parallelogram with acute angle B. A circle is tangent to BC, CD, DA and intersects AC at M,N with AM=9, MN=16, NC=2. Find area of ABCD.",
+    "ans": "324√2",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 77,
+    "name": "IMOPrelim-2022-Q17",
+    "statement": "There are four positive integers. Computing H.C.F. of two at a time gives six different values: 1,2,3,4,5,k. Find the smallest possible k.",
+    "ans": "14",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 78,
+    "name": "IMOPrelim-2022-Q18",
+    "statement": "At a party, 1234 participants each shook hands with exactly 137 others. No three shook hands mutually. For any two who did not shake, there are exactly k others who shook with both. Find k.",
+    "ans": "17",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 79,
+    "name": "IMOPrelim-2022-Q19",
+    "statement": "In triangle ABC, AB<AC. Internal bisector of ∠BAC meets BC at D, external bisector meets CB produced at E. If EB=2022 and BD,DC are integers, how many possible lengths of BD are there?",
+    "ans": "16",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 80,
+    "name": "IMOPrelim-2022-Q20",
+    "statement": "Let ABCD be cyclic, E = AC∩BD. P and Q on AC such that A,E,Q,P,C in order, BP bisects ∠ABC, DQ bisects ∠ADC. If AE=4, EQ=2, QP=3, find PC.",
+    "ans": "15",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 81,
+    "name": "IMOPrelim-2021-Q1",
+    "statement": "100 students numbered 1 to 100 are divided into 20 groups of 5. The student with the largest number in each group becomes the group leader. What is the maximum number of group leaders whose number is prime?",
+    "ans": "18",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 82,
+    "name": "IMOPrelim-2021-Q2",
+    "statement": "Let n be a three-digit number divisible by the product of its digits. Find the greatest possible n.",
+    "ans": "816",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 83,
+    "name": "IMOPrelim-2021-Q3",
+    "statement": "Let a,b be non-zero reals with a/b + b/a = 5 and a^2/b + b^2/a = 12. Find 1/a + 1/b.",
+    "ans": "7/3",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 84,
+    "name": "IMOPrelim-2021-Q4",
+    "statement": "Three students each randomly choose a prime less than 100, then the teacher multiplies them. What is the probability that the product is divisible by 2021?",
+    "ans": "144/15625",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 85,
+    "name": "IMOPrelim-2021-Q5",
+    "statement": "Ann, Ben and Cat each answer 2021 yes-no questions. They compare answers: number of same answers between Ann&Ben, Ann&Cat, Ben&Cat. The team score is the largest of these three numbers. Find the minimum possible score.",
+    "ans": "674",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 86,
+    "name": "IMOPrelim-2021-Q6",
+    "statement": "Let G be the centroid of triangle ABC. If distances from G to sides AB, BC, CA are 20,12,15 respectively, find BG.",
+    "ans": "10√13",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 87,
+    "name": "IMOPrelim-2021-Q7",
+    "statement": "Find the sum of all real roots of (2∜(x+1)-1)^4 + (2∜(x+1)-3)^4 = 16.",
+    "ans": "45/8",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 88,
+    "name": "IMOPrelim-2021-Q8",
+    "statement": "Let n ≤ 2021 such that n, n+1, n+2 can each be expressed as sum of two powers of 2 (non-negative integer exponents). Find sum of all possible n.",
+    "ans": "2049",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 89,
+    "name": "IMOPrelim-2021-Q9",
+    "statement": "In a bag there are 2021 balls numbered 1 to 2021. Two balls are drawn at random. Probability that the ratio of the numbers is an integral power of 2?",
+    "ans": "2013/2041210",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 90,
+    "name": "IMOPrelim-2021-Q10",
+    "statement": "How many different addition questions can the teacher set: adding two two-digit positive integers (order matters) with no carry and answer two-digit?",
+    "ans": "1980",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 91,
+    "name": "IMOPrelim-2021-Q11",
+    "statement": "Suppose (21x+20y)^{2021} + x^{2021} + 484x + 440y = 0 for non-zero reals x,y. Find x/y.",
+    "ans": "-10/11",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 92,
+    "name": "IMOPrelim-2021-Q12",
+    "statement": "OABC is a trapezium with OC//AB and ∠AOB=37°. A,B,C lie on a circle centered at O. The perpendicular bisector of OC meets AC at D. If ∠ABD = x°, find x.",
+    "ans": "107.25",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 93,
+    "name": "IMOPrelim-2021-Q13",
+    "statement": "Find the smallest positive integer n such that the last four digits of n^3 are 2,0,2,1.",
+    "ans": "1741",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 94,
+    "name": "IMOPrelim-2021-Q14",
+    "statement": "There are 21 students numbered 1 to 21. In each lesson, three prepare notes, the one with middle number presents. Every triple of students prepared together exactly once. What is the sum of the numbers of the presenting students over all lessons?",
+    "ans": "14630",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 95,
+    "name": "IMOPrelim-2021-Q15",
+    "statement": "Find the sum of all proper fractions with two-digit numerator and denominator having exactly one common non-zero digit, and deleting that digit yields the reduced fraction.",
+    "ans": "17/20",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 96,
+    "name": "IMOPrelim-2021-Q16",
+    "statement": "How many of the first 2021 positive integers can be expressed as a^3+b^3+c^3-3abc with a,b,c non-negative integers?",
+    "ans": "1572",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 97,
+    "name": "IMOPrelim-2021-Q17",
+    "statement": "In triangle ABC, ∠BAC=60°, M on BC. Incircle touches BC,CA,AB at D,E,F. AM meets incircle at P,Q with AP<AQ. AE=4, EC=2, AP=QM. Find AM.",
+    "ans": "24√7/7",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 98,
+    "name": "IMOPrelim-2021-Q18",
+    "statement": "Ann and Ben play a game with acute triangles. Ann constructs initial triangle with integer degree angles, not equilateral. Then alternately they construct the pedal triangle. Game ends when triangle is not acute. Ann wants to maximize her score. Find the greatest possible ∠A0.",
+    "ans": "66^{\\circ}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 99,
+    "name": "IMOPrelim-2021-Q19",
+    "statement": "For positive integer n, let f(n) be the number of ways to write n as sum of two squares of non-negative integers (order ignored). Find f(3)+f(6)+f(9)+...+f(2022).",
+    "ans": "99",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 100,
+    "name": "IMOPrelim-2021-Q20",
+    "statement": "In triangle ABC, AB=15, AC=13. DEFG is a square with D on AC, F on AB, G midpoint of BC. AD=11, AF>FB. Find area of DEFG.",
+    "ans": "45/2",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 101,
+    "name": "IMOPrelim-2020-Q1",
+    "statement": "Let n = (10^2020 + 2020)^2. Find the sum of all digits of n.",
+    "ans": "25",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 102,
+    "name": "IMOPrelim-2020-Q2",
+    "statement": "Let x<y<z be positive integers with x + xy + xyz = 37. Find the greatest possible value of x+y+z.",
+    "ans": "20",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 103,
+    "name": "IMOPrelim-2020-Q3",
+    "statement": "A child lines up 2020^2 bricks, removes bricks at square positions, then repeats until remaining <250. How many bricks remain?",
+    "ans": "240",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 104,
+    "name": "IMOPrelim-2020-Q4",
+    "statement": "A participant chooses a nine-digit number ABCDEFGHI with distinct non-zero digits. Score = A^(B^(C^(...))). Which nine-digit number maximises the score?",
+    "ans": "234567891",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 105,
+    "name": "IMOPrelim-2020-Q5",
+    "statement": "28 students sit in a circle. Each says 'the two next to me are of different genders'. All boys lie, exactly 3 girls lie. How many girls are there?",
+    "ans": "19",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 106,
+    "name": "IMOPrelim-2020-Q6",
+    "statement": "In triangle ABC, AB=6, BC=7, CA=8. Let D be the midpoint of minor arc AB on circumcircle. Find AD^2.",
+    "ans": "32/3",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 107,
+    "name": "IMOPrelim-2020-Q7",
+    "statement": "Solve √(7-x) = 7 - x^2, where x>0.",
+    "ans": "(-1+√29)/2",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 108,
+    "name": "IMOPrelim-2020-Q8",
+    "statement": "Find the smallest positive multiple of 77 whose last four digits are 2020.",
+    "ans": "482020",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 109,
+    "name": "IMOPrelim-2020-Q9",
+    "statement": "In triangle ABC, ∠B=46.6°, D on BC with ∠BAD=20.1°, AB=CD, ∠CAD=x°. Find x.",
+    "ans": "66.7",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 110,
+    "name": "IMOPrelim-2020-Q10",
+    "statement": "Let k be an integer. If (x-1)|x+1| = x + k/2020 has three distinct real roots, how many possible k?",
+    "ans": "4544",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 111,
+    "name": "IMOPrelim-2020-Q11",
+    "statement": "Let a,b,c be roots of x^3 - (k+1)x^2 + kx + 12 = 0. If (a-2)^3+(b-2)^3+(c-2)^3 = -18, find k.",
+    "ans": "5",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 112,
+    "name": "IMOPrelim-2020-Q12",
+    "statement": "There are balls each with a positive integer ≤14, sum S. Find the greatest S such that regardless of the integers, the balls can be split into two piles each with sum ≤129.",
+    "ans": "246",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 113,
+    "name": "IMOPrelim-2020-Q13",
+    "statement": "There are n different integers on a blackboard. For any two, either their sum or their difference is a power of 2. Find the greatest possible n.",
+    "ans": "5",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 114,
+    "name": "IMOPrelim-2020-Q14",
+    "statement": "In triangle ABC, ∠ABC=120°. Internal bisector of ∠B meets AC at D. If BD=1, find the smallest possible value of 4BC+AB.",
+    "ans": "9",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 115,
+    "name": "IMOPrelim-2020-Q15",
+    "statement": "How many ten-digit positive integers consist of ten different digits and are divisible by 99?",
+    "ans": "285120",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 116,
+    "name": "IMOPrelim-2020-Q16",
+    "statement": "Triangle ABC is right-angled at B, AB=1, BC=3. E is foot from B to AC. BA and BE extended to D and F such that D,F,C collinear and ∠DAF = ∠BAC. Find AD.",
+    "ans": "2/7",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 117,
+    "name": "IMOPrelim-2020-Q17",
+    "statement": "How many positive integer solutions does the system of equations have? (the system is given as [[289, 342, 651, 442]])",
+    "ans": "45",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 118,
+    "name": "IMOPrelim-2020-Q18",
+    "statement": "Two n-sided polygons are of the same type if vertices can be labelled so that corresponding interior angles are either both reflex or both non-reflex. How many different types of 11-sided polygons are there?",
+    "ans": "181",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 119,
+    "name": "IMOPrelim-2020-Q19",
+    "statement": "Four couples are to be seated in a row. Each woman may only sit next to her husband or another woman. How many seating arrangements?",
+    "ans": "816",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 120,
+    "name": "IMOPrelim-2020-Q20",
+    "statement": "Consider the Fibonacci sequence 1,1,2,3,5,8,13,... What are the last three digits of the 2020th term?",
+    "ans": "515",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 121,
+    "name": "IMOPrelim-2019-Q1",
+    "statement": "Find the remainder when 1111^{2019} is divided by 11111.",
+    "ans": "11101",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 122,
+    "name": "IMOPrelim-2019-Q2",
+    "statement": "There are 9 cards with numbers 1,1,2,2,3,4,5,6,8. Odd-numbered cards are red, others green. How many ways to arrange them in a row so that each red card's number is ≤ every red card to its right?",
+    "ans": "7560",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 123,
+    "name": "IMOPrelim-2019-Q3",
+    "statement": "A line through (6,8) intersects circle x^2+y^2=25 at P,Q. M is midpoint of PQ. As the slope varies, find the length of the locus of M.",
+    "ans": "10π/3",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 124,
+    "name": "IMOPrelim-2019-Q4",
+    "statement": "Let x,y be positive reals such that x^3 - y^3 + (x-y)^3 - 36xy = 3456. Find x-y.",
+    "ans": "12",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 125,
+    "name": "IMOPrelim-2019-Q5",
+    "statement": "How many five-digit positive integers are divisible by 36 and have their tens digit and unit digit equal?",
+    "ans": "300",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 126,
+    "name": "IMOPrelim-2019-Q6",
+    "statement": "In triangle ABC, AB<AC. H is orthocentre, D foot from A to BC. AH=4, HD=3, BC=12. Find BD.",
+    "ans": "6-√15",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 127,
+    "name": "IMOPrelim-2019-Q7",
+    "statement": "Let α,β,γ be roots of x^3+2x^2+3x+4=0. Find (α^4-1)(β^4-1)(γ^4-1).",
+    "ans": "160",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 128,
+    "name": "IMOPrelim-2019-Q8",
+    "statement": "At a party there are 8 boys and 10 girls. Each wears a red, yellow or blue hat such that no two opposite gender wear the same colour. How many possibilities for the colours?",
+    "ans": "3834",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 129,
+    "name": "IMOPrelim-2019-Q9",
+    "statement": "Let k be real. If the three roots of x^3+6x^2+5x+k=0 form an arithmetic sequence, find the largest root.",
+    "ans": "√7-2",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 130,
+    "name": "IMOPrelim-2019-Q10",
+    "statement": "In triangle ABC, ∠ABC=90°, D is midpoint of BC, E on AC such that DE bisects ∠ADC. If DE=DC=1, find AD.",
+    "ans": "2+√5",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 131,
+    "name": "IMOPrelim-2019-Q11",
+    "statement": "Let ABC be a triangle. D,E on AB with AD:DE:EB=2:3:2. F,G on BC with BF:FG:GC=1:3:1. H,K on AC with AH:HK:KC=2:3:1. Line DG meets FH at P and EK at Q. Find DP:QG.",
+    "ans": "14:11",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 132,
+    "name": "IMOPrelim-2019-Q12",
+    "statement": "There is a 3×3 table. Integers 1 to 9 are randomly allocated. Find the probability that the sum of the three numbers in each row and each column is odd.",
+    "ans": "1/14",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 133,
+    "name": "IMOPrelim-2019-Q13",
+    "statement": "A,B,C are on a circle, P,Q on AB. Extensions of CP and CQ meet the circle at S and T. AP=2, AQ=7, AB=11, AS=5, BT=2. Find ST.",
+    "ans": "25/4",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 134,
+    "name": "IMOPrelim-2019-Q14",
+    "statement": "Find the product of the real roots of (x+2+√(x^2+4x+3))^5 - 32(x+2-√(...))^5 = 31.",
+    "ans": "9/4",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 135,
+    "name": "IMOPrelim-2019-Q15",
+    "statement": "Let n ≤ 100 such that (n^2-1)! is a multiple of (n!)^n. How many possible n?",
+    "ans": "74",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 136,
+    "name": "IMOPrelim-2019-Q16",
+    "statement": "Let f(x) be a cubic polynomial. If |f(2)|=|f(3)|=|f(4)|=|f(6)|=|f(7)|=|f(8)|=16, find |f(0)|.",
+    "ans": "240",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 137,
+    "name": "IMOPrelim-2019-Q17",
+    "statement": "On a plane 100 triangles are drawn. What is the maximum number of regions they can divide the plane into?",
+    "ans": "29702",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 138,
+    "name": "IMOPrelim-2019-Q18",
+    "statement": "Let x,y,z be reals such that x^3 - xyz = -16, y^3 - xyz = 3, z^3 - xyz = 40. Find the smallest possible value of x^2+y^2+z^2.",
+    "ans": "55/3",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 139,
+    "name": "IMOPrelim-2019-Q19",
+    "statement": "In triangle ABC, AC=6, BC=17. If tan(A/2) tan(C/2) = 2/3, find AB.",
+    "ans": "13",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 140,
+    "name": "IMOPrelim-2019-Q20",
+    "statement": "There are 8 stickers numbered 4,5,...,11. They are randomly put on the faces of a regular octahedron. What is the probability that numbers on each pair of adjacent faces are relatively prime?",
+    "ans": "1/420",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 141,
+    "name": "IMOPrelim-2018-Q1",
+    "statement": "There are 13 fractions, numerators and denominators are 1,2,...,26 each exactly once. At most how many of these fractions can be simplified to integers?",
+    "ans": "12",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 142,
+    "name": "IMOPrelim-2018-Q2",
+    "statement": "In denoting the product of two three-digit numbers, the multiplication sign was omitted, resulting in a six-digit number. If the six-digit number equals 3 times the original product, find this six-digit number.",
+    "ans": "167334",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 143,
+    "name": "IMOPrelim-2018-Q3",
+    "statement": "In triangle ABC, ∠BAC=18°, ∠BCA=24°. D on AC such that ∠BDC=60°. The bisector of ∠ADB meets AB at E. Find ∠BEC.",
+    "ans": "30^{\\circ}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 144,
+    "name": "IMOPrelim-2018-Q4",
+    "statement": "For any real x, f satisfies f(x+2)=-f(x)=f(-x). If f(x)=2x for 0<x<1, find f(10√3).",
+    "ans": "36-20√3",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 145,
+    "name": "IMOPrelim-2018-Q5",
+    "statement": "Let n>100 such that LCM(1,2,...,n) = LCM(101,102,...,n). Find the smallest possible n.",
+    "ans": "194",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 146,
+    "name": "IMOPrelim-2018-Q6",
+    "statement": "Find a prime p such that p-1 has exactly 10 positive factors and p+1 has exactly 6 positive factors.",
+    "ans": "163",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 147,
+    "name": "IMOPrelim-2018-Q7",
+    "statement": "A child filled a 3×3 table with numbers 1 to 9 each once. He circled the median of each row, and found that the median of the three circled numbers is 5. How many ways to fill the table?",
+    "ans": "207360",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 148,
+    "name": "IMOPrelim-2018-Q8",
+    "statement": "How many polynomials P(x) of degree ≤3 have coefficients non-negative integers <10 and P(-1)=-9?",
+    "ans": "220",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 149,
+    "name": "IMOPrelim-2018-Q9",
+    "statement": "In triangle ABC, AB=9, AC=12, BC=15. X,Y,Z on AB,BC,CA respectively with 0<AX=BY=CZ<9. If area of triangle XYZ is an integer, find the sum of all possible values of this integer.",
+    "ans": "1353",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 150,
+    "name": "IMOPrelim-2018-Q10",
+    "statement": "On the coordinate plane, points (x,y) with x,y≥0 and x+y+[x]+[y]≤2019 are coloured blue. Find the area of the blue region.",
+    "ans": "510050",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 151,
+    "name": "IMOPrelim-2018-Q11",
+    "statement": "Find the last four digits of 2^27653 - 1.",
+    "ans": "2991",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 152,
+    "name": "IMOPrelim-2018-Q12",
+    "statement": "Expanding (a^2+20ab+18)^{2018} and simplifying, how many terms will there be?",
+    "ans": "2039190",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 153,
+    "name": "IMOPrelim-2018-Q13",
+    "statement": "Let O be circumcentre of triangle ABC with AB=1, AO=AC=2. D and E on extensions of AB and AC such that OD=OE and BD=√2 EC. Find OD^2.",
+    "ans": "14-6√2",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 154,
+    "name": "IMOPrelim-2018-Q14",
+    "statement": "Let n be positive such that 3n^3-2019 is a positive multiple of 2016. Find the smallest possible n.",
+    "ans": "193",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 155,
+    "name": "IMOPrelim-2018-Q15",
+    "statement": "In triangle ABC, AB=AC=20, BC=18. D on BC with BD<DC. E is reflection of C across AD. Extensions of EB and AD meet at F. Find AD×AF.",
+    "ans": "400",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 156,
+    "name": "IMOPrelim-2018-Q16",
+    "statement": "ABCD is cyclic with AC=56, BD=65, BC>DA and AB/BC = CD/DA. Find ratio of area of triangle ABC to area of triangle ADC.",
+    "ans": "49/16",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 157,
+    "name": "IMOPrelim-2018-Q17",
+    "statement": "A real number a is randomly chosen in [-20,18]. What is the probability that all roots of x^3+(2a+1)x^2+(4a-1)x+2=0 are real?",
+    "ans": "18/19",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 158,
+    "name": "IMOPrelim-2018-Q18",
+    "statement": "There are 12 students numbered 1 to 12. Each tosses a coin; gets score equal to number if head, else 0. Probability that total score is divisible by 3?",
+    "ans": "43/128",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 159,
+    "name": "IMOPrelim-2018-Q19",
+    "statement": "A frog started from origin and made three jumps each of distance 5, landing at integer coordinates. How many different final positions are possible?",
+    "ans": "264",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 160,
+    "name": "IMOPrelim-2018-Q20",
+    "statement": "Find the product of the real roots of x^2+7x-5 = 5√(x^3-1).",
+    "ans": "10",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 161,
+    "name": "IMOPrelim-2017-Q1",
+    "statement": "Let a0=1, a1=2, an = a_{n-2} + (a_{n-1})^2 for n>1. Find remainder when a2017 is divided by 7.",
+    "ans": "1",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 162,
+    "name": "IMOPrelim-2017-Q2",
+    "statement": "The graph of x^2(x+y+1)=y^2(x+y+1) together with the coordinate axes divides the plane into n regions. Find n.",
+    "ans": "12",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 163,
+    "name": "IMOPrelim-2017-Q3",
+    "statement": "Let f(n)=1/2^n+1/3^n+...+1/2017^n. Find f(2)+f(3)+f(4)+...",
+    "ans": "2016/2017",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 164,
+    "name": "IMOPrelim-2017-Q4",
+    "statement": "How many ways to put 600 identical balls into 3 identical boxes such that each box contains at least one ball?",
+    "ans": "30000",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 165,
+    "name": "IMOPrelim-2017-Q5",
+    "statement": "Let x1,...,xn be positive rationals such that x1^3+...+xn^3=1. Find the smallest possible n.",
+    "ans": "3",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 166,
+    "name": "IMOPrelim-2017-Q6",
+    "statement": "If b is a positive integer ≤200, how many solutions (a,b) to (log_b a)^2017 = log_b (a^2017)?",
+    "ans": "597",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 167,
+    "name": "IMOPrelim-2017-Q7",
+    "statement": "How many triples (x,y,z) of positive integers with x≤y≤z, HCF=30, LCM=3000?",
+    "ans": "26",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 168,
+    "name": "IMOPrelim-2017-Q8",
+    "statement": "Let f(x)=x^4+x^3+bx^2+100x+c, g(x)=x^3+ax^2+x+10. If g(x)=0 has three distinct real roots each also a root of f(x)=0, find f(1).",
+    "ans": "-7007",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 169,
+    "name": "IMOPrelim-2017-Q9",
+    "statement": "In quadrilateral ABCD, ∠BAD=∠ADC and ∠ABD=∠BCD. AB=8, BD=10, BC=6. Find CD.",
+    "ans": "64/5",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 170,
+    "name": "IMOPrelim-2017-Q10",
+    "statement": "ABCD is a trapezium with ∠DAB=∠ABC=90° and AB=BC=2AD. P inside such that PA=1, PB=2, PC=3. Find area of ABCD.",
+    "ans": "(15+6√2)/4",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 171,
+    "name": "IMOPrelim-2017-Q11",
+    "statement": "Ann and Ben compete. 8 voters vote one by one. A candidate wins when leading by 4 votes. If all votes random, probability Ann wins?",
+    "ans": "23/128",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 172,
+    "name": "IMOPrelim-2017-Q12",
+    "statement": "Let d1,...,dn be all positive factors of 11!. Find sum_{i=1}^n 1/(di+√(11!)).",
+    "ans": "3√77/616",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 173,
+    "name": "IMOPrelim-2017-Q13",
+    "statement": "If all roots of (k^2-1)x^2 - 6(3k-1)x + 72 = 0 are positive integers, find sum of all possible k.",
+    "ans": "37/5",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 174,
+    "name": "IMOPrelim-2017-Q14",
+    "statement": "Let Q(x)=x^2+ax+b with integers a,b, |b|≤365. If [Q(x)]^2=1 has four positive integral solutions, how many possible (a,b)?",
+    "ans": "17",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 175,
+    "name": "IMOPrelim-2017-Q15",
+    "statement": "In triangle ABC, D on AB, E on AC. AB=33, AC=21, BC=m, AD=DE=EC=n with m,n integers. Find m.",
+    "ans": "30",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 176,
+    "name": "IMOPrelim-2017-Q16",
+    "statement": "Some families form teams. Each family has father, mother and ≤5 children. Prizes for best father, mother, child, each family at most one prize. There are 7770 different possible combinations for prize winners. Total number of children?",
+    "ans": "37",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 177,
+    "name": "IMOPrelim-2017-Q17",
+    "statement": "In triangle ABC, AB=4, AC=6. Tangents at B and C to circumcircle intersect at D. If A and D are equidistant from BC, find BC.",
+    "ans": "√26",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 178,
+    "name": "IMOPrelim-2017-Q18",
+    "statement": "On a plane 5 points X1..X5, each pair joined by a blue line. No two blue lines are parallel or perpendicular. For each point and each blue line not through it, draw a red line through the point perpendicular to the blue line. What is the maximum number of intersection points of the red lines?",
+    "ans": "315",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 179,
+    "name": "IMOPrelim-2017-Q19",
+    "statement": "Let ABC be acute, incircle ω tangent to BC at D, CA at E. X on altitude from A, circle with diameter AX tangent to ω. U,V second intersections of CA,AB with ω'. UV=12, AX=15, AE=24. Find BD×DC.",
+    "ans": "384",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 180,
+    "name": "IMOPrelim-2017-Q20",
+    "statement": "Let X be a randomly chosen subset of {1,2,...,2017}. A positive integer n is 'good' if both n and n+|X| are in X. Find the expected number of 'good' integers.",
+    "ans": "2015/8",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 181,
+    "name": "IMOPrelim-2016-Q1",
+    "statement": "A positive integer n is a square number and a multiple of 2016. Find the smallest possible n.",
+    "ans": "28224",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 182,
+    "name": "IMOPrelim-2016-Q2",
+    "statement": "Let S be the set of all 2016-digit positive integers with digits only 2,0,1,6. If chosen at random, probability that leftmost digit is smaller than rightmost digit?",
+    "ans": "1/4",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 183,
+    "name": "IMOPrelim-2016-Q3",
+    "statement": "In a test, students draw a triangle where largest and smallest interior angles differ by 54°, then compute sum of any two angles. Two students got x° and y°. Find greatest possible x-y.",
+    "ans": "72",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 184,
+    "name": "IMOPrelim-2016-Q4",
+    "statement": "A class of 26 students took a test with n questions each 1 mark. No two students got same score, no question was answered correctly by more than 3 students. Find smallest possible n.",
+    "ans": "109",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 185,
+    "name": "IMOPrelim-2016-Q5",
+    "statement": "Let f(n)=⌊4032n/2017⌋. Find f(1)+f(2)+...+f(2016).",
+    "ans": "4063248",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 186,
+    "name": "IMOPrelim-2016-Q6",
+    "statement": "Find the smallest possible value of 4x^2+(x+2y-6)^2+16y-23.",
+    "ans": "5",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 187,
+    "name": "IMOPrelim-2016-Q7",
+    "statement": "In triangle ABC, M is midpoint of AB, D foot from A to BC, P on MD such that CP ⟂ MD. AB=3, BD=1, PB=PC. Find AC.",
+    "ans": "√473/7",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 188,
+    "name": "IMOPrelim-2016-Q8",
+    "statement": "Let a,b,c,d be integers with |a|,|b|,|c|,|d|≤10. If roots of x^2+ax+b=0 are c,d and roots of x^2+cx+d=0 are a,b, how many possible (a,b,c,d)?",
+    "ans": "22",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 189,
+    "name": "IMOPrelim-2016-Q9",
+    "statement": "Let Q be a polynomial with non-negative integer coefficients. Q(1)=4, Q(5)=152. Find Q(7).",
+    "ans": "394",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 190,
+    "name": "IMOPrelim-2016-Q10",
+    "statement": "How many five-digit positive integers are divisible by 3 and contain at least one digit 3?",
+    "ans": "12504",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 191,
+    "name": "IMOPrelim-2016-Q11",
+    "statement": "In triangle ABC, ∠B=40°, AB+BC=2AC. K,M midpoints of AB,BC; L on AC such that BL bisects ∠ABC. Find ∠KLM.",
+    "ans": "70^{\\circ}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 192,
+    "name": "IMOPrelim-2016-Q12",
+    "statement": "Find the smallest positive multiple of 2016 whose digits do not contain 2,0,1,6.",
+    "ans": "48384",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 193,
+    "name": "IMOPrelim-2016-Q13",
+    "statement": "A test requires marking A on positive x-axis, B on positive y-axis, C vertically above A, D on OA, such that quadrilateral OACB has perimeter 32, area condition, and lengths OD,DA,AC,CB,BO are positive integers. How many correct answers?",
+    "ans": "113",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 194,
+    "name": "IMOPrelim-2016-Q14",
+    "statement": "If a^3-3ab^2=11 and b^3-3a^2b=13, find a^2+b^2.",
+    "ans": "∛290",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 195,
+    "name": "IMOPrelim-2016-Q15",
+    "statement": "Three positive integers form a 'perfect group' if they are equal or three consecutive. How many ways to write 9 positive integers each ≤10 in ascending order so that they can be divided into 3 perfect groups?",
+    "ans": "1132",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 196,
+    "name": "IMOPrelim-2016-Q16",
+    "statement": "In triangle ABC, AB+BC=2AC and ∠A = ∠C+90°. Find cos B.",
+    "ans": "3/4",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 197,
+    "name": "IMOPrelim-2016-Q17",
+    "statement": "10 boys seated in a row, each puts on red, green or blue hat randomly. Probability that everyone finds at least one neighbour with same colour hat?",
+    "ans": "19/2187",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 198,
+    "name": "IMOPrelim-2016-Q18",
+    "statement": "In triangle ABC, D midpoint of BC, M on AD. Extension of BM meets AC at N, AB is tangent to circumcircle of BCN. BC=8, BN=6. Find BM.",
+    "ans": "96/25",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 199,
+    "name": "IMOPrelim-2016-Q19",
+    "statement": "Let f be a quadratic with integer coefficients. f(0),f(3),f(4) are distinct but belong to {2,20,201,2016}. Find sum of all possible f(1).",
+    "ans": "203",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 200,
+    "name": "IMOPrelim-2016-Q20",
+    "statement": "In triangle ABC, P on AB with AP:PB=8:1, Q on AC with AQ:QC=15:1. X,Y on BC such that circumcircle of APX is tangent to BC and CA, and circumcircle of AQY is tangent to AB and BC. Find cos∠BAC.",
+    "ans": "1/6",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 201,
+    "name": "IMOPrelim-2015-Q1",
+    "statement": "There are 12 lamps initially off. Each round you press exactly 5 different switches. Minimum number of rounds to turn all lamps on?",
+    "ans": "4",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 202,
+    "name": "IMOPrelim-2015-Q2",
+    "statement": "ABCD is a square of side 1234. E on CD such that CEFG is a square of side 567 with F,G outside ABCD. Circumcircle of ACF meets BC again at H. Find CH.",
+    "ans": "667",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 203,
+    "name": "IMOPrelim-2015-Q3",
+    "statement": "In triangle ABC, ∠A=54°, ∠C=24°. P on AC such that AP=BC. Find ∠CBP.",
+    "ans": "6^{\\circ}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 204,
+    "name": "IMOPrelim-2015-Q4",
+    "statement": "Find the remainder when 19^{17^{15}} is divided by 100.",
+    "ans": "59",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 205,
+    "name": "IMOPrelim-2015-Q5",
+    "statement": "ABCD is a trapezium with AB//CD, AB=42, BC=20, DA=15. P on AB, a circle with centre P tangent to BC and AD. Find AP×PB.",
+    "ans": "432",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 206,
+    "name": "IMOPrelim-2015-Q6",
+    "statement": "Let a,b be integers. If a+b is a root of x^2+ax+b=0, find the smallest possible value of ab.",
+    "ans": "-54",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 207,
+    "name": "IMOPrelim-2015-Q7",
+    "statement": "Let f(x)=15/(x+1) + 16/(x^2+1) - 17/(x^3+1). Find f(tan15°)+f(tan30°)+f(tan45°)+f(tan60°)+f(tan75°).",
+    "ans": "35",
+    "difficulty": 0,
+    "tags": ["trigonometry"]
+  },
+  {
+    "id": 208,
+    "name": "IMOPrelim-2015-Q8",
+    "statement": "ABCD is a trapezium with AB//CD. M,N midpoints of AB,CD. AC=6, BD=8, MN=4. Find area of ABCD.",
+    "ans": "3√55",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 209,
+    "name": "IMOPrelim-2015-Q9",
+    "statement": "Let k be integer. If kx^2+(4k-2)x+(4k-7)=0 has an integral root, find sum of all possible k.",
+    "ans": "6",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 210,
+    "name": "IMOPrelim-2015-Q10",
+    "statement": "Triangle ABC has area 1, AB>AC. Internal bisector of ∠A meets BC at D, and triangle DBC' is similar to ABC where C' is reflection of C across AD. When perimeter of ABC is minimised, find AB.",
+    "ans": "2",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 211,
+    "name": "IMOPrelim-2015-Q11",
+    "statement": "Let n be positive integer. If (n+1)(2n+15) and n(n+5) have exactly the same prime factors, find greatest possible n.",
+    "ans": "15",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 212,
+    "name": "IMOPrelim-2015-Q12",
+    "statement": "Let f(x)=x^6-x^5-x^3-x^2-x, g(x)=x^4-x^3-x^2-1. If a,b,c,d are roots of g(x)=0, find f(a)+f(b)+f(c)+f(d).",
+    "ans": "6",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 213,
+    "name": "IMOPrelim-2015-Q13",
+    "statement": "Let k be real with -1<k<1. Line y=x+k meets curve y^2=1-x^2 at A,B. C=(1,0). Find greatest possible area of triangle ABC.",
+    "ans": "3√3/4",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 214,
+    "name": "IMOPrelim-2015-Q14",
+    "statement": "In each box fill a positive integer ≤11 (repetition allowed) so that 10×□+□×□+□ is a multiple of 11. How many different correct answers?",
+    "ans": "1320",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 215,
+    "name": "IMOPrelim-2015-Q15",
+    "statement": "Let [x] be greatest integer ≤x. Find the last seven digits of [10^{2016}/(10^{672}+2015)].",
+    "ans": "4060224",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 216,
+    "name": "IMOPrelim-2015-Q16",
+    "statement": "An arithmetic sequence with 10 terms has common difference d. If the absolute value of each term is prime, find the smallest possible d.",
+    "ans": "30",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 217,
+    "name": "IMOPrelim-2015-Q17",
+    "statement": "12 children stand on a circle equally spaced. Teacher puts red or blue hat on each. No regular polygon (including triangles, squares, etc.) has all hats same colour. How many ways?",
+    "ans": "906",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 218,
+    "name": "IMOPrelim-2015-Q18",
+    "statement": "Let f(x) be a polynomial of degree 5 with f(1)=0, f(3)=1, f(9)=2, f(27)=3, f(81)=4, f(243)=5. Find coefficient of x in f(x).",
+    "ans": "121/162",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 219,
+    "name": "IMOPrelim-2015-Q19",
+    "statement": "Let a1=2/3 and a_{n+1}=a_n/4 + √((24a_n+9)/256) - 9/48. Find a1+a2+a3+...",
+    "ans": "11",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 220,
+    "name": "IMOPrelim-2015-Q20",
+    "statement": "Eight couples attend a gathering. They are divided into four groups each with two men and two women, and no man is with his wife. How many ways?",
+    "ans": "31185",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 221,
+    "name": "IMOPrelim-2014-Q1",
+    "statement": "If x-y=12, find x^3 - y^3 - 36xy.",
+    "ans": "1728",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 222,
+    "name": "IMOPrelim-2014-Q2",
+    "statement": "If x is real, find minimum of |x+1|+2|x-5|+|2x-7|+|(x-11)/2|.",
+    "ans": "45",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 223,
+    "name": "IMOPrelim-2014-Q3",
+    "statement": "Find minimum of √(4+y^2) + √(x^2+y^2-4x-4y+8) + √(x^2-8x+17).",
+    "ans": "5",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 224,
+    "name": "IMOPrelim-2014-Q4",
+    "statement": "Let f(x)=ax+b with integers a,b. f(f(0))=0 and f(f(f(4)))=9. Find f(f(f(f(1))))+...+f(f(f(f(2014)))).",
+    "ans": "2029105",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 225,
+    "name": "IMOPrelim-2014-Q5",
+    "statement": "Let ABC and PQR be triangles. If cos A = sin P, cos B = sin Q, cos C = sin R, what is the largest angle among the six interior angles?",
+    "ans": "135^{\\circ}",
+    "difficulty": 0,
+    "tags": ["trigonometry"]
+  },
+  {
+    "id": 226,
+    "name": "IMOPrelim-2014-Q6",
+    "statement": "Two parallel chords of a circle have lengths 24 and 32, distance between them is 14. What is the length of another parallel chord midway between them?",
+    "ans": "2√249",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 227,
+    "name": "IMOPrelim-2014-Q7",
+    "statement": "In triangle ABC, tan∠CAB=22/7 and altitude from A to BC divides BC into segments 3 and 17. Find area of triangle ABC.",
+    "ans": "110",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 228,
+    "name": "IMOPrelim-2014-Q8",
+    "statement": "There are three identical red, three identical yellow, three identical green balls. How many ways to split them into three groups of three balls each?",
+    "ans": "10",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 229,
+    "name": "IMOPrelim-2014-Q9",
+    "statement": "Triangle ABC is isosceles with AB=AC. P inside such that ∠BCP=30°, ∠APB=150°, ∠CAP=39°. Find ∠BAP.",
+    "ans": "13^{\\circ}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 230,
+    "name": "IMOPrelim-2014-Q10",
+    "statement": "Points A and C lie on a circle of radius √50. B inside with ∠ABC=90°, AB=6, BC=2. Find distance from B to centre.",
+    "ans": "√26",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 231,
+    "name": "IMOPrelim-2014-Q11",
+    "statement": "A dragon sequence: last digit of a_k equals first digit of a_{k+1} (cyclic). At least how many two-digit numbers must be chosen to ensure a dragon sequence can be formed?",
+    "ans": "46",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 232,
+    "name": "IMOPrelim-2014-Q12",
+    "statement": "Let [x] be greatest integer ≤x. Find last two digits of [1/3]+[2/3]+[2^2/3]+...+[2^{2014}/3].",
+    "ans": "15",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 233,
+    "name": "IMOPrelim-2014-Q13",
+    "statement": "Triangle ABC acute with AB=13, BC=7. D on AB, E on AC such that BD=BC and ∠DEB=∠CEB. Find product of all possible lengths of AE.",
+    "ans": "507/10",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 234,
+    "name": "IMOPrelim-2014-Q14",
+    "statement": "How many triples (a,b,c) of integers with 2≤a≤b≤c and abc = 2013×2014?",
+    "ans": "90",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 235,
+    "name": "IMOPrelim-2014-Q15",
+    "statement": "Let n≤2014 such that x^2+x+1 is a factor of x^{2n}+x^n+1. Find sum of all possible n.",
+    "ans": "1352737",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 236,
+    "name": "IMOPrelim-2014-Q16",
+    "statement": "Let a1,...,a24 be integers with sum 0 and |a_i|≤i. Find greatest possible value of a1+2a2+...+24a24.",
+    "ans": "1432",
+    "difficulty": 0,
+    "tags": ["optimization"]
+  },
+  {
+    "id": 237,
+    "name": "IMOPrelim-2014-Q17",
+    "statement": "Let [x] be greatest integer ≤x. Find last three digits of [ (∛(√5+2)+∛(√5-2))^{2014} ].",
+    "ans": "125",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 238,
+    "name": "IMOPrelim-2014-Q18",
+    "statement": "36 participants, some handshakes, at most once each. No two with same number of handshakes shook hands. Find maximum total handshakes.",
+    "ans": "546",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 239,
+    "name": "IMOPrelim-2014-Q19",
+    "statement": "Let A,B,C on a plane with ∠ACB=120°. Circles ω0,ω1,ω2,... tangent to CA and CB, and each tangent to previous. r0=3. Find r0+r1+r2+...",
+    "ans": "3/2+√3",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 240,
+    "name": "IMOPrelim-2014-Q20",
+    "statement": "In a school, each student number is a positive factor of 60^{60}, and the H.C.F. of any two student numbers is not a student number. Find greatest possible n.",
+    "ans": "3721",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 241,
+    "name": "IMOPrelim-2013-Q1",
+    "statement": "Let a,b,c be nonzero reals with 1/a^3 = 8/b^3 = 5/c^3. If d = ((a+b+c)/a)^3, find d.",
+    "ans": "2744",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 242,
+    "name": "IMOPrelim-2013-Q2",
+    "statement": "How many three-digit numbers have digits forming an arithmetic progression?",
+    "ans": "45",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 243,
+    "name": "IMOPrelim-2013-Q3",
+    "statement": "Find the fractional part of √(1+1/1^2+1/2^2) + √(1+1/2^2+1/3^2) + ... + √(1+1/2012^2+1/2013^2).",
+    "ans": "2012/2013",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 244,
+    "name": "IMOPrelim-2013-Q4",
+    "statement": "If x,y,z ≥ 0 and x^2+y^2+z^2+x+2y+3z = 13/4, find the minimum possible value of x+y+z.",
+    "ans": "(-3+√22)/2",
+    "difficulty": 0,
+    "tags": ["optimization"]
+  },
+  {
+    "id": 245,
+    "name": "IMOPrelim-2013-Q5",
+    "statement": "Peter won 22 games, lost some, and did not play on some days. Each day there was exactly one winner. The number of days on which Peter did not win equals twice the number of days on which he lost. Over a certain number of days, total wins were 74. How many days did Peter play?",
+    "ans": "48",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 246,
+    "name": "IMOPrelim-2013-Q6",
+    "statement": "Let sequence a_n be 1,2,1,2,2,1,2,2,2,1,... (the nth term is 2 unless n is a triangular number). Find a_1 a_2 + a_2 a_3 + ... + a_{2013} a_{2014}.",
+    "ans": "7806",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 247,
+    "name": "IMOPrelim-2013-Q7",
+    "statement": "There are n different positive integers each ≤2013, such that sum of any three is divisible by 39. Find greatest n.",
+    "ans": "52",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 248,
+    "name": "IMOPrelim-2013-Q8",
+    "statement": "Find the smallest value of √(x^2+4x+5) + √(x^2-8x+25).",
+    "ans": "2√13",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 249,
+    "name": "IMOPrelim-2013-Q9",
+    "statement": "The equation 9x^3 - 3x^2 - 3x - 1 = 0 has a real root of the form (∛a + ∛b + 1)/c with a,b,c positive integers. Find a+b+c.",
+    "ans": "119",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 250,
+    "name": "IMOPrelim-2013-Q10",
+    "statement": "By permuting the digits of 20130518, how many different eight-digit positive odd numbers can be formed?",
+    "ans": "3600",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 251,
+    "name": "IMOPrelim-2013-Q11",
+    "statement": "Let α,β,γ be roots of 8x^3+2012x+2013=0. Find (α+β)^3+(β+γ)^3+(γ+α)^3.",
+    "ans": "6039/8",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  },
+  {
+    "id": 252,
+    "name": "IMOPrelim-2013-Q12",
+    "statement": "ABCD is a square on coordinate plane. Points (31,27), (42,43), (60,27), (46,16) lie on sides AB,BC,CD,DA respectively. Find area of ABCD.",
+    "ans": "3364/5",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 253,
+    "name": "IMOPrelim-2013-Q13",
+    "statement": "In triangle ABC, AB=8, BC=13, CA=15. H,I,O are orthocentre, incentre, circumcentre. Find sin∠HIO.",
+    "ans": "7√3/26",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 254,
+    "name": "IMOPrelim-2013-Q14",
+    "statement": "Let ABCD be convex quadrilateral, E on CD such that circumcircle of ABE is tangent to CD. AC meets BE at F, BD meets AE at G, AC meets BD at H. FG∥CD, areas of ABH, BCE, ADE are 2,3,4. Find area of ABE.",
+    "ans": "1+√15",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 255,
+    "name": "IMOPrelim-2013-Q15",
+    "statement": "Let I be incenter of triangle ABC. If BC = AC + AI and ∠ABC - ∠ACB = 13°, find ∠BAC.",
+    "ans": "96.5^{\\circ}",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 256,
+    "name": "IMOPrelim-2013-Q16",
+    "statement": "A,B,C,M,N on a circle with MN as diameter. A,B on same side, C on other side, A is midpoint of arc MN. CA,CB meet MN at P,Q. MN=1, MB=12/13. Find greatest length of PQ.",
+    "ans": "(17-4√15)/7",
+    "difficulty": 0,
+    "tags": ["geometry"]
+  },
+  {
+    "id": 257,
+    "name": "IMOPrelim-2013-Q17",
+    "statement": "How many pairs (m,n) of non-negative integers with m≠n such that 50688/(m+n) is an odd positive power of 2?",
+    "ans": "33760",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 258,
+    "name": "IMOPrelim-2013-Q18",
+    "statement": "A positive integer is 'good' if each digit is 1 or 2 and no four consecutive 1's nor three consecutive 2's. Let a_n be number of n-digit good integers. Find (a_{10}-a_8-a_5)/(a_7+a_6).",
+    "ans": "2",
+    "difficulty": 0,
+    "tags": ["combinatorics"]
+  },
+  {
+    "id": 259,
+    "name": "IMOPrelim-2013-Q19",
+    "statement": "Let p,q be positive integers with p/q = 0.123456789... (first 9 digits after decimal are 1..9 in order). Find smallest possible q.",
+    "ans": "10989019",
+    "difficulty": 0,
+    "tags": ["number theory"]
+  },
+  {
+    "id": 260,
+    "name": "IMOPrelim-2013-Q20",
+    "statement": "Let a,b be real numbers such that 17(a^2+b^2)-30ab-16=0. Find maximum of √(16a^2+4b^2-16ab-12a+6b+9).",
+    "ans": "7",
+    "difficulty": 0,
+    "tags": ["algebra"]
+  }
+]
