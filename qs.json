@@ -162,25 +162,25 @@
   {
     "id": 21,
     "name": "IMOPrelim-2024-Q1",
-    "statement": "Find the highest common factor of 8^8 - 1 and 4^9 + 1.",
+    "statement": "Find the highest common factor of $8^8 - 1$ and $4^9 + 1$.",
     "ans": "65",
-    "difficulty": 0,
+    "difficulty": 3.1,
     "tags": ["number theory"]
   },
   {
     "id": 22,
     "name": "IMOPrelim-2024-Q2",
-    "statement": "Let n be a positive integer less than 100 such that the tens digit of n^2 is 7. Find the sum of all possible values of n.",
+    "statement": "Let n be a positive integer less than 100 such that the tens digit of $n^2$ is 7. Find the sum of all possible values of n.",
     "ans": "200",
-    "difficulty": 0,
+    "difficulty": 4.6,
     "tags": ["number theory"]
   },
   {
     "id": 23,
     "name": "IMOPrelim-2024-Q3",
-    "statement": "Let a, b, c be integers such that 2^a + 2^b + 2^c = 37/64. Find the value of a^3 + b^3 + c^3.",
+    "statement": "Let a, b, c be integers such that $2^a + 2^b + 2^c = \\frac{37}{64}$. Find the value of $a^3 + b^3 + c^3$.",
     "ans": "-281",
-    "difficulty": 0,
+    "difficulty": 1.2,
     "tags": ["number theory"]
   },
   {
