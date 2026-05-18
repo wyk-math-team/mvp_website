@@ -1,33 +1,32 @@
-// app.js - 访客可浏览，受保护操作弹出登录框
+// app.js - 全局初始化：时钟、用户显示、侧边栏、键盘快捷键，并持久化侧边栏状态
 
 (function() {
-    // ----- DOM 元素 -----
-    const appContainer = document.getElementById('appContainer');
-    const modal = document.getElementById('loginModal');
-    const modalForm = document.getElementById('modalLoginForm');
-    const modalUsername = document.getElementById('modalUsername');
-    const modalPassword = document.getElementById('modalPassword');
-    const modalError = document.getElementById('modalLoginError');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    
+    // 1. 登录校验
+    if (typeof isLoggedIn === 'function' && !isLoggedIn()) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+    // 2. 获取当前用户
+    let currentUser = { displayName: 'User' };
+    if (typeof getCurrentUser === 'function') {
+        const user = getCurrentUser();
+        if (user && user.displayName) currentUser = user;
+    }
+
+    // 3. DOM 元素引用
     const usernameSpan = document.getElementById('currentUsername');
     const clockEl = document.getElementById('clockTime');
     const userMenu = document.getElementById('userMenu');
     const logoutBtn = document.getElementById('logoutBtn');
     const sidebar = document.getElementById('sidebar');
     const topbarLeft = document.querySelector('.topbar-left');
-    const mobileToggle = document.getElementById('sidebarToggle');
-    const body = document.body;
+    const mobileToggle = document.getElementById('sidebarToggle'); // 原有移动端按钮
 
-    // ----- 辅助函数 -----
-    function updateUsername() {
-        const user = getCurrentUser();
-        if (usernameSpan) {
-            usernameSpan.textContent = user ? user.displayName : 'Guest';
-        }
-    }
+    // 设置用户名
+    if (usernameSpan) usernameSpan.textContent = currentUser.displayName;
 
-    // GMT+8 时钟
+    // 4. GMT+8 时钟 (每秒更新)
     function getGMT8Date(date) {
         const utc = date.getTime() + (date.getTimezoneOffset() * 60000);
         return new Date(utc + (8 * 3600000));
@@ -40,18 +39,18 @@
             .map(v => String(v).padStart(2, '0')).join(':');
         clockEl.textContent = time;
     }
+    updateClock();
+    setInterval(updateClock, 500);
 
-    function updateDate() {
-        const dateSpan = document.getElementById('currentDate');
-        if (!dateSpan) return;
-        const gmt8 = getGMT8Date(new Date());
-        dateSpan.textContent = gmt8.toLocaleDateString('en-US', {
-            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
-        });
+    // 5. 侧边栏状态管理 (统一函数，并持久化)
+    const body = document.body;
+    let topToggleBtn = null; // 顶部栏动态生成的按钮
+
+    // 保存侧边栏状态到 localStorage
+    function saveSidebarState(isOpen) {
+        localStorage.setItem('sidebarOpen', isOpen ? 'true' : 'false');
     }
 
-    // ----- 侧边栏控制 (与之前相同)-----
-    let topToggleBtn = null;
     function setSidebarState(open) {
         if (!sidebar) return;
         if (open) {
@@ -63,168 +62,113 @@
             if (topToggleBtn) topToggleBtn.innerHTML = '☰';
             if (window.innerWidth > 768) body.classList.add('sidebar-closed');
         }
+        saveSidebarState(open);
     }
-    function toggleSidebar() { setSidebarState(!sidebar.classList.contains('open')); }
 
-    function initSidebarToggle() {
-        if (!topbarLeft || !sidebar) return;
-        let existing = document.getElementById('sidebarToggleTop');
-        if (!existing) {
+    function toggleSidebar() {
+        setSidebarState(!sidebar.classList.contains('open'));
+    }
+
+    // 6. 创建顶部栏侧边开关 (如果不存在)
+    if (topbarLeft && sidebar) {
+        let existingBtn = document.getElementById('sidebarToggleTop');
+        if (!existingBtn) {
             topToggleBtn = document.createElement('button');
             topToggleBtn.id = 'sidebarToggleTop';
             topToggleBtn.className = 'topbar-sidebar-toggle';
             topToggleBtn.title = 'Toggle Sidebar';
             topbarLeft.insertBefore(topToggleBtn, topbarLeft.firstChild);
         } else {
-            topToggleBtn = existing;
+            topToggleBtn = existingBtn;
         }
-        topToggleBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleSidebar(); });
+        // 绑定点击事件
+        topToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleSidebar();
+        });
     }
 
-    function initSidebarState() {
-        if (!sidebar) return;
-        setSidebarState(window.innerWidth > 768);
-    }
-
-    // ----- 用户菜单和退出 -----
-    function initUserMenu() {
-        if (!userMenu) return;
+    // 7. 用户菜单下拉
+    if (userMenu) {
         userMenu.addEventListener('click', (e) => {
             e.stopPropagation();
-            if (isLoggedIn()) userMenu.classList.toggle('open');
-            else showLoginModal();   // 未登录点击用户菜单也弹出登录框
+            userMenu.classList.toggle('open');
         });
-        document.addEventListener('click', () => userMenu.classList.remove('open'));
+        document.addEventListener('click', () => {
+            userMenu.classList.remove('open');
+        });
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') userMenu.classList.remove('open');
         });
     }
 
-    function initLogout() {
-        if (!logoutBtn) return;
+    // 8. 退出登录
+    if (logoutBtn) {
         logoutBtn.addEventListener('click', (e) => {
             e.stopPropagation();
-            logout();
-            updateUsername();
-            // 刷新页面以重置所有受保护状态（简单处理）
-            location.reload();
+            if (typeof logout === 'function') logout();
+            // 退出时清除侧边栏状态记录（可选）
+            localStorage.removeItem('sidebarOpen');
+            window.location.href = 'login.html';
         });
     }
 
-    // ----- 登录模态框逻辑 -----
-    let pendingAction = null;  // 存储被拦截的操作函数
-
-    function showLoginModal(callbackAfterLogin) {
-        pendingAction = callbackAfterLogin || null;
-        if (modal) {
-            modal.style.display = 'flex';
-            if (modalUsername) modalUsername.focus();
+    // 9. 初始侧边栏状态: 优先读取 localStorage，否则根据窗口宽度决定
+    if (sidebar) {
+        const savedState = localStorage.getItem('sidebarOpen');
+        let initialOpen;
+        if (savedState !== null) {
+            initialOpen = savedState === 'true';
+        } else {
+            // 默认：桌面端打开，移动端关闭
+            initialOpen = window.innerWidth > 768;
         }
+        setSidebarState(initialOpen);
     }
 
-    function hideLoginModal() {
-        if (modal) modal.style.display = 'none';
-        if (modalError) modalError.classList.add('hidden');
-        if (modalForm) modalForm.reset();
-        pendingAction = null;
-    }
-
-    function handleModalLogin(e) {
-        e.preventDefault();
-        const username = modalUsername.value.trim();
-        const password = modalPassword.value;
-        if (!username || !password) {
-            if (modalError) {
-                modalError.textContent = 'Please enter both fields.';
-                modalError.classList.remove('hidden');
-            }
-            return;
-        }
-        const result = login(username, password);
-        if (result.success) {
-            updateUsername();
-            hideLoginModal();
-            // 执行之前被拦截的操作
-            if (pendingAction && typeof pendingAction === 'function') {
-                pendingAction();
-                pendingAction = null;
+    // 10. 响应窗口大小变化 (根据桌面/移动自动调整 padding 类，但不改变侧边栏开关状态)
+    window.addEventListener('resize', () => {
+        if (!sidebar) return;
+        if (window.innerWidth > 768) {
+            if (sidebar.classList.contains('open')) {
+                body.classList.remove('sidebar-closed');
             } else {
-                // 可选：刷新页面状态
-                location.reload();
+                body.classList.add('sidebar-closed');
             }
         } else {
-            if (modalError) {
-                modalError.textContent = result.message;
-                modalError.classList.remove('hidden');
-            }
+            body.classList.remove('sidebar-closed');
         }
-    }
-
-    // 关闭模态框
-    if (closeModalBtn) closeModalBtn.addEventListener('click', hideLoginModal);
-    if (modal) modal.addEventListener('click', (e) => {
-        if (e.target === modal) hideLoginModal();
     });
-    if (modalForm) modalForm.addEventListener('submit', handleModalLogin);
 
-    // ----- 拦截所有需要登录的链接/按钮 -----
-    function interceptProtectedElements() {
-        // 拦截侧边栏中带有 .require-login 的链接
-        const protectedLinks = document.querySelectorAll('.require-login');
-        protectedLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (!isLoggedIn()) {
-                    e.preventDefault();
-                    const targetUrl = link.getAttribute('data-href') || link.getAttribute('href');
-                    showLoginModal(() => {
-                        window.location.href = targetUrl;
-                    });
-                } // 如果已登录，正常跳转（无需额外操作）
-            });
-        });
+    // 11. 键盘快捷键 Ctrl + B
+    document.addEventListener('keydown', (e) => {
+        if (e.ctrlKey && e.key === 'b') {
+            e.preventDefault();
+            toggleSidebar();
+        }
+    });
 
-        // 额外：拦截任何带有 .require-login 类的按钮或元素（可扩展）
-        const protectedButtons = document.querySelectorAll('.require-login-button');
-        protectedButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                if (!isLoggedIn()) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    showLoginModal(() => {
-                        // 登录后重新执行按钮原有逻辑（可自定义）
-                        btn.click();
-                    });
-                }
-            });
+    // 12. 侧边栏链接高亮当前页面 & 移动端点击后自动关闭侧边栏 (可选)
+    const sidebarLinks = document.querySelectorAll('.sidebar-link');
+    const currentPath = window.location.pathname;
+
+    sidebarLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href && currentPath.endsWith(href)) {
+            link.classList.add('active');
+        }
+        link.addEventListener('click', function() {
+            // 移动端点击导航后自动收起侧边栏
+            if (window.innerWidth <= 768 && sidebar) {
+                setSidebarState(false);
+            }
         });
+    });
+
+    // 13. 移动端底部按钮 (如果存在) 与顶部开关行为一致
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleSidebar);
     }
 
-    // ----- 通用初始化（仅 UI，不强制登录）-----
-    function initUI() {
-        updateUsername();
-        updateClock();
-        setInterval(updateClock, 500);
-        updateDate();
-        initSidebarToggle();
-        initSidebarState();
-        initUserMenu();
-        initLogout();
-
-        if (mobileToggle) mobileToggle.addEventListener('click', toggleSidebar);
-        window.addEventListener('resize', () => {
-            if (!sidebar) return;
-            if (window.innerWidth > 768) {
-                if (sidebar.classList.contains('open')) body.classList.remove('sidebar-closed');
-                else body.classList.add('sidebar-closed');
-            } else body.classList.remove('sidebar-closed');
-        });
-        document.addEventListener('keydown', (e) => {
-            if (e.ctrlKey && e.key === 'b') { e.preventDefault(); toggleSidebar(); }
-        });
-
-        interceptProtectedElements();
-    }
-
-    // 启动（无需登录检查）
-    initUI();
+    console.log(`WYK Maths Team ready. Welcome, ${currentUser.displayName}!`);
 })();
