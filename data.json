@@ -1,0 +1,17 @@
+[
+    {
+        "username": "admin",
+        "password": "admin",
+        "displayName": "Administrator"
+    },
+    {
+        "username": "student",
+        "password": "wykmath",
+        "displayName": "Student User"
+    },
+    {
+        "username": "user2",
+        "password": "password2",
+        "displayName": "Demo User"
+    }
+]
