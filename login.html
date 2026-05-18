@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>WYK Maths Team - Login</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        /* 独立登录页面样式，与 index 风格统一 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #1a1a2e 40%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-wrapper {
+            width: 100%;
+            max-width: 640px;
+            padding: 20px;
+        }
+        .login-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 2rem 2rem 2rem 2rem;
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .login-logo h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #1a1a2e;
+            margin-bottom: 4px;
+        }
+        .login-subtitle {
+            font-size: 0.85rem;
+            color: #6b7d8e;
+            margin-bottom: 32px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .login-form {
+            text-align: left;
+        }
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            color: #2c3e50;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 2px solid #e1e5eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: 0.2s;
+            background: #fafbfc;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #4a90d9;
+            box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.15);
+            background: #fff;
+        }
+        .login-error {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #e74c3c;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .login-btn {
+            width: 100%;
+            padding: 13px;
+            background: #4a90d9;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            margin-top: 6px;
+        }
+        .login-btn:hover {
+            background: #3a7bc8;
+        }
+        .login-hint {
+            margin-top: 24px;
+            font-size: 0.75rem;
+            color: #999;
+            text-align: center;
+        }
+        .demo-accounts {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <div class="login-logo">
+                <h1>WYK Maths Team</h1>
+                <p class="login-subtitle">Sign in to continue</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" autocomplete="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" autocomplete="current-password" required>
+                </div>
+                <div id="loginError" class="login-error hidden"></div>
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script>
+        // 如果已经登录，直接跳转到主页
+        if (typeof isLoggedIn === 'function' && isLoggedIn()) {
+            window.location.href = 'index.html';
+        }
+
+        const form = document.getElementById('loginForm');
+        const errorDiv = document.getElementById('loginError');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value;
+
+            if (!username || !password) {
+                errorDiv.textContent = 'Please enter both username and password.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+
+            const result = login(username, password);
+            if (result.success) {
+                errorDiv.classList.add('hidden');
+                window.location.href = 'index.html';
+            } else {
+                errorDiv.textContent = result.message || 'Invalid credentials.';
+                errorDiv.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
