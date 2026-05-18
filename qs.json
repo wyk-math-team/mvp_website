@@ -4,39 +4,39 @@
     "name": "IMOPrelim-2025-Q1",
     "statement": "Let n be a nine-digit positive integer whose product of digits is equal to 10!. Find the greatest possible value of n.",
     "ans": "998875541",
-    "difficulty": 0,
+    "difficulty": 2.0,
     "tags": ["number theory"]
   },
   {
     "id": 2,
     "name": "IMOPrelim-2025-Q2",
-    "statement": "Find the smallest positive integer n such that the first four digits of n^2 (from left to right) are 2, 0, 2, 5 while the fifth digit of n^2 is non-zero.",
+    "statement": "Find the smallest positive integer n such that the first four digits of $n^2$ (from left to right) are 2, 0, 2, 5 while the fifth digit of $n^2$ is non-zero.",
     "ans": "4501",
-    "difficulty": 0,
+    "difficulty": 2.1,
     "tags": ["number theory"]
   },
   {
     "id": 3,
     "name": "IMOPrelim-2025-Q3",
-    "statement": "Let m and n be positive integers where m > n. If m = (m - n)^2 and n is equal to 25 times the H.C.F. of m and n, find the L.C.M. of m and n.",
+    "statement": "Let m and n be positive integers where m > n. If $m = (m - n)^2$ and n is equal to 25 times the H.C.F. of m and n, find the L.C.M. of m and n.",
     "ans": "16900",
-    "difficulty": 0,
+    "difficulty": 7.0,
     "tags": ["number theory"]
   },
   {
     "id": 4,
     "name": "IMOPrelim-2025-Q4",
-    "statement": "Find a negative number x such that (x^2 - 2$\\sqrt{3}$ x)(x^2 - 3) = 2016.",
-    "ans": "\\frac{\\sqrt{3} - \\sqrt{195}}{2}",
-    "difficulty": 0,
+    "statement": "Find a negative number x such that $(x^2 - 2\\sqrt{3} x)(x^2 - 3) = 2016$. $$$$ The answer is like this: $$\\frac{\\sqrt{a} \\pm \\sqrt{b}}{c}$$ $$$$ Your answer should be $$a \\pm b + c$$",
+    "ans": "-190",
+    "difficulty": 5.4,
     "tags": ["algebra"]
   },
   {
     "id": 5,
     "name": "IMOPrelim-2025-Q5",
-    "statement": "In triangle ABC, BC = 1 and ∠ACB = 90°. If the median of the triangle through A, the internal angle bisector of ∠ABC and the altitude of the triangle from C are concurrent, find AC.",
-    "ans": "\\sqrt{\\frac{1 + \\sqrt{5}}{2}}",
-    "difficulty": 0,
+    "statement": "In triangle ABC, BC = 1 and ∠ACB = 90°. If the median of the triangle through A, the internal angle bisector of ∠ABC and the altitude of the triangle from C are concurrent, find AC. $$$$ AC looks like this: $$\\sqrt{\\frac{a \\pm \\sqrt{b}}{c}}$$ Write the answer $$a \\pm b + c$$",
+    "ans": "8",
+    "difficulty": 4.2,
     "tags": ["geometry"]
   },
   {
