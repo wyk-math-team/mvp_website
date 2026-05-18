@@ -124,10 +124,19 @@
         }
         .filter-tag-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
 
-        /* 详情样式（不变） */
+        /* 详情样式 */
         .problem-detail { background: var(--card-bg); border-radius: 4px; padding: 1.2rem; box-shadow: var(--shadow-sm); }
         .detail-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
         .back-btn { background: none; border: 1px solid var(--border-color); border-radius: 4px; padding: 0.3rem 0.7rem; cursor: pointer; font-size: 0.85rem; }
+        .problem-id-badge {
+            font-family: monospace;
+            font-weight: 600;
+            background: #e9ecef;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+        }
         .problem-name-detail { font-size: 1.2rem; font-weight: 700; }
         .answer-area { margin: 1rem 0; display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
         .answer-input { padding: 0.4rem 0.7rem; border: 1px solid var(--border-color); border-radius: 4px; width: 160px; }
@@ -346,7 +355,6 @@
                 sessionStorage.removeItem(SCROLL_KEY);
                 window.scrollTo(0, 0);
             }
-            // 监听滚动事件（仅列表视图时）
             let scrollListenerActive = false;
             function bindScrollListener() {
                 if (!scrollListenerActive) {
@@ -360,8 +368,6 @@
                     scrollListenerActive = false;
                 }
             }
-
-            // 当筛选或排序时，清除记忆的滚动位置并滚动到顶部
             function resetScrollOnFilterOrSort() {
                 clearScrollPosition();
             }
@@ -387,11 +393,10 @@
                     return;
                 }
                 let filtered = getFilteredProblems();
-                filtered = sortProblems(filtered);  // 应用排序
+                filtered = sortProblems(filtered);
                 const allTags = getAllTags();
                 const states = loadStates();
 
-                // 构建表头
                 let html = `<div class="updates-panel" style="padding:0.5rem;">
                             <div class="updates-header"><h2>Problem Set</h2></div>
                             <div class="filter-bar"><span style="font-weight:600;">Filter:</span>
@@ -423,48 +428,43 @@
                 html += `</div></div>`;
                 mainContainer.innerHTML = html;
 
-                // 绑定卡片点击
                 document.querySelectorAll('.problem-item').forEach(el => {
                     const id = parseInt(el.getAttribute('data-id'));
                     if (id) {
                         el.addEventListener('click', () => {
-                            // 点击跳转到详情页前保存当前滚动位置
                             saveScrollPosition();
                             window.location.href = `problems.html?problem_id=${id}`;
                         });
                     }
                 });
 
-                // 筛选按钮事件
                 document.querySelectorAll('.filter-tag-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         e.stopPropagation();
                         const tag = btn.getAttribute('data-tag');
                         activeTag = (tag === "") ? null : (activeTag === tag ? null : tag);
-                        resetScrollOnFilterOrSort();   // 清除滚动记忆
+                        resetScrollOnFilterOrSort();
                         renderProblemList();
                     });
                 });
 
-                // 排序按钮事件
                 const sortBtn = document.getElementById('levelSortBtn');
                 if (sortBtn) {
                     sortBtn.addEventListener('click', (e) => {
                         e.stopPropagation();
                         sortMode = (sortMode + 1) % 3;
                         saveSortMode();
-                        resetScrollOnFilterOrSort();   // 清除滚动记忆
+                        resetScrollOnFilterOrSort();
                         renderProblemList();
                     });
                 }
 
-                // 恢复滚动位置并绑定滚动监听
                 restoreScrollPosition();
                 bindScrollListener();
             }
 
+            // ========== 修改详情渲染，添加 ID 显示 ==========
             function renderProblemDetail(problemId) {
-                // 详情页移除滚动监听（避免保存滚动位置干扰）
                 unbindScrollListener();
                 const prob = problemsData.find(p => p.id === problemId);
                 if (!prob) {
@@ -477,6 +477,7 @@
                 const html = `<div class="problem-detail">
                     <div class="detail-header">
                         <button class="back-btn" id="backToListBtn">← Back</button>
+                        <span class="problem-id-badge">#${prob.id}</span>
                         <span class="problem-name-detail">${escapeHtml(prob.name)}</span>
                         <span style="margin-left:auto; font-size:0.8rem;">Lv. ${diffStr}</span>
                         <span style="font-size:0.8rem;">${escapeHtml(tagsStr)}</span>
@@ -484,7 +485,7 @@
                     <div class="answer-area">
                         <label style="font-weight:500;">Your Answer:</label>
                         <input type="text" id="answerInput" class="answer-input" placeholder="Enter answer" autocomplete="off">
-                        <button id="checkAnswerBtn" class="check-btn">Submit</button>
+                        <button id="checkAnswerBtn" class="check-btn">Check</button>
                         <button id="submissionsBtn" class="submissions-btn">Submissions</button>
                         <span id="feedbackMsg" class="feedback"></span>
                     </div>
@@ -561,7 +562,6 @@
                 return String(str).replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
             }
 
-            // 加载外部数据
             function loadExternalData() {
                 if (window.problemsData && Array.isArray(window.problemsData) && window.problemsData.length) {
                     problemsData = window.problemsData;
