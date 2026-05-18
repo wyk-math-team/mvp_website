@@ -1,20 +1,22 @@
-// auth.js - 认证模块，无自动跳转
+// auth.js - 认证模块，使用localStorage实现跨标签页同步
 const DEMO_USERS = [
     { username: 'admin', password: 'admin', displayName: 'Test' },
     { username: 'student', password: 'wykmath', displayName: 'user' },
     { username: 'user2', password: 'password2', displayName: '...' }
 ];
 
+const STORAGE_KEY = 'currentUser';
+
 function setCurrentUser(user) {
     if (user) {
-        sessionStorage.setItem('currentUser', JSON.stringify(user));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
     } else {
-        sessionStorage.removeItem('currentUser');
+        localStorage.removeItem(STORAGE_KEY);
     }
 }
 
 function getCurrentUser() {
-    const data = sessionStorage.getItem('currentUser');
+    const data = localStorage.getItem(STORAGE_KEY);
     if (data) {
         try {
             return JSON.parse(data);
@@ -30,12 +32,11 @@ function isLoggedIn() {
 function login(username, password) {
     const user = DEMO_USERS.find(u => u.username === username && u.password === password);
     if (user) {
-        const sessionUser = {
+        setCurrentUser({
             username: user.username,
             displayName: user.displayName
-        };
-        setCurrentUser(sessionUser);
-        return { success: true, user: sessionUser };
+        });
+        return { success: true, user: user };
     }
     return { success: false, message: 'Invalid username or password.' };
 }
@@ -43,3 +44,10 @@ function login(username, password) {
 function logout() {
     setCurrentUser(null);
 }
+
+// 跨标签页同步：当其他标签页修改用户信息时，刷新当前页面
+window.addEventListener('storage', function(e) {
+    if (e.key === STORAGE_KEY) {
+        location.reload();
+    }
+});
