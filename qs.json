@@ -266,7 +266,7 @@
   {
     "id": 34,
     "name": "IMOPrelim-2024-Q14",
-    "statement": "How many positive integers n are there such that n has exactly 2024 positive factors, and n is also a factor of 2024^{2024}?",
+    "statement": "How many positive integers n are there such that n has exactly 2024 positive factors, and n is also a factor of $2024^{2024}$?",
     "ans": "90",
     "difficulty": 0,
     "tags": ["number theory"]
