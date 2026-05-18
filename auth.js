@@ -1,7 +1,7 @@
 // auth.js - 认证模块，无自动跳转
 const DEMO_USERS = [
-    { username: 'admin', password: 'admin', displayName: 'Administrator' },
-    { username: 'student', password: 'wykmath', displayName: '...' },
+    { username: 'admin', password: 'admin', displayName: 'Test' },
+    { username: 'student', password: 'wykmath', displayName: 'user' },
     { username: 'user2', password: 'password2', displayName: '...' }
 ];
 
