@@ -26,7 +26,7 @@
   {
     "id": 4,
     "name": "IMOPrelim-2025-Q4",
-    "statement": "Find a negative number x such that (x^2 - 2\\sqrt{3} x)(x^2 - 3) = 2016.",
+    "statement": "Find a negative number x such that (x^2 - 2$\\sqrt{3}$ x)(x^2 - 3) = 2016.",
     "ans": "\\frac{\\sqrt{3} - \\sqrt{195}}{2}",
     "difficulty": 0,
     "tags": ["algebra"]
