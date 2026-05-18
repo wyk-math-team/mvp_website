@@ -250,9 +250,9 @@
   {
     "id": 32,
     "name": "IMOPrelim-2024-Q12",
-    "statement": "The equation $x^3 - \\frac{1}{x} = 4$ has two real roots a and b. Find $a^2 + b^2$.",
-    "ans": "2\\sqrt{2}",
-    "difficulty": 0,
+    "statement": "The equation $x^3 - \\frac{1}{x} = 4$ has two real roots a and b. Find $a^2 + b^2$.$$$$The answer looks like this: $a\\sqrt{b}$. You should write a+b as your answer.",
+    "ans": "4",
+    "difficulty": 3.7,
     "tags": ["algebra"]
   },
   {
