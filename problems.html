@@ -89,10 +89,10 @@
         }
         .sort-indicator {
             cursor: pointer;
-            --user-select: none;
+            user-select: none;
             display: inline-block;
         }
-        .sort-indicator:hover { background: #d0d7de; border-radius: 12px; padding: 0rem 0。1rem; }
+        .sort-indicator:hover { background: #d0d7de; border-radius: 12px; padding: 0 0.1rem; }
         @media (max-width: 700px) {
             .problems-header, .problem-item { grid-template-columns: 50px 1fr 1fr 60px; }
             .problem-name { max-width: 120px; }
@@ -329,6 +329,43 @@
             let activeTag = null;
             let mainContainer = document.getElementById('mainContent');
 
+            // ========== 滚动位置记忆 (window.scrollY) ==========
+            const SCROLL_KEY = 'problemsListScrollY';
+            function saveScrollPosition() {
+                sessionStorage.setItem(SCROLL_KEY, window.scrollY);
+            }
+            function restoreScrollPosition() {
+                const saved = sessionStorage.getItem(SCROLL_KEY);
+                if (saved !== null) {
+                    setTimeout(() => {
+                        window.scrollTo(0, parseInt(saved));
+                    }, 50);
+                }
+            }
+            function clearScrollPosition() {
+                sessionStorage.removeItem(SCROLL_KEY);
+                window.scrollTo(0, 0);
+            }
+            // 监听滚动事件（仅列表视图时）
+            let scrollListenerActive = false;
+            function bindScrollListener() {
+                if (!scrollListenerActive) {
+                    window.addEventListener('scroll', saveScrollPosition);
+                    scrollListenerActive = true;
+                }
+            }
+            function unbindScrollListener() {
+                if (scrollListenerActive) {
+                    window.removeEventListener('scroll', saveScrollPosition);
+                    scrollListenerActive = false;
+                }
+            }
+
+            // 当筛选或排序时，清除记忆的滚动位置并滚动到顶部
+            function resetScrollOnFilterOrSort() {
+                clearScrollPosition();
+            }
+
             function getAllTags() {
                 const set = new Set();
                 problemsData.forEach(p => p.tags.forEach(t => set.add(t)));
@@ -391,6 +428,8 @@
                     const id = parseInt(el.getAttribute('data-id'));
                     if (id) {
                         el.addEventListener('click', () => {
+                            // 点击跳转到详情页前保存当前滚动位置
+                            saveScrollPosition();
                             window.location.href = `problems.html?problem_id=${id}`;
                         });
                     }
@@ -402,6 +441,7 @@
                         e.stopPropagation();
                         const tag = btn.getAttribute('data-tag');
                         activeTag = (tag === "") ? null : (activeTag === tag ? null : tag);
+                        resetScrollOnFilterOrSort();   // 清除滚动记忆
                         renderProblemList();
                     });
                 });
@@ -413,12 +453,19 @@
                         e.stopPropagation();
                         sortMode = (sortMode + 1) % 3;
                         saveSortMode();
+                        resetScrollOnFilterOrSort();   // 清除滚动记忆
                         renderProblemList();
                     });
                 }
+
+                // 恢复滚动位置并绑定滚动监听
+                restoreScrollPosition();
+                bindScrollListener();
             }
 
             function renderProblemDetail(problemId) {
+                // 详情页移除滚动监听（避免保存滚动位置干扰）
+                unbindScrollListener();
                 const prob = problemsData.find(p => p.id === problemId);
                 if (!prob) {
                     renderProblemList();
@@ -437,7 +484,7 @@
                     <div class="answer-area">
                         <label style="font-weight:500;">Your Answer:</label>
                         <input type="text" id="answerInput" class="answer-input" placeholder="Enter answer" autocomplete="off">
-                        <button id="checkAnswerBtn" class="check-btn">Check</button>
+                        <button id="checkAnswerBtn" class="check-btn">Submit</button>
                         <button id="submissionsBtn" class="submissions-btn">Submissions</button>
                         <span id="feedbackMsg" class="feedback"></span>
                     </div>
@@ -451,7 +498,10 @@
                 }
 
                 const backBtn = document.getElementById('backToListBtn');
-                if (backBtn) backBtn.addEventListener('click', () => { removeUrlParam('problem_id'); renderProblemList(); });
+                if (backBtn) backBtn.addEventListener('click', () => { 
+                    removeUrlParam('problem_id'); 
+                    renderProblemList(); 
+                });
 
                 const subBtn = document.getElementById('submissionsBtn');
                 if (subBtn) subBtn.addEventListener('click', () => { window.location.href = `submissions.html?problem_id=${problemId}`; });
