@@ -13,7 +13,7 @@
     <script src="auth.js"></script>
     <script src="app.js" defer></script>
     <style>
-        /* 紧凑的题目列表 - 像表格一样 */
+        /* 紧凑的题目列表 - 网格对齐 */
         .problems-list {
             display: flex;
             flex-direction: column;
@@ -22,39 +22,50 @@
             border-radius: 4px;
             overflow: hidden;
         }
+        /* 表头样式 */
+        .problems-header {
+            display: grid;
+            grid-template-columns: 60px 1fr 1.2fr 70px;
+            background: #e9ecef;
+            padding: 0.5rem 0.8rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.85rem;
+        }
+        /* 题目条目样式 */
         .problem-item {
+            display: grid;
+            grid-template-columns: 60px 1fr 1.2fr 70px;
+            align-items: center;
             background: var(--card-bg);
             border-left: 4px solid;
             border-bottom: 1px solid var(--border-color);
-            padding: 0.6rem 0.8rem;
+            padding: 0.5rem 0.8rem;
             transition: background 0.2s ease;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            flex-wrap: wrap;
+            gap: 0.5rem;
         }
         .problem-item:last-child { border-bottom: none; }
         .problem-item.state-not_started { border-left-color: #aaa; background: var(--card-bg); }
         .problem-item.state-failed { border-left-color: var(--danger); background: #fff5f5; }
         .problem-item.state-passed { border-left-color: #2e7d32; background: #f0fff0; }
         .problem-item:hover { background: #f8f9fa; }
+        
         .problem-id {
             font-family: monospace;
             font-weight: 700;
             background: #e9ecef;
-            padding: 0.1rem 0.5rem;
+            padding: 0.1rem 0.3rem;
             border-radius: 16px;
-            min-width: 40px;
             text-align: center;
             font-size: 0.85rem;
+            width: fit-content;
         }
         .problem-name {
             font-weight: 600;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 200px;
             color: var(--text-primary);
             font-size: 0.9rem;
         }
@@ -62,7 +73,6 @@
             display: flex;
             gap: 0.4rem;
             flex-wrap: wrap;
-            flex: 1;
             justify-content: flex-start;
         }
         .tag {
@@ -73,16 +83,24 @@
             white-space: nowrap;
         }
         .difficulty {
-            background: #eef2ff;
-            padding: 0.1rem 0.5rem;
-            border-radius: 12px;
-            font-size: 0.7rem;
+            text-align: right;
             font-weight: 500;
-            white-space: nowrap;
-            margin-left: auto;
+            font-size: 0.85rem;
         }
-        @media (max-width: 700px) { .problem-name { max-width: 120px; } }
-        @media (max-width: 550px) { .problem-name { max-width: 80px; } }
+        .sort-indicator {
+            cursor: pointer;
+            --user-select: none;
+            display: inline-block;
+        }
+        .sort-indicator:hover { background: #d0d7de; border-radius: 12px; padding: 0rem 0。1rem; }
+        @media (max-width: 700px) {
+            .problems-header, .problem-item { grid-template-columns: 50px 1fr 1fr 60px; }
+            .problem-name { max-width: 120px; }
+        }
+        @media (max-width: 550px) {
+            .problems-header, .problem-item { grid-template-columns: 40px 1fr 1fr 50px; }
+            .problem-name { max-width: 80px; }
+        }
 
         /* 筛选栏 */
         .filter-bar {
@@ -106,7 +124,7 @@
         }
         .filter-tag-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
 
-        /* 详情样式 */
+        /* 详情样式（不变） */
         .problem-detail { background: var(--card-bg); border-radius: 4px; padding: 1.2rem; box-shadow: var(--shadow-sm); }
         .detail-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
         .back-btn { background: none; border: 1px solid var(--border-color); border-radius: 4px; padding: 0.3rem 0.7rem; cursor: pointer; font-size: 0.85rem; }
@@ -120,11 +138,7 @@
         .feedback.correct { color: #2e7d32; }
         .feedback.wrong { color: var(--danger); }
         .statement-content { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border-color); }
-        .loading-msg {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-secondary);
-        }
+        .loading-msg { text-align: center; padding: 2rem; color: var(--text-secondary); }
     </style>
 </head>
 <body class="index-body">
@@ -181,17 +195,25 @@
             window.location.href = 'index.html';
         }
 
+        // ========== 获取当前用户名（用于数据隔离）==========
+        function getCurrentUserName() {
+            if (typeof getCurrentUser === 'function') {
+                const user = getCurrentUser();
+                if (user && (user.username || user.displayName)) {
+                    return user.username || user.displayName;
+                }
+            }
+            return 'guest';
+        }
+
         // ========== 配置外部数据路径 ==========
-        // 您可以修改这个变量来指向您的题目数据文件（支持 .json 或 .js 文件）
-        const PROBLEMS_DATA_URL = './qs.json';   // 默认 JSON 文件
-        // 如果希望使用 JS 模块，可以设置 window.problemsData 全局变量，优先使用
+        const PROBLEMS_DATA_URL = './qs.json';
 
         (function() {
-            let problemsData = [];        // 将从外部加载
+            let problemsData = [];
             let dataLoaded = false;
-            let loadError = false;
 
-            // 默认后备数据（当外部加载失败时使用）
+            // 默认后备数据
             const fallbackData = [
                 { id: 1, name: "Quadratic Equation", statement: "Solve $x^2 - 5x + 6 = 0$. Enter the **positive** root.", ans: 3, difficulty: 2.5, tags: ["algebra", "quadratic"] },
                 { id: 2, name: "Limit", statement: "Evaluate $\\lim_{x \\to 0} \\frac{\\sin x}{x}$.", ans: 1, difficulty: 3.0, tags: ["calculus", "limit"] },
@@ -200,17 +222,21 @@
                 { id: 5, name: "Matrix Multiplication", statement: "$A=\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}, B=\\begin{pmatrix}2&0\\\\1&2\\end{pmatrix}$, find (1,1) entry of AB.", ans: 4, difficulty: 3.5, tags: ["linear algebra", "matrix"] }
             ];
 
-            // 状态管理相关函数（依赖 problemsData）
-            const STORAGE_KEY_STATE = 'problemStates';
-            const STORAGE_KEY_SUBMISSIONS = 'submissions';
+            // ---------- 用户相关存储键 ----------
+            function getUserKey(baseKey) {
+                const username = getCurrentUserName();
+                return `${baseKey}_${username}`;
+            }
 
+            // 状态管理（用户隔离）
             function getDefaultStates() {
                 const s = {};
                 problemsData.forEach(p => s[p.id] = 'not_started');
                 return s;
             }
             function loadStates() {
-                const stored = localStorage.getItem(STORAGE_KEY_STATE);
+                const key = getUserKey('problemStates');
+                const stored = localStorage.getItem(key);
                 if (!stored) return getDefaultStates();
                 try {
                     return { ...getDefaultStates(), ...JSON.parse(stored) };
@@ -219,7 +245,8 @@
                 }
             }
             function saveStates(states) {
-                localStorage.setItem(STORAGE_KEY_STATE, JSON.stringify(states));
+                const key = getUserKey('problemStates');
+                localStorage.setItem(key, JSON.stringify(states));
             }
             function updateProblemState(pid, newState) {
                 const s = loadStates();
@@ -232,18 +259,59 @@
                 return loadStates()[pid] || 'not_started';
             }
             function addSubmission(pid, answer, isCorrect) {
+                const key = getUserKey('submissions');
                 const subs = getSubmissions();
                 subs.push({ problemId: pid, answer: answer, isCorrect: isCorrect, timestamp: new Date().toISOString() });
-                localStorage.setItem(STORAGE_KEY_SUBMISSIONS, JSON.stringify(subs));
+                localStorage.setItem(key, JSON.stringify(subs));
             }
             function getSubmissions() {
-                const stored = localStorage.getItem(STORAGE_KEY_SUBMISSIONS);
+                const key = getUserKey('submissions');
+                const stored = localStorage.getItem(key);
                 if (!stored) return [];
                 try {
                     return JSON.parse(stored);
                 } catch(e) {
                     return [];
                 }
+            }
+
+            // 排序模式存储（用户隔离）
+            const SORT_MODE_KEY = getUserKey('problemSortMode');
+            let sortMode = 0;  // 0: id升序, 1: 难度升序(0视为无穷大), 2: 难度降序(0视为0)
+            function loadSortMode() {
+                const saved = localStorage.getItem(SORT_MODE_KEY);
+                if (saved !== null) {
+                    const mode = parseInt(saved);
+                    if (!isNaN(mode) && mode >= 0 && mode <= 2) sortMode = mode;
+                }
+            }
+            function saveSortMode() {
+                localStorage.setItem(SORT_MODE_KEY, sortMode.toString());
+            }
+
+            // 排序函数
+            function sortProblems(problems) {
+                const sorted = [...problems];
+                if (sortMode === 0) {
+                    sorted.sort((a, b) => a.id - b.id);
+                } else if (sortMode === 1) {
+                    // 难度升序，0视为无穷大
+                    sorted.sort((a, b) => {
+                        let da = a.difficulty === 0 ? Infinity : a.difficulty;
+                        let db = b.difficulty === 0 ? Infinity : b.difficulty;
+                        if (da === db) return a.id - b.id;
+                        return da - db;
+                    });
+                } else if (sortMode === 2) {
+                    // 难度降序，0视为0（最小）
+                    sorted.sort((a, b) => {
+                        let da = a.difficulty === 0 ? 0 : a.difficulty;
+                        let db = b.difficulty === 0 ? 0 : b.difficulty;
+                        if (da === db) return a.id - b.id;
+                        return db - da;
+                    });
+                }
+                return sorted;
             }
 
             // URL 参数处理
@@ -257,7 +325,7 @@
                 window.history.pushState({}, '', url);
             }
 
-            // 渲染逻辑（依赖 problemsData）
+            // 渲染逻辑
             let activeTag = null;
             let mainContainer = document.getElementById('mainContent');
 
@@ -281,9 +349,12 @@
                     mainContainer.innerHTML = `<div class="loading-msg">No problems available.</div>`;
                     return;
                 }
-                const filtered = getFilteredProblems();
+                let filtered = getFilteredProblems();
+                filtered = sortProblems(filtered);  // 应用排序
                 const allTags = getAllTags();
                 const states = loadStates();
+
+                // 构建表头
                 let html = `<div class="updates-panel" style="padding:0.5rem;">
                             <div class="updates-header"><h2>Problem Set</h2></div>
                             <div class="filter-bar"><span style="font-weight:600;">Filter:</span>
@@ -291,24 +362,31 @@
                 allTags.forEach(tag => {
                     html += `<button class="filter-tag-btn ${activeTag === tag ? 'active' : ''}" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`;
                 });
-                html += `</div><div class="problems-list">`;
+                html += `</div><div class="problems-list">
+                            <div class="problems-header">
+                                <span>ID</span>
+                                <span>Name</span>
+                                <span>Tags</span>
+                                <span class="sort-indicator" id="levelSortBtn">Level ${sortMode === 0 ? '↕️' : (sortMode === 1 ? '⬆️' : '⬇️')}</span>
+                            </div>`;
                 if (filtered.length === 0) {
-                    html += `<div class="problem-item" style="justify-content:center;">No problems match.</div>`;
+                    html += `<div class="problem-item" style="justify-content:center; grid-column:1/-1;">No problems match.</div>`;
                 } else {
                     filtered.forEach(prob => {
                         const state = states[prob.id] || 'not_started';
                         const stateClass = getStateClass(state);
                         html += `<div class="problem-item ${stateClass}" data-id="${prob.id}">
-                                    <span class="problem-id">${prob.id}</span>
-                                    <span class="problem-name" title="${escapeHtml(prob.name)}">${escapeHtml(prob.name)}</span>
+                                    <div class="problem-id">${prob.id}</div>
+                                    <div class="problem-name" title="${escapeHtml(prob.name)}">${escapeHtml(prob.name)}</div>
                                     <div class="tags-container">${prob.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
-                                    <span class="difficulty">Lv. ${prob.difficulty.toFixed(1)}</span>
+                                    <div class="difficulty">${prob.difficulty === 0 ? '∞' : prob.difficulty.toFixed(1)}</div>
                                 </div>`;
                     });
                 }
                 html += `</div></div>`;
                 mainContainer.innerHTML = html;
 
+                // 绑定卡片点击
                 document.querySelectorAll('.problem-item').forEach(el => {
                     const id = parseInt(el.getAttribute('data-id'));
                     if (id) {
@@ -318,6 +396,7 @@
                     }
                 });
 
+                // 筛选按钮事件
                 document.querySelectorAll('.filter-tag-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         e.stopPropagation();
@@ -326,6 +405,17 @@
                         renderProblemList();
                     });
                 });
+
+                // 排序按钮事件
+                const sortBtn = document.getElementById('levelSortBtn');
+                if (sortBtn) {
+                    sortBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        sortMode = (sortMode + 1) % 3;
+                        saveSortMode();
+                        renderProblemList();
+                    });
+                }
             }
 
             function renderProblemDetail(problemId) {
@@ -335,7 +425,7 @@
                     return;
                 }
                 const currentState = getProblemState(problemId);
-                const diffStr = prob.difficulty.toFixed(1);
+                const diffStr = prob.difficulty === 0 ? '∞' : prob.difficulty.toFixed(1);
                 const tagsStr = prob.tags.join(', ');
                 const html = `<div class="problem-detail">
                     <div class="detail-header">
@@ -423,15 +513,14 @@
 
             // 加载外部数据
             function loadExternalData() {
-                // 优先检查 window.problemsData（如果通过 script 标签全局定义）
                 if (window.problemsData && Array.isArray(window.problemsData) && window.problemsData.length) {
                     problemsData = window.problemsData;
                     dataLoaded = true;
+                    loadSortMode();
                     initRouting();
                     return;
                 }
 
-                // 否则 fetch JSON 文件
                 fetch(PROBLEMS_DATA_URL)
                     .then(response => {
                         if (!response.ok) throw new Error(`HTTP ${response.status}`);
@@ -444,17 +533,18 @@
                             throw new Error('Invalid data format');
                         }
                         dataLoaded = true;
+                        loadSortMode();
                         initRouting();
                     })
                     .catch(err => {
                         console.warn('Failed to load external problems data, using fallback:', err);
                         problemsData = fallbackData;
                         dataLoaded = true;
+                        loadSortMode();
                         initRouting();
                     });
             }
 
-            // 启动
             loadExternalData();
         })();
     </script>
