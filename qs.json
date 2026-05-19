@@ -340,7 +340,7 @@
     "name": "IMOPrelim-2023-Q3",
     "statement": "There is a 20×20 table and 400 cards numbered 1 to 400. Cards are distributed one per cell. On each row, a red sticker is put on the largest number; on each column, a blue sticker on the largest number. Let A be the smallest red number, B the smallest blue number. How many different possible values of |A-B| are there?",
     "ans": "362",
-    "difficulty": 0,
+    "difficulty": 4.2,
     "tags": ["combinatorics"]
   },
   {
