@@ -324,7 +324,7 @@
     "name": "IMOPrelim-2023-Q1",
     "statement": "Someone extracted n consecutive digits in the infinite decimal representation of 1/13 and found that the sum of the n digits is equal to 2023. Find n.",
     "ans": "449",
-    "difficulty": 0,
+    "difficulty": 1.4,
     "tags": ["number theory"]
   },
   {
