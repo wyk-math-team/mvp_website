@@ -220,7 +220,7 @@
     "name": "IMOPrelim-2024-Q8",
     "statement": "In triangle ABC, D and E are points on AB and AC respectively such that B, C, D, E lie on a common circle with centre O and that ADOE is a parallelogram. Suppose ∠BAC = x° and ∠BOC = y°. If x + y = 196, find the sum of all possible values of x.",
     "ans": "131",
-    "difficulty": 0,
+    "difficulty": 3.4,
     "tags": ["geometry"]
   },
   {
