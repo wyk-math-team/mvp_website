@@ -658,7 +658,7 @@
   {
     "id": 83,
     "name": "IMOPrelim-2021-Q3",
-    "statement": "Let a,b be non-zero reals with a/b + b/a = 5 and a^2/b + b^2/a = 12. Find 1/a + 1/b.",
+    "statement": "Let a,b be non-zero reals with $\\frac{a}{b}+ \\frac{b}{a}= 5 $and $\\frac{a^2}{b}+ \\frac{b^2}{a}= 12$. Find $\\frac{1}{a}+ \\frac{1}{b}$.",
     "ans": "7/3",
     "difficulty": 0,
     "tags": ["algebra"]
