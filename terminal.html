@@ -45,7 +45,7 @@
             outline: none;
         }
         .info-note {
-            background: #2a2a3a;
+            background: #ffffff;
             padding: 0.5rem;
             border-radius: 6px;
             margin-bottom: 1rem;
@@ -107,86 +107,189 @@
     <div id="loginModal" class="modal-overlay" style="display: none;"><!-- 与之前相同 --></div>
 
     <script>
-      // 登录检查：未登录则跳转到首页
-if (typeof isLoggedIn === 'function' && !isLoggedIn()) {
-    window.location.href = 'index.html';
-}
-        // 定义 remove 函数（与 problems.html 中暴露的全局函数对接）
-        // 注意：problems.html 已经暴露了 window.removeProblemState，本页面只需调用即可。
-        // 为了确保功能，我们直接实现一个本地版本，同时也会尝试调用 problems 页面的函数。
-        
-        // 获取所有题目 ID（从 localStorage 中读取，或者从 problemsData 获取，但这里无法直接获取 problemsData）
-        // 为了 remove 能检测 ID 是否存在，我们需要知道有效的题目 ID 列表。
-        // 由于题目数据定义在 problems.html 中，这里我们采用一种简单方式：从 localStorage 中读取状态，但 ID 集合需要在 problems.html 中暴露。
-        // 更好的做法：在 problems.html 中暴露一个 getAllProblemIds 函数，或者我们在这里硬编码题目 ID 范围（1-5）。
-        // 为简单且保证正确，我们假设题目 ID 为 1-5（根据 problemsData）。
-        const VALID_IDS = [1,2,3,4,5];
-        
-        function removeProblemState(id) {
-            const states = localStorage.getItem('problemStates');
-            if (!states) return -1;
-            let obj;
-            try { obj = JSON.parse(states); } catch(e) { return -1; }
-            if (!obj.hasOwnProperty(id)) return -1;
-            delete obj[id];
-            localStorage.setItem('problemStates', JSON.stringify(obj));
-            return 0;
+        // 登录检查：未登录则跳转到首页
+        if (typeof isLoggedIn === 'function' && !isLoggedIn()) {
+            window.location.href = 'index.html';
         }
-        
-        // 列出所有题目状态
-        function listStates() {
-            const states = localStorage.getItem('problemStates');
-            if (!states) return "No states stored.";
-            try {
-                const obj = JSON.parse(states);
-                let lines = [];
-                for (let id in obj) {
-                    lines.push(`Problem ${id}: ${obj[id]}`);
+
+        // ---------- 获取当前用户名（与 problems.html 保持一致）----------
+        function getCurrentUserName() {
+            if (typeof getCurrentUser === 'function') {
+                const user = getCurrentUser();
+                if (user && (user.username || user.displayName)) {
+                    return user.username || user.displayName;
                 }
-                if (lines.length === 0) lines.push("No problem states found.");
-                return lines.join('\n');
-            } catch(e) { return "Error parsing states."; }
+            }
+            return 'guest';
         }
-        
+
+        const currentUser = getCurrentUserName();
+
+        // ---------- 存储键构造 ----------
+        function getStatesKey() {
+            return `problemStates_${currentUser}`;
+        }
+        function getSubmissionsKey() {
+            return `submissions_${currentUser}`;
+        }
+
+        // ---------- 读取/写入状态 ----------
+        function loadStates() {
+            const key = getStatesKey();
+            const stored = localStorage.getItem(key);
+            if (!stored) return {};
+            try {
+                return JSON.parse(stored);
+            } catch(e) {
+                return {};
+            }
+        }
+        function saveStates(states) {
+            localStorage.setItem(getStatesKey(), JSON.stringify(states));
+        }
+
+        // ---------- 读取/写入提交记录 ----------
+        function loadSubmissions() {
+            const key = getSubmissionsKey();
+            const stored = localStorage.getItem(key);
+            if (!stored) return [];
+            try {
+                return JSON.parse(stored);
+            } catch(e) {
+                return [];
+            }
+        }
+        function saveSubmissions(subs) {
+            localStorage.setItem(getSubmissionsKey(), JSON.stringify(subs));
+        }
+
+        // ---------- 删除所有数据 ----------
+        function deleteAllData() {
+            localStorage.removeItem(getStatesKey());
+            localStorage.removeItem(getSubmissionsKey());
+        }
+
+        // ---------- 删除所有状态 ----------
+        function deleteAllStates() {
+            localStorage.removeItem(getStatesKey());
+        }
+
+        // ---------- 删除所有提交记录 ----------
+        function deleteAllSubmissions() {
+            localStorage.removeItem(getSubmissionsKey());
+        }
+
+        // ---------- 删除指定题目的状态 ----------
+        function deleteStateByProblemId(problemId) {
+            const states = loadStates();
+            if (states.hasOwnProperty(problemId)) {
+                delete states[problemId];
+                saveStates(states);
+                return true;
+            }
+            return false;
+        }
+
+        // ---------- 删除指定题目的所有提交记录 ----------
+        function deleteSubmissionsByProblemId(problemId) {
+            const subs = loadSubmissions();
+            const newSubs = subs.filter(s => s.problemId !== problemId);
+            if (newSubs.length !== subs.length) {
+                saveSubmissions(newSubs);
+                return true;
+            }
+            return false;
+        }
+
+        // ---------- 解析 remove 命令 ----------
+        // 格式示例: remove() , remove().status , remove().sub , remove().status.qn(5) , remove().sub(3)
+        function parseRemoveCommand(cmd) {
+            // 匹配主模式
+            const mainMatch = cmd.match(/^remove\(\)(?:\.(status|sub)(?:\.qn\((\d+)\)|\((\d+)\)))?$/);
+            if (!mainMatch) return null;
+            const type = mainMatch[1];        // 'status' 或 'sub' 或 undefined
+            const qnId = mainMatch[2];        // 来自 .qn(#)
+            const subId = mainMatch[3];        // 来自 .sub(#) 中的 #
+            let id = null;
+            if (qnId !== undefined) id = parseInt(qnId);
+            if (subId !== undefined) id = parseInt(subId);
+            return { type, id };
+        }
+
+        // 列出当前用户的状态
+        function listStates() {
+            const states = loadStates();
+            const keys = Object.keys(states);
+            if (keys.length === 0) return "No problem states found.";
+            let lines = [];
+            for (let id of keys) {
+                lines.push(`Problem ${id}: ${states[id]}`);
+            }
+            return lines.join('\n');
+        }
+
         const outputDiv = document.getElementById('terminalOutput');
         const inputField = document.getElementById('terminalInput');
-        
+
         function appendOutput(text) {
             outputDiv.innerHTML += text + '\n';
             outputDiv.scrollTop = outputDiv.scrollHeight;
         }
-        
-        function processCommand(cmd) {
-            const parts = cmd.trim().split(/\s+/);
-            const command = parts[0].toLowerCase();
-            if (command === 'remove') {
-                if (parts.length < 2) {
-                    appendOutput("Usage: remove <id>");
-                    return;
-                }
-                const id = parseInt(parts[1]);
-                if (isNaN(id)) {
-                    appendOutput("Error: ID must be a number.");
-                    return;
-                }
-                const result = removeProblemState(id);
-                if (result === -1) {
-                    appendOutput(`remove(${id}) returned -1: Problem ID ${id} not found.`);
-                } else {
-                    appendOutput(`remove(${id}) returned 0: State removed successfully.`);
-                }
-            } else if (command === 'list') {
-                appendOutput(listStates());
-            } else if (command === 'clear') {
+
+        function processCommand(cmdLine) {
+            const cmd = cmdLine.trim();
+            if (cmd === "") return;
+
+            // 处理常规命令
+            if (cmd === 'help') {
+                appendOutput("Available commands:\n  remove()                - Delete ALL data (states + submissions)\n  remove().status         - Delete all problem states\n  remove().sub             - Delete all submissions\n  remove().status.qn(#)   - Delete state for problem #\n  remove().sub(#)         - Delete submissions for problem #\n  list                    - Show current user's problem states\n  clear                   - Clear terminal output\n  help                    - Show this help");
+                return;
+            }
+            if (cmd === 'clear') {
                 outputDiv.innerHTML = "";
                 appendOutput("> Terminal cleared.");
-            } else if (command === 'help') {
-                appendOutput("Available commands:\n  remove <id>  - Remove problem state (returns 0 or -1)\n  list         - Show all problem states\n  clear        - Clear terminal output\n  help         - Show this help");
-            } else {
-                appendOutput(`Unknown command: ${command}. Type 'help' for commands.`);
+                return;
             }
+            if (cmd === 'list') {
+                appendOutput(listStates());
+                return;
+            }
+
+            // 尝试解析 remove 类命令
+            const parsed = parseRemoveCommand(cmd);
+            if (parsed) {
+                const { type, id } = parsed;
+                if (type === undefined) {
+                    // remove()
+                    deleteAllData();
+                    appendOutput("All data (states + submissions) deleted for current user.");
+                } else if (type === 'status' && id === null) {
+                    // remove().status
+                    deleteAllStates();
+                    appendOutput("All problem states deleted for current user.");
+                } else if (type === 'sub' && id === null) {
+                    // remove().sub
+                    deleteAllSubmissions();
+                    appendOutput("All submissions deleted for current user.");
+                } else if (type === 'status' && id !== null) {
+                    // remove().status.qn(#)
+                    const success = deleteStateByProblemId(id);
+                    if (success) appendOutput(`State for problem #${id} deleted.`);
+                    else appendOutput(`Problem #${id} not found in states.`);
+                } else if (type === 'sub' && id !== null) {
+                    // remove().sub(#)
+                    const success = deleteSubmissionsByProblemId(id);
+                    if (success) appendOutput(`Submissions for problem #${id} deleted.`);
+                    else appendOutput(`No submissions found for problem #${id}.`);
+                } else {
+                    appendOutput("Invalid remove syntax. Use help for examples.");
+                }
+                return;
+            }
+
+            appendOutput(`Unknown command: ${cmd}. Type 'help' for commands.`);
         }
-        
+
         inputField.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 const cmd = inputField.value;
@@ -196,9 +299,6 @@ if (typeof isLoggedIn === 'function' && !isLoggedIn()) {
                 inputField.value = "";
             }
         });
-        
-        // 补充：如果 problems.html 暴露了全局函数，也将其别名绑定（但这里独立实现即可）
-        window.remove = removeProblemState;  // 可选
     </script>
 </body>
 </html>
