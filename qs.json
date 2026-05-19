@@ -644,7 +644,7 @@
     "name": "IMOPrelim-2021-Q1",
     "statement": "100 students numbered 1 to 100 are divided into 20 groups of 5. The student with the largest number in each group becomes the group leader. What is the maximum number of group leaders whose number is prime?",
     "ans": "18",
-    "difficulty": 0,
+    "difficulty": 1.3,
     "tags": ["combinatorics"]
   },
   {
