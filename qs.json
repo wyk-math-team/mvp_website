@@ -652,7 +652,7 @@
     "name": "IMOPrelim-2021-Q2",
     "statement": "Let n be a three-digit number divisible by the product of its digits. Find the greatest possible n.",
     "ans": "816",
-    "difficulty": 0,
+    "difficulty": 2.5,
     "tags": ["number theory"]
   },
   {
