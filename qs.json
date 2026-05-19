@@ -484,7 +484,7 @@
     "name": "IMOPrelim-2022-Q1",
     "statement": "If $x^2 + y^2 = \\frac{3961xy}{1980 } $ where x > y > 0, find (x+y)/(x-y).",
     "ans": "89",
-    "difficulty": 0,
+    "difficulty": 1.3,
     "tags": ["algebra"]
   },
   {
