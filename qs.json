@@ -348,7 +348,7 @@
     "name": "IMOPrelim-2023-Q4",
     "statement": "Write down three consecutive positive integers not exceeding 2023 in ascending order, such that one is a multiple of 6, another a multiple of 7, and the remaining a multiple of 8. How many different correct answers?",
     "ans": "24",
-    "difficulty": 0,
+    "difficulty": 2.9,
     "tags": ["number theory"]
   },
   {
