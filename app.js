@@ -106,7 +106,7 @@
             e.stopPropagation();
             if (typeof logout === 'function') logout();
             localStorage.removeItem('sidebarOpen');
-            window.location.href = 'index.html';
+            window.location.href = 'login.html';
         });
     }
 
