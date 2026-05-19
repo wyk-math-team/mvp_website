@@ -354,8 +354,8 @@
   {
     "id": 45,
     "name": "IMOPrelim-2023-Q5",
-    "statement": "ABCD is a square of side 1. BC is extended to E and DC extended to F such that BE = DF = 3. The circumcircle of triangle AEF meets the extensions of CB and CD at G and H respectively. Find GH.",
-    "ans": "3\\sqrt{2}/2",
+    "statement": "ABCD is a square of side 1. BC is extended to E and DC extended to F such that BE = DF = 3. The circumcircle of triangle AEF meets the extensions of CB and CD at G and H respectively. Find GH.$$$$ The answer looks like this:$\\frac{a \\sqrt{b}}{c}$. write your answer $a+b+c$",
+    "ans": "7",
     "difficulty": 0,
     "tags": ["geometry"]
   },
