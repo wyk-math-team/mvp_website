@@ -210,8 +210,8 @@
   {
     "id": 27,
     "name": "IMOPrelim-2024-Q7",
-    "statement": "ABCD is a square. P and Q are points on sides BC and CD respectively such that ∠PAQ = 45°, PQ = 4 and the area of triangle PCQ is 3. Find AB.",
-    "ans": "2 + \\sqrt{7}",
+    "statement": "ABCD is a square. P and Q are points on sides BC and CD respectively such that ∠PAQ = 45°, PQ = 4 and the area of triangle PCQ is 3. Find AB.$$$$ The answer looks like this: $a + \\sqrt{b}$, write your answer as a+b.",
+    "ans": "9",
     "difficulty": 0,
     "tags": ["geometry"]
   },
