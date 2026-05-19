@@ -1,5 +1,12 @@
 // app.js - 全局初始化：时钟、用户显示、侧边栏、键盘快捷键，并持久化侧边栏状态，添加数据导入/导出按钮，支持未登录时弹出模态框拦截受保护操作
-
+// 注册 Service Worker 以实现离线缓存
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('Service Worker registered:', reg))
+      .catch(err => console.error('Service Worker registration failed:', err));
+  });
+}
 (function() {
     // 获取当前页面文件名
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
