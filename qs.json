@@ -658,8 +658,8 @@
   {
     "id": 83,
     "name": "IMOPrelim-2021-Q3",
-    "statement": "Let a,b be non-zero reals with $\\frac{a}{b}+ \\frac{b}{a}= 5 $and $\\frac{a^2}{b}+ \\frac{b^2}{a}= 12$. Find $\\frac{1}{a}+ \\frac{1}{b}$.",
-    "ans": "7/3",
+    "statement": "Let a,b be non-zero reals with $\\frac{a}{b}+ \\frac{b}{a}= 5 $and $\\frac{a^2}{b}+ \\frac{b^2}{a}= 12$. Find $\\frac{1}{a}+ \\frac{1}{b}$. $$$$ The answer looks like this: $\\frac{a}{b}$ , write your answer as $a+b$.",
+    "ans": "10",
     "difficulty": 0,
     "tags": ["algebra"]
   },
