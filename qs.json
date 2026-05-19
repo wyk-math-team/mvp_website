@@ -362,7 +362,7 @@
   {
     "id": 46,
     "name": "IMOPrelim-2023-Q6",
-    "statement": "Let n be a positive integer such that 1^3+2^3+...+n^3 is divisible by n+3. Find the greatest possible value of n.",
+    "statement": "Let n be a positive integer such that $1^3+2^3+...+n^3$ is divisible by n+3. Find the greatest possible value of n.",
     "ans": "15",
     "difficulty": 0,
     "tags": ["number theory"]
