@@ -74,6 +74,718 @@
   },
 
   {
+    "id": 100086,
+    "name": "[CE 08 Q6]",
+    "statement": "Using the apparatus in Figure 9, describe the procedures of an experiment to find the focal length of a cylindrical convex lens.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100087,
+    "name": "[CE 09 Q5]",
+    "statement": "An object $HK$ is placed in front of a lens $Z$. A light ray $x$ from $H$ passes through the lens as shown in Figure 6.$$$$(a) Explain whether the lens is convex or concave.$$$$(b) (i) Construct the image of $HK$ in Figure 6. (ii) Hence, find the linear magnification of the image.$$$$(c) Mark the position of the principal focus $F$ in figure 6.$$$$(d) Draw the refracted ray of ray $y$ in figure 6.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100088,
+    "name": "[CE 11 Q4]",
+    "statement": "(a) Determine the refractive index of glass for blue light.$$$$(b) Now, the blue light ray is replaced by a red light ray as shown in figure 7. The dotted line shows the original path of the blue light ray. Sketch the path of the red light ray in figure 7.$$$$(c) An object emitting red light is placed in front of a convex lens as shown in figure 8. The lens is made of glass. A sharp image is formed on the screen. The positions of the object and the lens remain unchanged. (i) Complete the paths of rays $x$ and $y$ in figure 8. (ii) When the object is replaced by one emitting blue light, the image on the screen becomes blurred. Explain in which direction should the screen be moved in order to form a sharp image. (iii) Now the object is replaced by one emitting white light. Theoretically, it is impossible to form a sharp image on the screen. Explain why.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100089,
+    "name": "[AL 07 Q5]",
+    "statement": "A student performs an experiment on an optical bench to measure the focal length of a convex lens. He places a lamp behind a sheet of cardboard with a circular hole covered by a piece of translucent paper and tries to locate a sharp image of the edge of the hole on a screen. The object distance and image distance are denoted by $u$ and $v$ respectively.$$$$(a) Suggest ONE way to make it easier to focus the image on the screen.$$$$(b) For a certain object distance, the student cannot obtain an image on the screen no matter how he adjusts the screen's position. What would most likely be the reason? Explain briefly.$$$$(c) If the centre of the lens is covered by a small coin, what would be the effect on the image formed on the screen? Explain briefly.$$$$(d) The positions of the cardboard and the screen are varied such that a real image is always formed on the screen. The corresponding object distance and image distance are obtained for plotting a graph of $(u+v)$ against $u$. (i) Estimate the image distance for which $(u+v)$ is a minimum and find the corresponding magnification of the image. (ii) Draw a ray diagram corresponding to the situation when $(u+v)$ is a minimum. Hence, estimate a value for the focal length of the lens.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100090,
+    "name": "[DSE PP Q7]",
+    "statement": "A drop of liquid is placed on a thin glass slide above a plastic ruler. The side view of the set-up is shown in Figure 7.1. Looking through the liquid drop, a magnified image of the number '9' on the ruler is seen as shown in Figure 7.2.$$$$(a) A lens can be used to produce an image with the same nature as that produced by the liquid drop. State the type of lens and explain your answer.$$$$(b) The linear magnification of the number '9' is 1.4. Take the number '9' as the object, use the graph paper below to (i) draw the image of the object, and (ii) draw one light ray to find the focal length of the liquid drop. You may neglect the effect due to the thin glass slide. Focal length of the liquid drop = ______ mm.$$$$(c) If the refractive index of the liquid becomes smaller, explain the change, if any, in the focal length of the liquid drop.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100091,
+    "name": "[DSE 12 Q7]",
+    "statement": "A luminous object $PQ$ is placed 15 cm in front of a convex lens $AB$ as shown in Figure 7.1.$$$$(a) The focal length of the lens is 5 cm. (i) Use a graphical method to find the location of the image of the object. Clearly draw all the construction lines on Figure 7.1 and state the nature of the image. (ii) Complete the path of ray $r$ on Figure 7.1 to show how it travels after passing through the convex lens.$$$$(b) Suppose that a convex lens of focal length 10 cm is used instead while the size of the lens and the object distance of $PQ$ from the lens remain unchanged. (i) Use the lens formula to find the image distance. Find also the linear magnification of the image. (ii) Compare the brightness of this image with that in (a). Explain.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100092,
+    "name": "[DSE 13 Q8]",
+    "statement": "In Figure 8.1, $A'B'$ represents the image of an object $AB$ formed by a lens $L$ (not shown) where $XY$ is the principal axis of the lens.$$$$(a) (i) Is the image real or virtual? (ii) What kind of lens is used? Explain your answer.$$$$(b) (i) Locate the optical centre $O$ of lens $L$ and draw on Figure 8.1 the position of lens $L$. (ii) By drawing an additional light ray, mark the principal focus $F$ of the lens and find its focal length. The horizontal scale is 1 cm to 5 cm. Focal length = __________.$$$$(c) Draw a light ray to show how the eye $E$ shown can see the image of head $A$ through lens $L$.$$$$(d) State an application of lens $L$ in the situation as shown above.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100093,
+    "name": "[DSE 14 Q6]",
+    "statement": "In Figure 6.1, $XY$ is the principal axis of a thin spherical lens $L$. $A$, $B$ are two parallel rays coming from a point $P$ of a distant object (NOT shown).$$$$(a) What kind of lens is $L$? Explain.$$$$(b) (i) Locate the image of $P$ (denote it as point $P'$). (ii) Hence, determine the focal length of the lens. Focal length = ________.$$$$(c) $R$ is a ray coming from the same point $P$; complete its path after passing through the lens.$$$$(d) Based on the situation shown in the ray diagram above, describe a simple experimental method to determine the focal length of lens $L$.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100094,
+    "name": "[DSE 16 Q5]",
+    "statement": "Kitty uses the set-up in Figure 5.1 to study the image formation of a lens. The lens is placed at a distance $u$ from an illuminated object (letter 'P'). An opaque screen is placed at a distance $D$ from the object so as to capture the image.$$$$(a) (i) State the kind of lens used. Explain your answer. (ii) Sketch the image on the screen seen by the observer.$$$$(b) The separation $D$ is varied while the position of the lens is adjusted to form an image once again on the screen. The corresponding object distance $u$ is obtained for plotting a graph of $D$ against $u$ (Figure 5.2). (i) When the lens is placed at 18 cm from the object, use the graph to find the corresponding separation between the lens and the screen. Hence, calculate the magnification of the image. (ii) Indicate the image formed by $AB$ (denote it as $I$) and draw the refracted rays of $p$, $q$ and $r$. (iii) Hence find the focal length of the lens. The horizontal scale is 1 cm to 5 cm. Focal length = ________. (iv) Keeping the object and screen fixed in position, suggest where Kitty should move the lens to such that an image can be formed again on the screen. State the ratio $\\frac{\\text{height of this new image}}{\\text{height of the original image}}$.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100095,
+    "name": "[DSE 18 Q6]",
+    "statement": "(a) Describe the procedures to measure the focal length of a cylindrical convex lens. State one possible source of error in this experiment.$$$$(b) (i) In Figure 6.1, $XY$ is the principal axis of a lens, and the dotted line is the path of a light ray parallel to the principal axis after passing through the lens. What kind of lens is it? Explain. (ii) An object $AB$ is placed in front of the lens. The image $A'B'$ of $AB$ is virtual and diminished. Draw a ray diagram to locate the image and measure the focal length of the lens.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100096,
+    "name": "[DSE 19 Q6]",
+    "statement": "In figure 6.1, $AB$ represents the virtual image of an object formed by lens $L$. The magnification of the image is 0.4. The horizontal scale is 1 cm to 5 cm.$$$$(a) What kind of lens is used? Explain.$$$$(b) Indicate on Figure 6.1 the position and height of the object.$$$$(c) By drawing a suitable light ray, locate and mark the position of the focus, $F$, of the lens. Find the focal length of the lens.$$$$(d) Draw a light ray emerging from the object to illustrate how the observer in the figure can see the tip $A$ of the image.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100097,
+    "name": "[DSE 20 Q6]",
+    "statement": "Figure 6.1 shows a slide projector. A slide $O$ is placed at a distance of $1.0\\,\\mathrm{m}$ from the screen. The slide and the screen are $1.0\\,\\mathrm{m}$ apart. A beam of white light illuminates the slide. The position of lens $L$ is adjusted until a sharp image of $O$ magnified linearly to 9 times is formed on the screen.$$$$(i) State the nature of this magnified image. (ii) Find the separation between $O$ and $L$. (iii) Draw a ray diagram to show how the image of slide $O$ is formed on the screen. Locate the focus $F$ of lens $L$ on your diagram and find the focal length of $L$. (iv) When a black-and-white slide is projected onto the screen, the image has colour edges. Explain briefly.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100098,
+    "name": "[DSE 21 Q6]",
+    "statement": "Figure 6.1 shows a convex lens $L$ of focal length $12\\,\\mathrm{cm}$. An object $AB$ of height $2\\,\\mathrm{cm}$ is placed at a distance $20\\,\\mathrm{cm}$ from $L$. The principal axis of $L$ is drawn horizontally.$$$$(a) Draw a ray diagram (using the scale 1 cm : 5 cm) to locate the image. (b) Determine the nature, position and magnification of the image. (c) If a concave lens of focal length $10\\,\\mathrm{cm}$ is placed in contact with $L$, find the power of the combination. (d) State one application of a combination of lenses.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100078,
+    "name": "[CE 96 Q1]",
+    "statement": "In Figure 1, the image of an illuminated letter 'J' formed by a lens is caught by a translucent screen.$$$$(a) (i) What kind of lens is being used? Explain your answer. (ii) Sketch the shape of the image seen by the observer.$$$$(b) Figure 2 shows the relation between the image distance $\\nu$ and the object distance $u$. (i) Find the magnification of the image when $u = 18\\,\\mathrm{cm}$. (ii) Find the value of $u$ when $u = \\nu$. Hence find the focal length of the lens.$$$$(c) The illuminated letter is now placed closer to the lens. In Figure 3, $AB$ represents the letter and the path of a ray from $A$ through the lens is shown. (i) In Figure 3, draw the path of a ray from $A$ which passes through the optical centre of the lens and construct the image of $AB$. (ii) State an application of the lens in which an image like that shown in Figure 3 is formed. (iii) Comment on the following statement: 'After adjusting the position of the screen, the image formed in Figure 3 can still be caught.'",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100079,
+    "name": "[CE 99 Q8]",
+    "statement": "Figure 8 shows a single-lens camera. When the shutter is opened, an image of the object to be photographed will form on the film. The focal length of the lens is $50\\,\\mathrm{mm}$.$$$$(a) What kind of lens used in the camera? Explain your answer.$$$$(b) An object is placed in front of the lens of the camera. In Figure 9, $AB$ represents the object and $p$, $q$ and $r$ are incident rays. A scale of $1\\,\\mathrm{cm}$ representing $50\\,\\mathrm{mm}$ is used. (i) Draw the refracted rays of $p$, $q$ and $r$ and the image of $AB$ in Figure 9. (ii) If the lens is replaced by another lens of focal length $100\\,\\mathrm{mm}$ and the object remains at $40\\,\\mathrm{cm}$ from the lens, how would the size of the image be affected? Illustrate your answer with a ray diagram.$$$$(c) The camera is now used to take a photograph of a clock tower. When the photographer looks through the viewfinder and adjusts the camera, the distance between the lens and the film $A$, the distance between the lens and the clock tower $B$, and the distance between the lens and the viewfinder image of the clock tower $C$ are indicated on the lens barrel as shown in Figure 10. Which of $A$, $B$ or $C$ is equal to the focal length of the lens? Explain your answer.$$$$(d) Compare a single-lens camera and a human eye in the way objects of different distances are focused.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100080,
+    "name": "[CE 00 Q1]",
+    "statement": "An illuminated object is placed $30\\,\\mathrm{cm}$ in front of a convex lens and a sharp image is formed on a screen on the other side of the lens. The image is of the same size as the object.$$$$(a) Is the image real or virtual? Explain your answer.$$$$(b) In Figure 1, draw a ray diagram to show how the image of the illuminated object is formed. Hence, or otherwise, determine the focal length of the lens.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100081,
+    "name": "[CE 01 Q3]",
+    "statement": "A student holds a lens above a picture and the image observed is shown in Figure 2.$$$$(a) What kind of lens is used by the student? Explain your answer.$$$$(b) Sketch a ray diagram to show how the image in Figure 2 is formed.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100082,
+    "name": "[CE 02 Q11]",
+    "statement": "Kitty designs a simple peephole which is installed at an entrance door to identify visitors (see Figure 17). The peephole consists of a metal tube with a concave lens of focal length $10\\,\\mathrm{cm}$ fixed inside.$$$$(a) A visitor stands at a distance $30\\,\\mathrm{cm}$ in front of the peephole (see Figure 18). (i) In Figure 18, draw the refracted rays of the three incident rays and the image formed. (ii) Find the magnification of the image formed.$$$$(b) Suggest one reason to explain why the concave lens inside the peephole cannot be replaced by a convex lens.$$$$(c) Figure 19 shows the top-view of the peephole. The metal tube will only allow Kitty to see those images formed in the shaded region. Now a visitor stands at a point $P$ and Kitty cannot see him through the peephole. (i) Explain, by drawing a ray diagram in Figure 20, why Kitty cannot see the visitor. (ii) The lens is now replaced by another concave lens of a shorter focal length and Kitty can just see the visitor at $P$. In Figure 20, locate the image observed and find the focal length of this lens.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100083,
+    "name": "[CE 04 Q11]",
+    "statement": "Peter designs a simple slide projector (see Figure 17). A slide is placed in front of a bright light source. A sharp image of the slide formed by a lens is projected onto a screen. The focal length of the lens is $40\\,\\mathrm{mm}$ and the distance between the slide and the lens can be adjusted within the range of $41$ to $55\\,\\mathrm{mm}$.$$$$(a) What kind of lens is used in the projector? Explain your answer.$$$$(b) The projector is placed on a trolley in front of a screen (see Figure 17). The lens is placed at $50\\,\\mathrm{mm}$ from the slide. (i) In Figure 18, draw a ray diagram to show how the image of the slide is formed by the lens. (ii) Find the magnification of the image formed. (iii) Peter finds that the size of the image formed on the screen is too small. (1) Without replacing the lens, describe a method to increase the size of the image formed on the screen. (2) Karen suggests that the size of the image can also be increased by replacing the lens with one that has a focal length of $60\\,\\mathrm{mm}$. Explain whether Karen's suggestion will work or not.$$$$(c) The projector is designed so that the lens can be moved up and down by adjusting the rollers. The screen is now hung at a higher position. In order to project the image onto the screen again, Karen suggests that the lens should be moved up (see Figure 19). Is Karen correct? Sketch a ray diagram to illustrate your answer.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100084,
+    "name": "[CE 05 Q4]",
+    "statement": "Figure 5 shows a paper with some letters 'J' printed on it. The paper is placed behind a glass filled with water. Figure 6 shows the image of the letters formed by the glass of water.$$$$(a) State the nature of the image formed (erect or inverted, magnified or diminished, real or virtual).$$$$(b) Jason holds a lens in front of the paper in Figure 5 and finds that the image formed is of the same nature as that formed by the glass of water. (i) What kind of lens is held by Jason? (ii) Sketch a ray diagram to show how the image of the letters is formed by the lens.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100085,
+    "name": "[CE 06 Q5]",
+    "statement": "Figure 9 shows a plastic lens $L$ mounted on the rear window of a car. The driver can view his friend David, and the surroundings at the back of the car through either the rear window or lens $L$ as shown in Figure 10.$$$$(a) What kind of lens is $L$? Explain your answer.$$$$(b) Suppose that David in Figure 10 stands at $60\\,\\mathrm{cm}$ from lens $L$ of focal length $30\\,\\mathrm{cm}$. In Figure 11, David is plotted as $AB$. Draw a ray diagram to show how the image of David is formed by lens $L$. Use a horizontal scale of $1\\,\\mathrm{cm}$ to $10\\,\\mathrm{cm}$.$$$$(c) State one advantage of using lens $L$.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100072,
+    "name": "[CE 84 Q6]",
+    "statement": "(a) Describe briefly with the aid of a ray diagram, a simple laboratory method to determine the focal length of a convex lens.$$$$(b) The figure is a simple experimental set-up to study the image formed by a convex lens. The translucent ruler is an illuminated object, the position of which remains unchanged throughout the experiment. The position of the lens is adjusted so that a sharp image of the ruler is formed on the screen. (i) Suppose that the distance between the lens and the ruler is $25\\,\\mathrm{cm}$ and the focal length of the lens is $20\\,\\mathrm{cm}$. What must be the distance between the lens and the screen? What is the magnification of the image? (ii) If the screen is now moved a few centimetres towards the object, how would you adjust the position of the lens to give a sharp image on the screen again? (iii) Keeping its position unchanged, the lens is now replaced by another convex lens of shorter focal length, and the screen is adjusted to give a sharp image. How would the magnification of the image be affected? Explain briefly. (iv) Explain briefly, with the aid of a ray diagram, why an image cannot be formed on the screen when the distance between the lens and the ruler is smaller than the focal length of the lens.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100073,
+    "name": "[CE 87 Q5a]",
+    "statement": "(a) The figure shows an object $AB$ in front of a concave lens with foci $F$ and $F^{\\prime}$, $p, q, r$ and $s$ are incident rays. (i) Draw the refracted rays of $p, q, r$ and $s$ and the image of $AB$ on the figure. (ii) State the nature (real or virtual, erect or inverted) of the image. (iii) Find the magnification.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100074,
+    "name": "[CE 89 Q6]",
+    "statement": "An object of height $4\\,\\mathrm{cm}$ placed in front of a lens produces an image of height $8\\,\\mathrm{cm}$ on a screen. The object and the image are $60\\,\\mathrm{cm}$ apart.$$$$(a) (i) Draw a ray diagram on a graph paper, using a scale of $1\\,\\mathrm{cm}$ representing $5\\,\\mathrm{cm}$ for the object and image distances and a scale of $1\\,\\mathrm{cm}$ representing $1\\,\\mathrm{cm}$ for the object and image heights to show TWO rays between the object and the image. (ii) From the ray diagram, measure (1) the object distance, (2) the image distance, and (3) the focal length of the lens. (iii) What is the (1) magnification and (2) nature of the image?$$$$(b) Describe the change in the magnification and nature of the image when the object is moving from nearly touching the lens to far away from the lens.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100075,
+    "name": "[CE 90 G6]",
+    "statement": "Figure 8 shows an experiment set-up to study image formation by a convex lens $A$ of focal length $40\\,\\mathrm{cm}$. The object is an illuminated letter 'J' placed a few metres away. The tracing paper is moved to catch a sharp image.$$$$(a) (i) What is the approximate distance between lens $A$ and the image? Explain briefly. (ii) Sketch the shape of the image seen by the observer.$$$$(b) If the experiment is repeated with a convex lens of longer focal length, what will be the change in the size of the image? Illustrate your answer with a ray diagram.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100076,
+    "name": "[CE 92 Q3]",
+    "statement": "A student holds a magnifying glass close to his eye to look at some small print on a paper. The image of the letters \"EX\" is shown in Figure 4. The magnification is 3.$$$$(a) What kind of lens is used as a magnifying glass?$$$$(b) State the nature (real or virtual, erect or inverted) of the image.$$$$(c) The paper is placed at a distance of $8\\,\\mathrm{cm}$ from the lens. In Figure 5, $AB$ represents the object, and $p,q$ are incident rays. A scale of $1\\,\\mathrm{cm}$ representing $4\\,\\mathrm{cm}$ for the object distance is used. (i) Draw the refracted rays of $p$ and $q$ and the image of $AB$ in Figure 5. (ii) From the ray diagram, measure (1) the image distance, (2) the focal length of the lens.$$$$(d) If the paper is placed closer to the lens, how would the size of the image and the image distance be affected? Illustrate your answer with a ray diagram.$$$$(e) If the paper is moved away from the lens to a position beyond the focus, the student finds that a clear image cannot be observed. Explain briefly.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100077,
+    "name": "[CE 94 Q3]",
+    "statement": "A student uses the set-up shown in Figure 5 to study the image formation of a lens. An illuminated object is placed at a distance of $20\\,\\mathrm{cm}$ from the lens. A screen is placed on the other side of the lens. When the screen is moved to a point $60\\,\\mathrm{cm}$ from the lens, a sharp image is formed on the screen.$$$$(a) What kind of lens is used in the experiment?$$$$(b) Is the image real or virtual?$$$$(c) In Figure 6, $AB$ represents the illuminated object and $p, q$ and $r$ represent the incident rays. (i) Draw the refracted rays of $p, q$ and $r$ and the image of $AB$ in Figure 6. (ii) Find the magnification of the image. (iii) Find the focal length of the lens.$$$$(d) How would the image formed on the screen be affected when the upper half of the lens is covered by opaque paper?$$$$(e) Describe briefly a simple laboratory method to measure directly the focal length of the lens. Illustrate your answer with a ray diagram.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W06"]
+  },
+  {
+    "id": 100058,
+    "name": "[CE 88 Q6]",
+    "statement": "Figure 7 shows a ray of light entering a semi-circular plastic block in direction AO and is refracted into the air along OE. Part of the light is reflected along OB. A set of readings for different angles $\\theta$ and $\\phi$ are measured. The results are tabulated as follows:$$$$(a) (i) Plot the graph of $\\sin \\phi$ (vertical axis) against $\\sin \\theta$ (horizontal axis) on a piece of graph paper using a scale of 1 cm to 0.05. (ii) Find the slope of the graph and state its physical meaning. (iii) Calculate the critical angle of the plastic.$$$$(b) Briefly describe the change in brightness of (i) the refracted ray OE and (ii) the reflected ray OB as angle $\\theta$ is gradually increased from $0^\\circ$ to nearly $90^\\circ$.$$$$(c) Describe briefly ONE application of total internal reflection in everyday life.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100059,
+    "name": "[CE 99 Q5]",
+    "statement": "A diver stays at a depth of $3\\,\\mathrm{m}$ under water in a lake. When the diver looks upwards, the scene above the water surface is compressed into a circular patch of radius $r$ at the water surface. (See Figure 5). The refractive index of water is 1.33.$$$$(a) Calculate (i) the critical angle of the water, (ii) the radius $r$.$$$$(b) A fisherman stands beside the lake as shown in Figure 5. Can the diver see the fisherman? Draw a ray diagram to illustrate your answer.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100060,
+    "name": "[CE 01 Q7]",
+    "statement": "(a) A ray of light travelling in air in the direction $PO$ enters a semicircular glass block as shown in Figure 5. The ray travels along the direction $OQ$ inside the block. Different values of the angle of incidence $\\theta$ and the corresponding values of $\\phi$, the angle between $OQ$ and the normal, are measured. The following results are obtained:$$$$(i) Name the wave phenomenon shown in Figure 5. (ii) Using a scale of $1\\,\\mathrm{cm}$ to 0.05, plot a graph of $\\sin \\theta$ against $\\sin \\phi$ on graph paper. (iii) Using the graph in (ii), find the critical angle of the glass. (iv) If the glass block is replaced with a perspex block with a smaller refractive index, on the same graph in (ii), draw the graph of $\\sin \\theta$ against $\\sin \\phi$ you expect to obtain.$$$$(b) Given that the refractive index of diamond is 2.4 and the refractive index of glass is about 1.6, explain why a diamond sparkles more than a piece of glass of similar shape. [Hint: You may consider the paths of rays entering the diamond and the glass from the top (see Figure 6).]",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100061,
+    "name": "[CE 02 Q1]",
+    "statement": "(a) Figure 1 shows an ambulance. Explain why the word AMBULANCE is printed in the form as shown in the figure.$$$$(b) Figure 2 shows the structure of part of a pair of binoculars, which consists of two triangular prisms. (i) Copy Figure 2 into your answer book and complete the path of the ray. (ii) Give one advantage of using triangular prisms over plane mirrors in making binoculars.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100062,
+    "name": "[CE 03 Q2]",
+    "statement": "(a) A ray of light travels from water to air with an angle of incidence $30^\\circ$. The refractive index of water is 1.33. (i) Find the angle of refraction of the ray in air. (ii) Find the critical angle of water.$$$$(b) Peter places a coin in an empty cup. As shown in Figure 2, he cannot see the coin. After pouring some water into the cup, he finds that he can see the coin without changing the position of the cup or his eyes. In Figure 2, draw a ray diagram to illustrate how Peter can see the coin.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100063,
+    "name": "[CE 04 Q1]",
+    "statement": "Figure 1 shows a set-up used to study the relationship between the angle of incidence $\\alpha$ and the angle of refraction $\\beta$ of a ray of light travelling from air into a semi-circular glass block. Figure 2 shows a graph of $\\sin \\alpha$ against $\\sin \\beta$.$$$$(a) Find the slope of the graph in Figure 2 and state its physical meaning.$$$$(b) Philip predicts that if $\\alpha$ is increased to $50^\\circ$, total internal reflection will occur. Explain whether he is correct or not.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100064,
+    "name": "[CE 05 Q10ac]",
+    "statement": "Optical fibres are widely used in telephone communication. The voice signals are transmitted in the form of light through optical fibres.$$$$(a) Figure 14 shows a light ray travelling towards an optical fibre. (i) In Figure 14, sketch the subsequent path of the ray. (ii) Name the wave phenomenon that occurs as the ray travels inside the fibre.$$$$(c) State two advantages of using optical fibres over copper wires in telephone communication.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100065,
+    "name": "[CE 08 Q10]",
+    "statement": "A teacher performs an experiment by directing a red light beam from air normally to the straight edge of a semi-circular glass block with centre $O$ (see Figure 19). The refractive index of glass is 1.48.$$$$(a) Find the critical angle of the glass block.$$$$(b) If $\\theta = 45^\\circ$, (i) describe and explain what happens when the light beam hits point $X$. (ii) complete the path of the light beam in Figure 19 until it finally emerges from the glass block to the air.$$$$(c) If the light beam travels in the same direction but with a shorter distance from $O$, with $<40^\\circ$, sketch the path of the refracted beam at $Y$ and mark the angle of refraction as $r$ in Figure 20.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100066,
+    "name": "[DSE PP Q6]",
+    "statement": "Figure 6.1 shows the following apparatus: A low voltage power supply, a ray box with a single slit, a full circle protractor and a semi-circular glass block. Describe how to use the above apparatus to measure the critical angle of the semi-circular glass block.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100067,
+    "name": "[DSE 15 Q6]",
+    "statement": "Read the following description about a mirage and answer the questions that follow.$$$$(a) State ONE essential condition for a mirage to be observed.$$$$(b) (i) Referring to Figure 6.3, deduce the relationship between $\\theta_1, \\theta_4$ and refractive indices $n_1, n_4$. For total internal reflection just to occur at $R$, $\\theta_4$ can be taken as $90^\\circ$. Hence, find the corresponding value of $\\theta_1$ if $n_1 = 1.000261$ and $n_4 = 1.000221$. (ii) Find $L$ in Figure 6.2 if $h = 1.5\\,\\mathrm{m}$. (Note: $\\alpha + \\theta_1 = 90^\\circ$ in Figure 6.3.)$$$$(c) A thirsty traveller in a vast desert sees similar mirages such that a 'water source' appears at $W$ which is distance $L$ away like the one in Figure 6.2. If he walks a distance $L$ towards that 'water source', how far would the 'water source' appear to him? Explain your answer.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100068,
+    "name": "[DSE 17 Q7]",
+    "statement": "(a) A light ray enters a rectangular plastic block ABCD from air at point $E$ and the angle of incidence is $\\theta$. The light ray emerges along face $BC$ as shown in Figure 7.1. The refractive index of the plastic is 1.36.$$$$(i) Find the critical angle of the plastic. (ii) Find the value of $\\theta$. (iii) If the light ray enters the plastic block at point $E$ with an angle of incidence larger than $\\theta$, sketch the path of the light ray in Figure 7.1.$$$$(b) A student designs a periscope using two plastic prisms, the refractive index of the plastic is 1.36. As shown in Figure 7.2, an object is placed in front of the periscope. (i) Complete the path of the light ray from the object in Figure 7.2, and explain why the periscope fails to work. (ii) What can be used to replace the two plastic prisms so that the periscope can work properly?",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100069,
+    "name": "[DSE 20 Q7]",
+    "statement": "Figure 7.1 shows an optical fibre which consists of a cylindrical glass core of refractive index $n_{\\mathrm{g}}$ enclosed by a transparent cladding of refractive index $n_{\\mathrm{c}}$. As shown in Figure 7.1, a point light source at $O$ emits monochromatic light in all directions. Inside the fibre, light can reach the right end of the fibre through many different paths making angles $\\theta$ with the axis $OD$. Two of these paths, $OD$ and $OABC$, have been drawn for reference. Light ray $OA$ makes an angle of $30^\\circ$ with the axis $OD$ and is incident at the core-cladding boundary at $A$ with an angle of incidence $i_{\\mathrm{A}}$.$$$$(a) (i) Find $i_{\\mathrm{A}}$. (ii) If $i_{\\mathrm{A}}$ is just greater than the critical angle of that boundary, estimate $\\frac{n_{\\mathrm{g}}}{n_{\\mathrm{c}}}$. (iii) What phenomenon occurs at point $A$? State the condition needs to be satisfied by $\\theta$ such that this phenomenon fails to occur.$$$$(b) A narrow monochromatic light pulse (i.e. of a short duration) emitted at point $O$ propagates with its energy within $\\theta = \\pm 30^\\circ$ towards a light sensor located at the right end of the optical fibre. The respective emitted and detected light pulses are represented below using the same scales. (i) Explain why the light pulse detected is broader (i.e. of a longer duration) and with lower intensity. Assume that the loss of energy of the light pulse due to absorption by glass is negligible. (ii) An engineer suggests changing the refractive index $n_{\\mathrm{c}}$ of the cladding in order to reduce the width of the light pulse received. Should $n_{\\mathrm{c}}$ be increased or decreased? Or, will a change in $n_{\\mathrm{c}}$ have no effect on the pulse width? Explain your choice.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100070,
+    "name": "[DSE 23 G6]",
+    "statement": "Read the following passage about rainbows and answer the questions that follow.$$$$(a) Figure 6.2 shows a red light ray entering a water droplet suspended in air. (i) When the angle of incidence is $45^\\circ$, find the angle of refraction $r$ at point $A$. (ii) Calculate the critical angle $c$ for red light at the water-air interface and justify whether the reflection at point $B$ is a total internal reflection or not.$$$$(b) Figure 6.3 illustrates how an observer sees a rainbow. $O_1$ and $O_2$ are the respective centres of the upper and lower water droplets suspended in air. The two paths of red light, $R_1$ and $R_2$, in the white light from the Sun are drawn for your reference, with $R_1$ being seen by the stationary observer. The lower water droplet enables a violet light ray from sunlight to be seen by the observer. Sketch the path of this violet light ray starting from point $P$ on the lower water droplet. Given that the refractive index for violet light in water is slightly greater than that for red light. (ii) For a secondary rainbow to be formed, a light ray has to undergo reflection twice within each of those water droplets situated higher above as shown in Figure 6.4. Explain why a secondary rainbow is dimmer than the primary rainbow.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100071,
+    "name": "[DSE 24 Q8]",
+    "statement": "Figure 8.1 shows a pencil in a glass of water with an observer viewing vertically downwards. Given that the refractive index of water is 1.33. Light rays $P$ and $Q$ come from the tip $O$ of the pencil, with $Q$ along the vertical.$$$$(a) On Figure 8.1, complete the paths of these light rays and indicate the image of $O$ seen by the observer (label this as $I$).$$$$(b) The angle between ray $P$ and ray $Q$ is $1.5^\\circ$. Find the angle of refraction of ray $P$.$$$$(c) Hence, or otherwise, find the distance between image $I$ and the water surface if the depth of water is $0.10\\,\\mathrm{m}$.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W05"]
+  },
+  {
+    "id": 100010,
+    "name": "[CE 94 Q5]",
+    "statement": "Figure 9 shows the displacement-time graph of a cork placed in the water. The waves take 0.5 s to travel a distance of 12 cm.$$$$(a) Find the amplitude, frequency, speed and wavelength of the waves.$$$$(b) Suggest one method to prevent water waves from bouncing back at the edges of the tank.$$$$(c) A barrier with an opening is placed in the ripple tank and the waves travel towards it as shown in Figure 10. (i) Copy Figure 10 into your answer book and sketch the wave pattern formed on the other side of the barrier. (ii) Name this wave phenomenon.$$$$(d) The barrier in (c) is replaced by one with two smaller openings. (i) Figure 11 shows the wave pattern at a certain instant. Of the 4 points A, B, C, D, state a point of constructive interference and a point of destructive interference. (ii) A student says that at a point of constructive interference, a crest is always formed. Is the student correct? Explain briefly.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100011,
+    "name": "[CE 97 Q2]",
+    "statement": "Two dippers $S_1$ and $S_2$ vibrate in phase producing identical circular water waves in a ripple tank. Figure 3 shows the wave pattern at a certain instant. (Note: The dark lines represent crests.) The distance between $S_1$ and $S_2$ is $0.06\\,\\mathrm{m}$ and it is known that the water waves travel with a speed of $0.4\\,\\mathrm{m\\,s^{-1}}$.$$$$(a) Find the wavelength and frequency of the water waves.$$$$(b) The ripple tank has a spongy lining at its edges. Explain the function of the spongy lining.$$$$(c) P and Q are two points at the water surface as shown in Figure 3. Find the path difference at (i) point P and (ii) point Q from $S_1$ and $S_2$, giving the answers in terms of the wavelength $\\lambda$ of the water waves. Hence state the types of interference occurring at P and Q.$$$$(d) How would the interference at Q be affected if the frequency of vibration of the two dippers is doubled? Explain your answer. (Note: You may assume that the speed of the water waves remains unchanged.)$$$$(e) If only one dipper is available, suggest a method of producing an interference pattern in the ripple tank. Illustrate your answer with a diagram.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100012,
+    "name": "[CE 00 Q9]",
+    "statement": "Figure 10 shows a vibrator producing straight water waves in a ripple tank. Figure 11 shows a loudspeaker which is emitting low-frequency sounds.$$$$(a) You are given the following equipment: a cork, a slinky spring, a candle and matches, a ruler. Select suitable equipment and describe (i) a method to demonstrate that the water waves in Figure 10 are transverse, and (ii) a method to demonstrate that the sound waves in Figure 11 are longitudinal.$$$$(b) A barrier with an opening is placed in the ripple tank as shown in Figure 10. (i) Copy Figure 10 into your answer book and draw the wave pattern formed on the other side of the barrier. Name this wave phenomenon. (ii) The wavelength of the water waves is increased as shown in Figure 12. (1) Suggest two methods which can be used to increase the wavelength of the water waves. (2) Copy Figure 12 into your answer book and draw the wave pattern formed on the other side of the barrier.$$$$(c) Figure 13 shows a loudspeaker unit with two speaker cones, a big one and a small one. One speaker cone emits low-frequency sounds and the other emits high-frequency sounds. The sound waves generated by the speaker cones will bend around the rim of the cones in a way similar to water waves bending around corners of obstacles. Which cone is more suitable for emitting high-frequency sounds? Explain your answer.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100013,
+    "name": "[CE 01 Q4]",
+    "statement": "A dipper $S_1$ is connected to a vibrator and produces circular water waves in a ripple tank. A cork is placed at a point $P$ on the water surface as shown in Figure 3.$$$$(a) Describe the motion of the cork as the water waves pass through it.$$$$(b) Suppose another dipper $S_2$ is connected to the same vibrator and produces identical water waves. It is known that $S_1P = 6.0\\,\\mathrm{cm}$, $S_2P = 7.8\\,\\mathrm{cm}$ and the wavelength of the water waves is $1.2\\,\\mathrm{cm}$. (i) Name the wave phenomenon that occurs when both dippers vibrate. (ii) How would the motion of the cork be affected? Explain your answer.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100014,
+    "name": "[CE 02 Q5]",
+    "statement": "Two identical loudspeakers $S_1$ and $S_2$ are connected to a computer. The set-up generates a sound of frequency $200\\,\\mathrm{Hz}$. Mary and Susan stand at positions $P$ and $Q$ respectively in front of the loudspeakers, where $PS_1 = 6.10\\,\\mathrm{m}$, $PS_2 = 8.65\\,\\mathrm{m}$ and $QS_1 = QS_2$. The speed of sound in air is $340\\,\\mathrm{m\\,s^{-1}}$.$$$$(a) Find the wavelength of the sound emitted by the loudspeakers.$$$$(b) (i) Find the path difference at $P$ from $S_1$ and $S_2$. (ii) Explain whether Mary will hear a loud or a soft sound.$$$$(c) The set-up now generates sound of frequencies $200\\,\\mathrm{Hz}$ and $400\\,\\mathrm{Hz}$ alternately. Susan predicts that constructive and destructive interference will occur alternately at $Q$. Explain whether Susan is correct or not.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100015,
+    "name": "[CE 03 Q5]",
+    "statement": "Figure 4 shows two loudspeakers $P$ and $Q$ emitting sound waves which are of the same frequency and in phase. As a microphone is moved along the line $AB$, the amplitude of the trace displayed on the CRO is found to increase and decrease alternately.$$$$(a) Name the wave phenomenon observed.$$$$(b) The amplitude of the trace reaches a maximum when the microphone is at point $X$, where $PX = 1.74\\,\\mathrm{m}$ and $QX = 1.96\\,\\mathrm{m}$. A student says that one possible wavelength of the sound waves is $0.44\\,\\mathrm{m}$. Explain whether the student is correct or not.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100016,
+    "name": "[CE 04 Q5]",
+    "statement": "Figure 6 shows a sectional view of a beach. Two boats are located at positions $P$ and $Q$ as shown, where $PQ = 20\\,\\mathrm{m}$. Straight water waves travel towards the beach. The waves take 4 s to travel from $P$ to $Q$.$$$$(a) Find the average speed of the waves between $P$ and $Q$.$$$$(b) Figure 7 shows the view of the beach from above. Copy Figure 7 into your answer book and draw the wave pattern observed when the waves travel towards the beach.$$$$(c) Name the wave phenomenon that occurs as the waves travel towards the beach.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100017,
+    "name": "[CE 05 Q5]",
+    "statement": "Figure 7 shows a ripple tank with deep region $P$ and a shallow region $Q$.$$$$(a) Suppose that two obstacles are added in the ripple tank as shown in Figure 7. (i) Name two wave phenomena that may occur if water waves travel from $P$ to $Q$. (ii) Figure 8 shows the wave pattern observed when straight water waves are generated in $P$. Compare the wavelength and speed of the waves travelling in $Q$ with those in $P$.$$$$(b) Suggest one method of obtaining the wave pattern in $Q$ as shown in Figure 9. Illustrate your answer by completing Figure 9.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100018,
+    "name": "[CE 07 Q10]",
+    "statement": "In Figure 16, two identical loudspeakers $P$ and $Q$ are connected to a signal generator. Position $A$ is the mid-point of $PQ$. A microphone connected to a CRO is moved along $BC$ to measure the loudness of the sound. The amplitude of the CRO trace increases as the loudness of the sound detected increases. Figure 17 shows the result.$$$$(a) (i) Explain why the loudness of the sound varies at different positions along $BC$. (ii) State ONE reason why the amplitude of the CRO trace is NOT zero at position $X$.$$$$(b) If $PY = 5.10\\,\\mathrm{m}$ and $QY = 5.78\\,\\mathrm{m}$, find (i) the path difference at position $Y$ from $P$ and $Q$; (ii) the wavelength of the sound.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100019,
+    "name": "[CE 08 Q5]",
+    "statement": "Figure 7 shows a plastic box floating on the water surface of a pool which has a deep region and a shallow region. A boy tries to get the box back. He throws a stone into the water to produce waves and he expects that the water waves will \"push\" the box towards the poolside.$$$$(a) According to the direction of motion of the water molecules, state the kind of wave produced on the water surface.$$$$(b) Explain whether the water waves can \"push\" the box to the poolside.$$$$(c) Figure 8 shows a continuous water wave travelling towards the poolside. Deduce the relationship between the velocity of the water wave and the depth of water in the pool. Show your reasoning.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100020,
+    "name": "[CE 09 Q10]",
+    "statement": "In a ripple tank, initially five tiny plastic beads $(P,Q,R,S,T)$ float on the calm water surface. A vibrator begins to produce straight waves at time $t = 0$. Figure 12 shows the positions of beads on the waves at $t = 7$ s. Figure 13 shows the displacement-time graph of $S$.$$$$(a) (i) Find the wavelength of the wave. (ii) Find the frequency of the wave. (iii) Find the distance between the vibrator and $S$.$$$$(b) State the bead(s) that is/are moving (i) in the same direction with $T$ at time $t = 7$ s, (ii) in the opposite direction with $T$ at time $t = 7$ s.$$$$(c) In Figure 12, sketch the waveform between $P$ and $T$ at a quarter of period after $t = 7$ s. Mark the position of $S$.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100021,
+    "name": "[CE 10 Q6]",
+    "statement": "Figure 10 shows a metal string stretched over two wedges. Kathy plucks the string and a sound is heard.$$$$(a) Describe how the sound is produced by the string.$$$$(b) State one difference and one similarity in the nature of the wave on the string and the sound wave produced.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100022,
+    "name": "[CE 10 Q11]",
+    "statement": "Figure 15 shows three points, $A$, $B$ and $X$, in a ripple tank where $AX = 15\\,\\mathrm{cm}$ and $BX = 25\\,\\mathrm{cm}$. A dipper placed at $A$ vibrates and produces circular water waves of wavelength $10\\,\\mathrm{cm}$. Figure 16 shows the displacement-time graph for a water particle at $X$. (Take displacement upward as positive.)$$$$(a) (i) Find the amplitude of the water wave at $X$. (ii) Find the speed of the water wave. (iii) In Figure 17, sketch the waveform along the straight line $AX$ at time $t = 0.2\\,\\mathrm{s}$. (Take displacement upward as positive.)$$$$(b) Another dipper is now placed at $B$ and always moves in the same direction as the dipper at $A$. Determine the type of interference occurring at $X$.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100023,
+    "name": "[CE 11 Q3]",
+    "statement": "Read the following passage about tsunamis and answer the questions that follow.$$$$(a) Name two natural phenomena that can cause tsunamis.$$$$(b) The typical water depth is about $4000\\,\\mathrm{m}$ in the Pacific Ocean. Estimate the speed of a tsunami generated there.$$$$(c) As shown in the map in Figure 5, an undersea earthquake occurs at $S$ and produces tsunamis. Both islands $Q$ and $R$ are struck by the tsunamis. (i) Although island $R$ is sheltered from $S$ by island $Q$, why is it still struck by the tsunamis? (ii) When the undersea earthquake occurs, a ship is at point $P$ which is in the open sea deep water area as shown in the Figure 5. On receiving the tsunami warning, the captain of the ship decides to stay at $P$ rather than going back to island $Q$. Referring to the given passage, comment on whether the captain's decision is correct or not.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100024,
+    "name": "[DSE SP Q6]",
+    "statement": "Figure 6.1 shows two identical loudspeakers $P$ and $Q$ are connected to a signal generator. Position $A$ is the mid-point of $PQ$. A microphone connected to a CRO is moved along $BC$. The amplitude of the CRO trace increases as the loudness of the sound detected increases. Figure 6.2 shows how the amplitude of the CRO trace varies with the position of the microphone.$$$$W02-17 (a) (i) Explain why the loudness of the sound varies along $BC$. W02-19 (ii) State ONE reason why the amplitude of the CRO trace is NOT zero at position $X$.$$$$W02-19 (b) If $PY = 5.10\\,\\mathrm{m}$ and $QY = 5.78\\,\\mathrm{m}$, find the wavelength of the sound.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100025,
+    "name": "[DSE 12 Q6abc]",
+    "statement": "In a ripple tank, circular water waves are produced by two vibrators $S_1$ and $S_2$ of the same frequency vibrating in phase. Their separation is $3.5\\lambda$ where $\\lambda$ is the wavelength of the waves. Figure 6.1 shows the two circular waves propagating on the water surface at a certain moment. Line $L$ is a line connecting all points $P$ which have path difference $S_1P - S_2P = 0$.$$$$W02-20 (a) Draw and label a line in Figure 6.1 connecting all points $P$ which have path difference $S_1P - S_2P = \\lambda$ (label it as $L_1$) and (ii) $S_1P - S_2P = -\\frac{3}{2}\\lambda$ (label it as $L_2$).$$$$W02-21 What would happen to $L_1$ and $L_2$ if the separation between $S_1$ and $S_2$ is reduced slightly?$$$$W02-18 (b) Figure 6.2 shows the profile of the water level along line $L$ at a certain instant. Sketch on the same figure the profile at a time $\\frac{T}{2}$ later, where $T$ is the period of the water waves.$$$$W02-17 (c) $Q$ is a point on the line joining $S_1$ and $S_2$ as shown in Figure 6.1. State the kind of interference that occurs at $Q$ and give a reason for this occurrence.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100026,
+    "name": "[DSE 15 Q7cd i]",
+    "statement": "Figure 7.3 shows circular water waves in a ripple tank. The two point sources $S_1$ and $S_2$, separated by $40\\,\\mathrm{mm}$, are driven by the same vibrator. The solid lines represent the wave crests from $S_1$ and the dotted lines represent the wave crests from $S_2$. The wavelength of the waves is $10\\,\\mathrm{mm}$.$$$$W02-19 (c) Sketch on Figure 7.3 two lines to indicate all points $P$ with path difference $PS_1 - PS_2$ equals to $10\\,\\mathrm{mm}$ $(L_1)$ and $20\\,\\mathrm{mm}$ $(L_2)$. State the kind of interference that occurs at these points $P$.$$$$(d) (i) If the interference pattern is observed along line $XY$ at $50\\,\\mathrm{mm}$ from the sources as shown, measure the separation between adjacent first- and second-order maxima $\\Delta y$.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100027,
+    "name": "[DSE 17 Q6b]",
+    "statement": "In Figure 6.3, $A$ and $B$ are two dippers vibrating in phase in a water tank. The distance between $A$ and $B$ is $6\\,\\mathrm{cm}$. $OP$ is the perpendicular bisector of $AB$. $Q$ is a second minimum from $P$, where $AQ = 12\\,\\mathrm{cm}$ and $BQ = 15\\,\\mathrm{cm}$.$$$$W02-17 (i) Explain why a minimum occurs at $Q$.$$$$W02-19 (ii) Determine the wavelength of the water wave.$$$$W02-19 (iii) Sketch in Figure 6.4 how the AMPLITUDE of the water wave varies along the line $OP$.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100028,
+    "name": "[DSE 19 Q5]",
+    "statement": "A ripple tank has a shallow region $P$ and a deep region $Q$. Straight water wave of frequency 10 Hz is travelling in the shallow region as shown in Figure 5.1 when viewed from above.$$$$W02-2 (a) The separation between seven crests in the shallow region is found to be 6 cm as shown. (i) Find the wavelength of the wave in the shallow region. (ii) What is the wave speed in the shallow region?$$$$(b) The water wave then propagates into the deep region where the wavelength of the wave is double that in the shallow region. W02-6 (i) State the frequency of the water wave in the deep region. W02-8 (ii) On figure 5.1, sketch the wave pattern in the deep region. W02-6 (iii) Name the phenomenon occurred across the boundary and explain its cause.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W02"]
+  },
+  {
+    "id": 100029,
+    "name": "[CE 99 Q10]",
+    "statement": "Peter lives in a house A on one side of a hill. A transmitting station T1 is located at site P on the other side of the hill. (See Figure 11.1) The station transmits radio waves of frequency 600 kHz and TV waves of frequency 500 MHz. (Note: 1 MHz = 10^6 Hz.)$$$$(a) Given that the speed of electromagnetic waves is 3×10^8 m/s, find the wavelengths of the radio waves and TV waves.$$$$(b) (i) Name the wave phenomenon which enables the waves transmitted by T1 to reach Peter's house. (ii) Peter finds that the radio reception is better than the TV reception. Explain this phenomenon.$$$$(c) Peter is watching TV in his house. He finds that the reception is affected when an aeroplane flies overhead. Explain this phenomenon.$$$$(d) Another transmitting station will be built at site Q. (See Figure 11.1) Mary lives in a house B such that BP = 3.95 km and BQ = 3.20 km. (i) Find the path difference at B from P and Q. (ii) Mary listens to the radio in her house. How will the reception be affected if both stations transmit identical radio waves at 600 kHz? Explain your answer. (Neglect the reflection of waves from the hill.)$$$$(e) Table 3 shows the broadcasting frequencies of RTHK Radio 1 (FM) in different districts. State one advantage of broadcasting at different frequencies in different districts.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03A"]
+  },
+  {
+    "id": 100030,
+    "name": "[CE 04 Q4]",
+    "statement": "Figure 5 shows the display panel of a radio and the broadcasting frequencies of two radio channels R1 and R2. Given: speed of electromagnetic waves = 3 × 10^8 m/s.$$$$(a) Find the wavelength of the radio waves used by channel R1.$$$$(b) Anita's house is surrounded by hills and at her house, the reception of one of the two radio channels is better. For which radio channel is the reception better? Explain your answer.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03A"]
+  },
+  {
+    "id": 100031,
+    "name": "[CE 06 Q1]",
+    "statement": "RADAR (RADio Detecting And Ranging) is a useful device in air traffic control. In Figure 1, an aircraft is flying near a radar station. A pulse of electromagnetic wave with a speed of 3 × 10^8 m/s and a frequency of 1.2 × 10^9 Hz is emitted from the radar station towards the aircraft.$$$$(a) Find the wavelength of the electromagnetic wave.$$$$(b) The electromagnetic wave pulse is emitted then reflected by the aircraft back to the radar station. The emitted and reflected pulses are displayed on the screen of a CRO as shown in Figure 2. The time-base setting of the CRO is 5 μs per division (1 μs = 10^{-6} s). Estimate the distance between the radar station and the aircraft.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03A"]
+  },
+  {
+    "id": 100032,
+    "name": "[CE 06 Q2]",
+    "statement": "RADAR, as mentioned in Question 1, is a useful device to detect aircraft. However, the airforces of many countries try to build aircraft that can hide away from their enemies. Read the following passage about a stealth bomber (see Figure 3).$$$$(a) (i) In Figure 4, draw a ray to show how a wave from the radar is reflected at the bottom of the stealth bomber. (ii) If the stealth bomber flies horizontally to a particular position around the radar, it can be detected by the radar. Mark this position with a symbol X in Figure 4.$$$$(b) All of the exhausts in a stealth bomber pass through cooling vents before flowing out of the plane. Explain how this can help the stealth bomber to hide away from enemy detection.$$$$(c) Apart from the designs which help prevent the stealth bomber being detected by radar and infrared sensors, state two other essential features which are important in building the stealth bomber so that it can hide away from enemy detection.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03A"]
+  },
+  {
+    "id": 100033,
+    "name": "[AL 81 Q3]",
+    "statement": "Student A views a line filament lamp covered with a yellow filter through a diffraction grating with its lines parallel to the filament (Figure 1). The grating is held at one end of a metre rule which is aimed at the lamp. At the other end of the metre rule, a second rule is placed at right angles to the first rule.$$$$(a) Student A asks student B to move a pencil held vertically along the second rule and tells him to stop when it coincides with the yellow band in the first image of the lamp as seen through the grating. If the distance between the first rule and the pencil is x = 0.37 m (see Figure 1) and the diffraction grating has 6.0 × 10^5 lines per metre, calculate the wavelength of the yellow light.$$$$(b) If student B keeps moving the pencil along the metre rule in the same direction, how many more yellow bands will be encountered? Explain.$$$$(c) If the filter is removed, sketch the full pattern seen by student A on both sides of the filament, in the space below. Label significant features.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03A"]
+  },
+  {
+    "id": 100034,
+    "name": "[AL 94 Q6abii-iii]",
+    "statement": "(a) A student views a green light source through a multiple-slit setup which can be considered as a diffraction grating with a few slits. The pattern observed is shown in Figure 6.1. (i) How would the pattern be affected if red light is used instead? (ii) Figure 6.2 shows the pattern observed by using another multiple-slit setup. Narrower bright fringes are observed but their separation is the same as that in Figure 6.1. What can you say about the number of slits and the slit separation of this setup, compared with the first one?$$$$(b) (ii) To observe the spectrum of the sodium lamp, a student places a diffraction grating on the platform of the spectrometer such that the incident light falls normally on the grating. The sodium lamp produces yellow light of two slightly different wavelengths. The student uses the second-order images and records the angular position readings of the two yellow lines on each side of the central image as follows: Left-hand side (second order): 45°36' and 45°40'; Right-hand side (second order): 134°22' and 134°26'. Given the grating constant (i.e. the slit separation) to be 1684 nm, calculate the two wavelengths of the yellow light produced by the sodium lamp. (iii) Suggest ONE reason for making measurements by using the second-order images instead of the first-order ones.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03A"]
+  },
+  {
+    "id": 100035,
+    "name": "[DSE 12 Q6d]",
+    "statement": "W03-6 (d) A similar double-slit set-up is used for the demonstration of the interference of light in which the separation between slits S1 and S2 is 0.5 mm and the screen is at 2.5 mm from the slits. Calculate the average separation between adjacent bright fringes on the screen for a monochromatic light of wavelength 550 nm.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03A"]
+  },
+  {
+    "id": 100036,
+    "name": "[DSE 13 Q7]",
+    "statement": "Figure 7.1 shows a set-up for the study of interference of microwaves. Microwaves of wavelength 2 cm emitted from a transmitter T pass through two slits A and B formed by metal plates. The slits are separated by 6 cm as shown. A probe R connecting to a meter is moved from X to Y to detect the intensity of microwaves received. Transmitter T and point X are equidistant from A and B.$$$$W03-1 (a) Calculate the frequency of the microwaves.$$$$W02-17 (b) (i) The meter shows alternate maxima and minima when R moves along XY. Explain. W02-19 (ii) The second minimum is found at position P where AP = 1.24 m. Find BP. W02-19 (iii) When R is moved along XY from X towards Y and beyond, explain whether or not it is possible to detect more than three maxima.$$$$W03-12 (c) Microwaves can be used in radar. Why are radio waves of lower frequencies not suitable for use in radar?",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03A"]
+  },
+  {
+    "id": 100037,
+    "name": "[DSE 14 Q7]",
+    "statement": "Figure 7.1 shows an experimental set-up to determine the wavelength of monochromatic light emitted from the vertical narrow slit of a discharge lamp. A, B are two mutually perpendicular metre rules on the bench with rule A pointing towards the lamp. A diffraction grating with vertical lines is placed at one end of rule A. A vertically mounted pin P is moved along rule B until the pin is in line with the diffracted image of the second-order to the observer. The corresponding distance x is measured for finding the diffraction angle θ. The grating has 300 lines per mm and x is found to be 0.38 m for the second-order image.$$$$(a) (i) Calculate the diffraction angle θ. W03-10 (ii) Hence find the wavelength of the light from the lamp. (iii) Give ONE advantage of measuring the position of the second-order image instead of the first-order one.$$$$(b) In the experiment, the illuminated slit may not be well aligned along metre rule A. Suggest one way to reduce this error.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03A"]
+  },
+  {
+    "id": 100038,
+    "name": "[DSE 16 Q6]",
+    "statement": "(a) A laser beam is directed perpendicularly towards a double slit of separation a = 0.3 mm. The pattern of bright spots projected on a screen 1.8 m away from the slits is shown in Figure 6.1. W03-6 (i) Find the wavelength of the laser beam. W03-5 (ii) Explain why the slit width has to be very narrow in order for the above pattern to be observed.$$$$(b) The double slit is now replaced by a diffraction grating of 500 lines per mm. W03-10 (i) Find the separation between the central bright spot and first-order bright spot of the pattern on the screen for the same experimental settings. W03-9 (ii) Sketch the pattern, up to the second-order, that you would expect to see on the screen when using this diffraction grating. A first-order bright spot has already been drawn for you.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03A"]
+  },
+  {
+    "id": 100039,
+    "name": "[DSE 17 Q6]",
+    "statement": "Figure 7.1 shows a set-up for measuring the wavelength λ of light emitted by a laser pointer. Several bright dots of average separation about 2 mm can be seen on the screen.$$$$W03-6 (i) For the same set of apparatus, suggest a way to increase the average separation between the bright dots on the screen.$$$$The double slit is now replaced by a diffraction grating with 400 lines per mm. W03-9 (ii) Briefly explain why the accuracy of the experiment can be improved. W03-10 (iii) Only five bright dots are observed on the screen such that the separation between the 1st and 5th dots is 1.56 m. Find λ.$$$$(b) To measure the speed of sound in air, a student connects two loudspeakers, A and B, to a signal generator as shown in Figure 7.2. The separation of A and B is 1 m. A microphone is used to pick up the sound along the line XY at a distance of 2 m from the loudspeakers. The central maximum is at point O while the next maximum is at point P. W03-6 (i) With reference to the above settings, use the fringe separation equation Δy = λD/a in double-slit interference to find the wavelength λ of sound is not accurate. Explain briefly. W02-19 (ii) The distance between O and P is found to be 1 m when the signal generator is set at 750 Hz. By considering the path difference PB - PA, use the results of the experiment to find the speed of sound in air.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03A"]
+  },
+  {
+    "id": 100040,
+    "name": "[DSE 24 Q6]",
+    "statement": "After removing the protective coating and the reflective layer of a compact disc (CD), the CD becomes a diffraction grating with evenly spaced parallel slits (Figure 6.1(a)). The set-up in Figure 6.1(b) employs a laser beam which can be used to measure the slit separation d. Given that the separation between the CD diffraction grating and the screen, L, is 0.10 m, the separation between the first-order maxima, x, is 0.092 m and the wavelength λ of the red laser light beam used is 650 nm.$$$$W03-10 (a) Estimate d.$$$$W03-10 (b) State and explain the change in x if green laser light is used.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03A"]
+  },
+  {
+    "id": 100041,
+    "name": "[CE 88 Q5]",
+    "statement": "Two small loudspeakers $P$ and $Q$ emit sound of the same frequency and intensity. A microphone connected to a C.R.O. is moved along the line $YX$ as shown in figure 5. A trace on the screen is as shown in figure 6.$$$$(a) It is given that the time base setting is $0.1\\,\\mathrm{ms\\,cm^{-1}}$. (i) What is the frequency of the sound? (ii) Is this frequency below, within or above audible range?$$$$(b) The amplitude of the trace shows a maximum when the microphone is at $C$ (on the perpendicular bisector of $PQ$) and gradually decreases to a minimum at $B$. (i) Explain briefly why this happens. (ii) Write down an equation to show the relationship between the distances $PB$, $QB$ and the wavelength $\\lambda$. (iii) If $PB = 3.04\\,\\mathrm{m}$ and $QB = 3.12\\,\\mathrm{m}$, calculate the speed of sound in air. (iv) How would the distance $CB$ be affected, when sound of a lower frequency is used?$$$$(c) If loudspeaker $P$ is disconnected from the signal generator when the microphone is still at $B$, how would the period and amplitude of the trace be affected?",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100042,
+    "name": "[CE 91 Q4]",
+    "statement": "Figure 5 shows the experimental set-up to study the interference of sound. $P,Q$ are two identical loudspeakers. $PC = 2.05\\,\\mathrm{m}$ and $QC = 2.31\\,\\mathrm{m}$.$$$$(a) Initially only $P$ is connected to the signal generator and sound is emitted. A microphone connected to an oscilloscope is placed at point $C$. Figure 6 shows the trace on the oscilloscope. The speed of sound in air is $325\\,\\mathrm{m\\,s^{-1}}$. Find the frequency and wavelength of the sound.$$$$(b) Now both $P$ and $Q$ are connected to the signal generator and they emit sound of the same frequency and intensity as in (a). Interference is observed when the microphone is moved along $AB$. (i) Is the interference of sound at $C$ constructive or destructive? Explain your answer. (ii) Compared with (a), how do the pitch and loudness of the sound at $C$ change? (iii) The amplitude of the trace on the oscilloscope is not zero at the positions of destructive interference. Suggest two possible reasons. (iv) A student says that alternate constructive and destructive interference will also be observed along $XY$. ($X$ is the mid-point of $PQ$.) State whether his statement is true or false. Explain briefly.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100043,
+    "name": "[CE 96 Q4b]",
+    "statement": "(b) Figure 8 shows the traces on a CRO of three notes produced by different musical instruments. (Note: The settings of the CRO remain unchanged.) (i) Which of the notes is produced by a tuning fork? (ii) Compare the pitch and loudness of the three notes. Explain briefly.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100044,
+    "name": "[CE 01 Q6ab]",
+    "statement": "Explain the following phenomena: (a) In a thunderstorm, lightning is seen before thunder is heard. (b) Sound waves can bend around a corner but light cannot.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100045,
+    "name": "[CE 03 Q7]",
+    "statement": "In a factory, an engineer uses a device to monitor the thickness of the wall of a metal pipe for conveying chemical solutions. The device consists of a transmitter and a receiver. During the test, the device is placed on the surface of the pipe. The transmitter emits an ultrasonic pulse of frequency $2 \\times 10^{6}$ Hz. The pulse travels with a speed of $6 \\times 10^{3}$ m s$^{-1}$ inside the wall. The pulse is reflected from the other surface of the wall and is recorded by the receiver (see Figure 7). The device is connected to a CRO, which displays the transmitted and reflected pulses (see Figure 8).$$$$(a) Find the wavelength of the pulse inside the wall.$$$$(b) Which of the two pulses in Figure 8 is reflected pulse? Explain your answer.$$$$(c) The engineer conducts the test every five weeks and measures the total time of travel of the pulse inside the wall. The results are shown in Table 1. (i) Show that the thickness of the wall at time $t = 0$ is $43.5\\,\\mathrm{mm}$. (ii) Plot a graph of the thickness of the wall $d$ against time $t$ on graph paper, with $d$ ranging from 0 to $50\\,\\mathrm{mm}$ and $t$ ranging from 0 to $40$ weeks. (iii) The pipe has to be replaced when the thickness of the wall drops to $30\\,\\mathrm{mm}$. Using the graph in (c)(ii), estimate the time at which the pipe has to be replaced.$$$$(d) Figure 9 shows the CRO display of the test result on a certain day. The engineer points out that there may be a small crack in the wall of the pipe. Explain how the engineer arrives at such a conclusion.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100046,
+    "name": "[CE 05 Q6]",
+    "statement": "You are provided with the apparatus shown in Figure 10. Describe how you should use the apparatus to conduct an experiment to demonstrate the interference of sound waves. You may use additional apparatus if necessary.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100047,
+    "name": "[CE 07 Q6]",
+    "statement": "John wants to find out the time he takes to run 100 metre. A starter at the starting point uses a horn to emit a sound signal of frequency 425 Hz to notify John to start running. A time keeper presses a stop watch to record the time when he hears the sound signal (see Figure 10). Given that the speed of sound in air is $340\\,\\mathrm{ms^{-1}}$.$$$$(a) Find the wavelength of the sound signal emitted by the horn.$$$$(b) (i) Find the time $t$ taken by the sound signal to travel 100 metres. (ii) As it takes time $t$ for the sound signal to travel from the starter to the time keeper, David suggests the following ways to reduce the time delay $t$: (1) using a horn emitting sound of higher frequency; (2) lowering a flag instead of using a horn to notify time keeper. Explain whether each of the above suggestions will work.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100048,
+    "name": "[CE 09 Q11]",
+    "statement": "A tsunami is a kind of large-scale water wave that is commonly generated by earthquakes. Figure 14 shows a simplified tsunami detection system. Sensor $X$ on the seafloor can detect earthquakes and tsunamis. When a tsunami is detected, an ultrasound signal will be sent from Sensor $X$ to Device $Y$ on the sea surface. Device $Y$ will immediately transmit a microwave signal to a satellite and the satellite will transmit the microwave signal to the Tsunami Warning Centre on land.$$$$(a) What is ultrasound?$$$$(b) Given: Distance from Sensor $X$ to the shore = 1800 km; Distance from Sensor $X$ to Device $Y$ = 6 km; Distance from Device $Y$ to the satellite = 36000 km; Distance from the satellite to the Tsunami Warning Centre = 40000 km; Speed of ultrasound in water = 1500 m/s; Speed of microwave = $3\\times10^8$ m/s; Average speed of tsunami on the sea surface = 250 m/s. Can the Tsunami Warning Centre receive the signal one hour before the arrival of tsunami to the shore? Show your calculations. (Assume that when a tsunami arrives at the water surface vertically above Sensor $X$, $X$ sends signal to Device $Y$.)$$$$(c) Explain why ultrasound is not used to transmit signals from the satellite to the Tsunami Warning Centre.$$$$(d) After receiving the signal from the satellite, the Tsunami Warning Centre will send a warning signal to the alarm stations in neighbouring cities. John suggests using ultrasound to transmit the warning signal, while Peter suggests using radio wave to transmit the warning signal. Explain which suggestion is more appropriate.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100049,
+    "name": "[AL 84 Q3]",
+    "statement": "In Figure 3, the loudspeakers $L_1$ and $L_2$ placed $3\\,\\mathrm{m}$ apart are fed from a signal generator $G$, whose frequency is $680\\,\\mathrm{Hz}$, so that they emit sound waves in phase. The speed of the sound wave is $340\\,\\mathrm{ms^{-1}}$.$$$$(a) Describe the variation in the signal detected by a microphone when it moves slowly as follows: (i) along line $AB$, the perpendicular bisector of $L_1L_2$; (ii) along line $XY$, parallel to $L_1L_2$ and about $20\\,\\mathrm{m}$ away from it.$$$$(b) Point $Z$ in Figure 3 represents a point at which a minimum intensity sound is heard. When the loudspeaker $L_2$ is temporarily disconnected, a student finds that the intensity of the sound heard at $Z$ increases. He finds this difficult to understand, as disconnecting $L_2$ presumably means that the total output energy from the loudspeakers decreases. Write a short note explaining the result to the student and explaining why it does not conflict with the law of conservation of energy.$$$$(c) The loudspeaker $L_2$ is now reconnected, but with the connections to its terminals interchanged, so that it emits sound waves in antiphase with those from loudspeaker $L_1$. Describe what effect, if any, this will have on the signal received by a microphone placed along $XY$ compared with the arrangement in (a)(ii).",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100050,
+    "name": "[AL 04 Q3]",
+    "statement": "Figure 3.1 shows a ship equipped with a sonar to detect objects in the sea. Ultrasonic waves of frequency $25\\,\\mathrm{kHz}$ are sent towards the seabed. The waves, which propagate at an angle of $50^\\circ$ to the sea surface, are reflected from a submarine back to the ship after $0.15\\,\\mathrm{s}$. Given: speed of sound in air = $340\\,\\mathrm{m\\,s^{-1}}$; speed of sound in sea water = $1500\\,\\mathrm{m\\,s^{-1}}$.$$$$(a) Find the wavelength of the ultrasonic waves in sea water.$$$$(b) Calculate the vertical distance of the submarine beneath the sea surface.$$$$(c) Some of the ultrasonic waves reflected by the submarine propagate along the dotted line and emerge into the air at $X$. Calculate the angle of refraction in air.$$$$(d) Is it possible for ultrasonic waves, at certain angles of incidence, to undergo total internal reflection when they go from sea water to the air? Explain.$$$$(e) Explain why microwaves are not suitable for detecting objects in sea water.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100051,
+    "name": "[AL 12 Q3]",
+    "statement": "Figure 3.1 shows two identical loudspeakers of separation $d$ connected to the same signal generator such that they emit sound of frequency $f$. A microphone is moved along a straight line $XY$ which is at a distance $D$ from the loudspeakers. Alternate maxima and minima of sound are detected by the microphone. Given: speed of sound in air $= 340\\,\\mathrm{m\\,s^{-1}}$.$$$$(a) Explain why there are alternate maxima and minima of sound detected by the microphone along $XY$.$$$$(c) Given: $f = 2.0\\,\\mathrm{kHz}$, $d = 1.5\\,\\mathrm{m}$ and $D = 12.0\\,\\mathrm{m}$. (i) Calculate the wavelength $\\lambda$ of the sound and check whether the formula of separation $\\frac{\\lambda D}{d}$ between maxima near point $P$ along the line $XY$ is applicable in the above set-up. (ii) When the microphone is moved from $P$ towards $X$, the first minimum is found at a certain point $Q$. Estimate the distance between $P$ and $Q$. (iii) When one of the loudspeakers is switched off, the microphone placed at $Q$ gives the following signal on the CRO. Now both loudspeakers are switched on and emitting sound of the same amplitude as before but of frequency $4.0\\,\\mathrm{kHz}$ instead. If the setting of the CRO is unchanged, sketch the signal on the CRO. Explain your answer.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100052,
+    "name": "[DSE SP Q10]",
+    "statement": "Figure 10.1 shows a ship equipped with sonar. The sonar emits ultrasonic waves of frequency 25 kHz into the sea. The waves propagate at an angle of $50^\\circ$ to the surface of the sea and are reflected from a submarine back to the ship after 0.15 s. Given: speed of sound in air $= 340\\,\\mathrm{m\\,s^{-1}}$, speed of sound in sea water $= 1500\\,\\mathrm{m\\,s^{-1}}$.$$$$W03-17 (a) Calculate the vertical distance of the submarine beneath the sea surface.$$$$W02-9 (b) Some of the reflected waves propagate along the dotted line and emerge into the air at $X$. Calculate the angle of refraction in air.$$$$W05-5 (c) Is it possible for ultrasonic waves, at certain angles of incidence, to undergo total internal reflection when they go from sea water to the air? Explain.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100053,
+    "name": "[DSE 20 Q6]",
+    "statement": "The set-up in Figure 6.1 is to find the speed of sound in air. Two identical microphones $A$ and $B$ are connected to a timer and placed on a bench top as shown. The timer can be triggered to 'start' and 'stop' timing using the respective microphones to feed signals to the START and STOP terminals of the timer.$$$$(a) You are given a hammer and a metal plate ( ). Use 'X' to indicate a suitable location on Figure 6.1 where the hammer should hit the plate so as to generate a sharp loud sound to be received by the microphones in this experiment. State an additional piece of apparatus needed and the measurements to be made in this experiment.$$$$(b) The separation between $A$ and $B$ is set at $0.280\\,\\mathrm{m}$. The experiment is repeated to obtain a few readings of the timer as follows: $801\\mu\\mathrm{s}, 838\\mu\\mathrm{s}, 539\\mu\\mathrm{s}, 821\\mu\\mathrm{s}$. (i) Find the speed of sound in air. Show how you would treat the data obtained in the calculation. (ii) Suggest one adjustment to the experimental setting so as to obtain a more accurate result.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100054,
+    "name": "[DSE 24 Q7]",
+    "statement": "The graph below shows the speed of sound at different air temperatures.$$$$(a) With reference to the graph, state the relationship between the speed of sound and the air temperature.$$$$W02-8 (b) Figure 7.2 shows sound travelling from a distant tower clock to an observer at night when the ground cools. How does the temperature difference between air layers above the ground explain the situation in Figure 7.2?$$$$(c) It is known that the air temperature is $10^\\circ\\mathrm{C}$. Referring to the graph in Figure 7.1: (i) estimate the ratio of speed of light to the speed of sound; (ii) estimate the distance of a thunderstorm from an observer $O$ if thunder is heard $3.0\\,\\mathrm{s}$ after lightning is seen by $O$.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W03B"]
+  },
+  {
+    "id": 100055,
+    "name": "[CE 95 Q3a]",
+    "statement": "a) A boy 1.5 m tall stands a few metres in front of a plane mirror AB which is hung on a vertical wall. The boy's eyes are 1.4 m above the ground. He can see all of himself in the mirror. In Figure 5, PQ represents the boy and E denotes his eyes.$$$$(i) State three properties of the boy's image as formed by the mirror.$$$$(ii) In Figure 5, draw (1) the image of the boy formed by the mirror, (2) the paths of two rays, one from P and one from Q, to show how the rays reach his eyes.$$$$(iii) Using (ii), or otherwise, find the minimum length of the mirror AB for the boy to see all of himself in the mirror? In Figure 6, draw a ray diagram to illustrate your answer.$$$$(iv) If the boy moves a few steps towards the mirror and the length of the mirror is equal to that found in (iii), can the boy still see all of himself in the mirror? In figure 6, draw a ray diagram to illustrate your answer.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W04"]
+  },
+  {
+    "id": 100056,
+    "name": "[CE 07 Q5]",
+    "statement": "Figure 8 shows a playground after raining. Images can be seen on the calm water surface of the wet ground.$$$$(a) Explain why images can be seen on the calm water surface.$$$$(b) Figure 9 shows an object AB above the water surface PQ. In figure 9, (i) draw the reflected rays of the incident rays x and y, (ii) hence, draw the image of AB.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W04"]
+  },
+  {
+    "id": 100057,
+    "name": "[CE 88 Q6]",
+    "statement": "Figure 7 shows a ray of light entering a semi-circular plastic block in direction AO and is refracted into the air along OE. Part of the light is reflected along OB. A set of readings for different angles $\\theta$ and $\\phi$ are measured. The results are tabulated as follows:$$$$(a) (i) Plot the graph of $\\sin \\phi$ (vertical axis) against $\\sin \\theta$ (horizontal axis) on a piece of graph paper using a scale of 1 cm to 0.05. (ii) Find the slope of the graph and state its physical meaning. (iii) Calculate the critical angle of the plastic.$$$$(b) Briefly describe the change in brightness of (i) the refracted ray OE and (ii) the reflected ray OB as angle $\\theta$ is gradually increased from $0^\\circ$ to nearly $90^\\circ$.$$$$(c) Describe briefly ONE application of total internal reflection in everyday life.",
+    "ans": "",
+    "difficulty": 0,
+    "tags": ["physics", "W04"]
+  },
+  {
     "id": 1,
     "name": "IMOPrelim-2025-Q1",
     "statement": "Let n be a nine-digit positive integer whose product of digits is equal to 10!. Find the greatest possible value of n.",
