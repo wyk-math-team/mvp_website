@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>WYK Maths Team - Page Not Found</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        /* 404 页面独立样式，保证布局美观 */
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - var(--topbar-height) - 80px);
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        .error-code {
+            font-size: 8rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            text-shadow: 4px 4px 12px rgba(0,0,0,0.1);
+        }
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        .error-message {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin-bottom: 2rem;
+        }
+        .home-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.6rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: var(--shadow-sm);
+        }
+        .home-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        .illustration {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        @media (max-width: 768px) {
+            .error-code { font-size: 5rem; }
+            .error-title { font-size: 1.5rem; }
+            .illustration { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body class="index-body">
+    <!-- 保持与主站相同的顶栏和侧边栏（为保持统一性，但404页面不需要复杂功能，可精简，但这里沿用框架） -->
+    <div id="appContainer">
+        <header class="topbar">
+            <div class="topbar-left">
+                <span class="brand-name"><a href="./index.html">WYK Maths Team</a></span>
+            </div>
+            <div class="topbar-right">
+                <div class="clock" id="clock">
+                    <span class="clock-time" id="clockTime">00:00:00</span>
+                </div>
+            </div>
+        </header>
+        <aside class="sidebar" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="./problems.html" class="sidebar-link">Problems</a></li>
+                    <li><a href="./submissions.html" class="sidebar-link">Your submissions</a></li>
+                    <li><a href="./ssubmissions.html" class="sidebar-link">All submissions</a></li>
+                    <li><a href="./resources.html" class="sidebar-link">Resources</a></li>
+                    <li><a href="./ranklist.html" class="sidebar-link">Leaderboard</a></li>
+                    <li><a href="./terminal.html" class="sidebar-link">(Dev)Terminal</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content" id="mainContent">
+            <div class="updates-panel">
+                <div class="error-container">
+                    <div class="illustration">🔍</div>
+                    <div class="error-code">404</div>
+                    <div class="error-title">Page Not Found</div>
+                    <div class="error-message">
+                        The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+                    </div>
+                    <a href="./index.html" class="home-btn">🏠 Back to Home</a>
+                </div>
+            </div>
+        </main>
+        <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">☰</button>
+    </div>
+
+    <!-- 简单的时钟脚本（复制自 app.js 的核心部分，无需完整认证） -->
+    <script>
+        (function() {
+            const clockEl = document.getElementById('clockTime');
+            function getGMT8Date(date) {
+                const utc = date.getTime() + (date.getTimezoneOffset() * 60000);
+                return new Date(utc + (8 * 3600000));
+            }
+            function updateClock() {
+                if (!clockEl) return;
+                const gmt8 = getGMT8Date(new Date());
+                const time = [gmt8.getHours(), gmt8.getMinutes(), gmt8.getSeconds()]
+                    .map(v => String(v).padStart(2, '0')).join(':');
+                clockEl.textContent = time;
+            }
+            updateClock();
+            setInterval(updateClock, 500);
+        })();
+        // 简单侧边栏开关（使用原app.js中的逻辑，但为了独立性，添加简易控制）
+        const sidebar = document.getElementById('sidebar');
+        const toggleBtn = document.getElementById('sidebarToggle');
+        const body = document.body;
+        function setSidebarState(open) {
+            if (!sidebar) return;
+            if (open) {
+                sidebar.classList.add('open');
+                if (window.innerWidth > 768) body.classList.remove('sidebar-closed');
+            } else {
+                sidebar.classList.remove('open');
+                if (window.innerWidth > 768) body.classList.add('sidebar-closed');
+            }
+        }
+        if (sidebar && toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                const isOpen = sidebar.classList.contains('open');
+                setSidebarState(!isOpen);
+            });
+            // 初始状态桌面打开，移动关闭
+            setSidebarState(window.innerWidth > 768);
+        }
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                if (sidebar && sidebar.classList.contains('open')) body.classList.remove('sidebar-closed');
+                else body.classList.add('sidebar-closed');
+            } else {
+                body.classList.remove('sidebar-closed');
+            }
+        });
+    </script>
+</body>
+</html>
