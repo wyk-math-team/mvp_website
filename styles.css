@@ -1,3 +1,6 @@
+/* ========================================
+   styles.css - 包含模态框 + 主界面完整样式
+   ======================================== */
 
 :root {
     --topbar-height: 60px;
@@ -77,6 +80,7 @@ ul { list-style: none; }
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow-y: hidden;
     padding: 0 24px;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
