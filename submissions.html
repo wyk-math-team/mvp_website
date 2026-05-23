@@ -21,14 +21,14 @@
             padding: 0.5rem 0.8rem;
             border-bottom: 2px solid var(--border-color);
             display: grid;
-            grid-template-columns: 160px 1fr 120px 110px;  /* 增加 status 列宽至 110px */
+            grid-template-columns: 100px 160px 1fr 120px 100px;  /* 新增 rejudge 列 */
             font-weight: 700;
             color: var(--text-primary);
             font-size: 0.85rem;
         }
         .sortable {
             cursor: pointer;
-            user-select: none;  /* 修复错误写法 */
+            user-select: none;
         }
         .sortable:hover {
             background: #d0d7de;
@@ -42,7 +42,7 @@
         }
         .submission-item {
             display: grid;
-            grid-template-columns: 160px 1fr 120px 110px;  /* 与表头一致 */
+            grid-template-columns: 100px 160px 1fr 120px 100px;  /* 与表头一致 */
             align-items: center;
             padding: 0.5rem 0.8rem;
             border-bottom: 1px solid var(--border-color);
@@ -75,10 +75,23 @@
         .submission-status {
             font-weight: bold;
             text-align: right;
-            white-space: nowrap;  /* 防止换行 */
+            white-space: nowrap;
         }
         .submission-correct { color: #2e7d32; }
         .submission-wrong { color: var(--danger); }
+        .rejudge-btn {
+            background: #6c757d;
+            border: none;
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.7rem;
+            transition: background 0.2s;
+        }
+        .rejudge-btn:hover {
+            background: #5a6268;
+        }
         .filter-info {
             background: #eef2ff;
             padding: 0.4rem 0.8rem;
@@ -95,17 +108,17 @@
         .updates-header {
             padding: 0.8rem 0.8rem 0 0.8rem;
         }
-        @media (max-width: 650px) {
+        @media (max-width: 750px) {
             .submissions-header, .submission-item {
-                grid-template-columns: 130px 1fr 90px 90px;  /* 移动端 status 列宽 90px 仍可容纳 "Wrong Answer" 可能需要调整，但一般移动端可缩放 */
+                grid-template-columns: 80px 130px 1fr 90px 80px;
             }
             .submission-time { font-size: 0.7rem; }
+            .rejudge-btn { padding: 0.1rem 0.4rem; font-size: 0.65rem; }
         }
-        @media (max-width: 550px) {
+        @media (max-width: 600px) {
             .submissions-header, .submission-item {
-                grid-template-columns: 110px 1fr 70px 85px;  /* 适当增加宽度 */
+                grid-template-columns: 70px 110px 1fr 70px 70px;
             }
-            .submission-answer { font-size: 0.75rem; }
         }
     </style>
 </head>
@@ -172,122 +185,254 @@
             return 'guest';
         }
 
-        (function() {
-            // 用户隔离的存储键
-            const STORAGE_KEY_SUBMISSIONS = `submissions_${getCurrentUserName()}`;
+        // ---------- 题目数据加载与答案判断 ----------
+        let problemsData = [];
+        let problemsLoaded = false;
+        const PROBLEMS_DATA_URL = './qs.json';
 
-            function getSubmissions() {
-                const stored = localStorage.getItem(STORAGE_KEY_SUBMISSIONS);
-                if (!stored) return [];
-                try { return JSON.parse(stored); } catch(e) { return []; }
+        function isStrictNumericString(str) {
+            if (typeof str !== 'string') str = String(str);
+            str = str.trim();
+            if (str === '') return false;
+            const numericRegex = /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?$/;
+            return numericRegex.test(str);
+        }
+
+        // 判断用户答案是否正确
+        function isAnswerCorrect(problemAns, userAnswer) {
+            const ansStr = String(problemAns).trim();
+            if (!isStrictNumericString(ansStr)) {
+                // 题目答案不是数字 -> 永远错误
+                return false;
             }
+            const correctNum = parseFloat(ansStr);
+            const userNum = parseFloat(userAnswer.trim());
+            if (isNaN(userNum)) return false;
+            return Math.abs(userNum - correctNum) < 1e-6;
+        }
 
-            // 获取 URL 参数 problem_id
-            function getProblemIdFromUrl() {
-                const params = new URLSearchParams(window.location.search);
-                const id = params.get('problem_id');
-                return id ? parseInt(id) : null;
-            }
-
-            // 排序状态
-            let sortField = 'timestamp';   // 'timestamp', 'problemId', 'answer', 'status'
-            let sortOrder = 'desc';        // 'asc' or 'desc'
-
-            // 排序函数
-            function sortSubmissions(submissions) {
-                return [...submissions].sort((a, b) => {
-                    let valA, valB;
-                    switch (sortField) {
-                        case 'timestamp':
-                            valA = new Date(a.timestamp);
-                            valB = new Date(b.timestamp);
-                            break;
-                        case 'problemId':
-                            valA = a.problemId;
-                            valB = b.problemId;
-                            break;
-                        case 'answer':
-                            valA = a.answer.toLowerCase();
-                            valB = b.answer.toLowerCase();
-                            break;
-                        case 'status':
-                            valA = a.isCorrect ? 1 : 0;
-                            valB = b.isCorrect ? 1 : 0;
-                            break;
-                        default:
-                            valA = 0; valB = 0;
+        function loadProblemsData() {
+            return fetch(PROBLEMS_DATA_URL)
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    return response.json();
+                })
+                .then(data => {
+                    if (Array.isArray(data) && data.length) {
+                        problemsData = data;
+                    } else {
+                        throw new Error('Invalid data format');
                     }
-                    if (valA < valB) return sortOrder === 'asc' ? -1 : 1;
-                    if (valA > valB) return sortOrder === 'asc' ? 1 : -1;
-                    return 0;
+                    problemsLoaded = true;
+                })
+                .catch(err => {
+                    console.warn('Failed to load problems data:', err);
+                    problemsLoaded = false;
                 });
+        }
+
+        // ---------- 存储操作 ----------
+        const currentUser = getCurrentUserName();
+        const STORAGE_KEY_SUBMISSIONS = `submissions_${currentUser}`;
+        const STORAGE_KEY_STATES = `problemStates_${currentUser}`;
+
+        function getSubmissions() {
+            const stored = localStorage.getItem(STORAGE_KEY_SUBMISSIONS);
+            if (!stored) return [];
+            try { return JSON.parse(stored); } catch(e) { return []; }
+        }
+
+        function saveSubmissions(subs) {
+            localStorage.setItem(STORAGE_KEY_SUBMISSIONS, JSON.stringify(subs));
+        }
+
+        function loadProblemStates() {
+            const stored = localStorage.getItem(STORAGE_KEY_STATES);
+            if (!stored) return {};
+            try { return JSON.parse(stored); } catch(e) { return {}; }
+        }
+
+        function saveProblemStates(states) {
+            localStorage.setItem(STORAGE_KEY_STATES, JSON.stringify(states));
+        }
+
+        // 重新判定某条提交，并更新问题状态
+        async function rejudgeSubmission(submission, index, allSubmissions) {
+            if (!problemsLoaded) {
+                await loadProblemsData(); // 确保数据已加载
+            }
+            if (!problemsLoaded) {
+                alert("无法加载题目数据，请刷新页面重试。");
+                return false;
+            }
+            const problem = problemsData.find(p => p.id === submission.problemId);
+            if (!problem) {
+                alert(`题目 #${submission.problemId} 不存在，无法重新判定。`);
+                return false;
+            }
+            const newIsCorrect = isAnswerCorrect(problem.ans, submission.answer);
+            if (newIsCorrect === submission.isCorrect) {
+                // 没有变化，无需更新
+                return false;
+            }
+            // 更新该提交
+            submission.isCorrect = newIsCorrect;
+            // 保存所有提交
+            saveSubmissions(allSubmissions);
+            // 重新计算该问题的整体状态
+            const relevantSubs = allSubmissions.filter(s => s.problemId === submission.problemId);
+            let newState = 'not_started';
+            if (relevantSubs.some(s => s.isCorrect === true)) {
+                newState = 'passed';
+            } else if (relevantSubs.length > 0) {
+                newState = 'failed';
+            }
+            const states = loadProblemStates();
+            if (states[submission.problemId] !== newState) {
+                states[submission.problemId] = newState;
+                saveProblemStates(states);
+            }
+            return true;
+        }
+
+        // ---------- 排序与渲染 ----------
+        let sortField = 'timestamp';
+        let sortOrder = 'desc';
+
+        function sortSubmissions(submissions) {
+            return [...submissions].sort((a, b) => {
+                let valA, valB;
+                switch (sortField) {
+                    case 'timestamp':
+                        valA = new Date(a.timestamp);
+                        valB = new Date(b.timestamp);
+                        break;
+                    case 'problemId':
+                        valA = a.problemId;
+                        valB = b.problemId;
+                        break;
+                    case 'answer':
+                        valA = a.answer.toLowerCase();
+                        valB = b.answer.toLowerCase();
+                        break;
+                    case 'status':
+                        valA = a.isCorrect ? 1 : 0;
+                        valB = b.isCorrect ? 1 : 0;
+                        break;
+                    default:
+                        valA = 0; valB = 0;
+                }
+                if (valA < valB) return sortOrder === 'asc' ? -1 : 1;
+                if (valA > valB) return sortOrder === 'asc' ? 1 : -1;
+                return 0;
+            });
+        }
+
+        async function render() {
+            const problemIdFilter = getProblemIdFromUrl();
+            let submissions = getSubmissions();
+            let filtered = problemIdFilter ? submissions.filter(s => s.problemId === problemIdFilter) : submissions;
+            filtered = sortSubmissions(filtered);
+
+            const container = document.getElementById('submissionsContainer');
+            let html = `<div class="updates-header"><h2>Your Submissions</h2></div>`;
+            if (problemIdFilter) {
+                html += `<div class="filter-info">🔍 Showing submissions for Problem #${problemIdFilter} <a href="./problems.html" class="back-link">← Back to problems</a></div>`;
+            } else {
+                html += `<div class="filter-info">All submissions <a href="./problems.html" class="back-link">← Back to problems</a></div>`;
             }
 
-            // 渲染表格
-            function render() {
-                const problemIdFilter = getProblemIdFromUrl();
-                let submissions = getSubmissions();
-                let filtered = problemIdFilter ? submissions.filter(s => s.problemId === problemIdFilter) : submissions;
-                filtered = sortSubmissions(filtered);
-
-                const container = document.getElementById('submissionsContainer');
-                let html = `<div class="updates-header"><h2>Your Submissions</h2></div>`;
-                if (problemIdFilter) {
-                    html += `<div class="filter-info">🔍 Showing submissions for Problem #${problemIdFilter} <a href="./problems.html" class="back-link">← Back to problems</a></div>`;
-                } else {
-                    html += `<div class="filter-info">All submissions <a href="./problems.html" class="back-link">← Back to problems</a></div>`;
+            if (filtered.length === 0) {
+                html += `<p style="padding: 1rem; text-align: center; color: var(--text-secondary);">No submissions found.</p>`;
+            } else {
+                const getSortIndicator = (field) => {
+                    if (sortField !== field) return '';
+                    return sortOrder === 'asc' ? ' ↑' : ' ↓';
+                };
+                html += `<div class="submissions-list">
+                            <div class="submissions-header">
+                                <span class="sortable" data-sort="rejudge">Rejudge</span>
+                                <span class="sortable" data-sort="timestamp">Time${getSortIndicator('timestamp')}</span>
+                                <span class="sortable" data-sort="problemId">Problem${getSortIndicator('problemId')}</span>
+                                <span class="sortable" data-sort="answer">Answer${getSortIndicator('answer')}</span>
+                                <span class="sortable" data-sort="status">Status${getSortIndicator('status')}</span>
+                            </div>`;
+                for (let i = 0; i < filtered.length; i++) {
+                    const sub = filtered[i];
+                    const date = new Date(sub.timestamp).toLocaleString();
+                    const statusClass = sub.isCorrect ? 'submission-correct' : 'submission-wrong';
+                    const statusText = sub.isCorrect ? 'Accepted' : 'Wrong Answer';
+                    const globalIndex = submissions.findIndex(s => s.timestamp === sub.timestamp && s.answer === sub.answer);
+                    html += `<div class="submission-item" data-submission-index="${globalIndex}">
+                                <div class="rejudge-cell">
+                                    <button class="rejudge-btn" data-index="${globalIndex}">↻</button>
+                                </div>
+                                <div class="submission-time" title="${escapeHtml(date)}">${escapeHtml(date)}</div>
+                                <div class="submission-problem-link"><a href="./problems.html?problem_id=${sub.problemId}">Problem #${sub.problemId}</a></div>
+                                <div class="submission-answer" title="${escapeHtml(sub.answer)}">${escapeHtml(sub.answer)}</div>
+                                <div class="submission-status ${statusClass}">${statusText}</div>
+                            </div>`;
                 }
+                html += `</div>`;
+            }
+            container.innerHTML = html;
 
-                if (filtered.length === 0) {
-                    html += `<p style="padding: 1rem; text-align: center; color: var(--text-secondary);">No submissions found.</p>`;
-                } else {
-                    // 表头带排序指示器
-                    const getSortIndicator = (field) => {
-                        if (sortField !== field) return '';
-                        return sortOrder === 'asc' ? ' ↑' : ' ↓';
-                    };
-                    html += `<div class="submissions-list">
-                                <div class="submissions-header">
-                                    <span class="sortable" data-sort="timestamp">Time${getSortIndicator('timestamp')}</span>
-                                    <span class="sortable" data-sort="problemId">Problem${getSortIndicator('problemId')}</span>
-                                    <span class="sortable" data-sort="answer">Answer${getSortIndicator('answer')}</span>
-                                    <span class="sortable" data-sort="status">Status${getSortIndicator('status')}</span>
-                                </div>`;
-                    filtered.forEach(sub => {
-                        const date = new Date(sub.timestamp).toLocaleString();
-                        const statusClass = sub.isCorrect ? 'submission-correct' : 'submission-wrong';
-                        const statusText = sub.isCorrect ? 'Accepted' : 'Wrong Answer';
-                        html += `<div class="submission-item">
-                                    <div class="submission-time" title="${escapeHtml(date)}">${escapeHtml(date)}</div>
-                                    <div class="submission-problem-link"><a href="./problems.html?problem_id=${sub.problemId}">Problem #${sub.problemId}</a></div>
-                                    <div class="submission-answer" title="${escapeHtml(sub.answer)}">${escapeHtml(sub.answer)}</div>
-                                    <div class="submission-status ${statusClass}">${statusText}</div>
-                                </div>`;
-                    });
-                    html += `</div>`;
-                }
-                container.innerHTML = html;
+            // 绑定排序事件
+            document.querySelectorAll('.sortable').forEach(el => {
+                const field = el.getAttribute('data-sort');
+                if (field === 'rejudge') return; // rejudge 列不可排序
+                el.addEventListener('click', (e) => {
+                    if (sortField === field) {
+                        sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+                    } else {
+                        sortField = field;
+                        sortOrder = 'asc';
+                    }
+                    render();
+                });
+            });
 
-                // 绑定排序事件
-                document.querySelectorAll('.sortable').forEach(el => {
-                    el.addEventListener('click', (e) => {
-                        const field = el.getAttribute('data-sort');
-                        if (sortField === field) {
-                            // 切换排序顺序
-                            sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
-                        } else {
-                            sortField = field;
-                            sortOrder = 'asc'; // 新字段默认升序
+            // 绑定 Rejudge 按钮事件
+            document.querySelectorAll('.rejudge-btn').forEach(btn => {
+                btn.addEventListener('click', async (e) => {
+                    e.stopPropagation();
+                    const idx = parseInt(btn.getAttribute('data-index'));
+                    if (isNaN(idx)) return;
+                    const allSubs = getSubmissions();
+                    if (idx < 0 || idx >= allSubs.length) return;
+                    const targetSub = allSubs[idx];
+                    // 显示加载状态
+                    const originalText = btn.textContent;
+                    btn.textContent = '...';
+                    btn.disabled = true;
+                    const changed = await rejudgeSubmission(targetSub, idx, allSubs);
+                    if (changed) {
+                        // 重新渲染表格
+                        await render();
+                    } else {
+                        btn.textContent = originalText;
+                        btn.disabled = false;
+                        if (!changed && targetSub.isCorrect !== undefined) {
+                            alert("答案判定结果与之前相同，未发生变化。");
                         }
-                        render(); // 重新渲染
-                    });
+                    }
                 });
-            }
+            });
+        }
 
-            function escapeHtml(str) {
-                return String(str).replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
-            }
+        function getProblemIdFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('problem_id');
+            return id ? parseInt(id) : null;
+        }
 
+        function escapeHtml(str) {
+            return String(str).replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
+        }
+
+        // 初始化：加载题目数据后渲染
+        (async function init() {
+            await loadProblemsData();
             render();
         })();
     </script>
