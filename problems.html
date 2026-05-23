@@ -13,6 +13,19 @@
     <script src="auth.js"></script>
     <script src="app.js" defer></script>
     <style>
+        /* 全局禁止水平滚动 */
+        body, html {
+            overflow-x: hidden;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        /* 主内容区域也禁止左右滑动 */
+        .main-content {
+            overflow-x: hidden;
+            width: 100%;
+            box-sizing: border-box;
+        }
         /* 紧凑的题目列表 - 网格对齐 */
         .problems-list {
             display: flex;
@@ -21,6 +34,7 @@
             border: 1px solid var(--border-color);
             border-radius: 4px;
             overflow: hidden;
+            width: 100%;
         }
         /* 表头样式 */
         .problems-header {
@@ -44,6 +58,8 @@
             transition: background 0.2s ease;
             cursor: pointer;
             gap: 0.5rem;
+            width: 100%;
+            box-sizing: border-box;
         }
         .problem-item:last-child { border-bottom: none; }
         .problem-item.state-not_started { border-left-color: #aaa; background: var(--card-bg); }
@@ -68,6 +84,7 @@
             text-overflow: ellipsis;
             color: var(--text-primary);
             font-size: 0.9rem;
+            min-width: 0;  /* 允许收缩防止溢出 */
         }
         .problem-name span {
             display: inline-block;
@@ -79,6 +96,7 @@
             gap: 0.4rem;
             flex-wrap: wrap;
             justify-content: flex-start;
+            overflow-x: auto;  /* 标签过多时内部滚动，不影响整体 */
         }
         .tag {
             background: #f0f0f0;
@@ -94,7 +112,7 @@
         }
         .sort-indicator {
             cursor: pointer;
-            user-select: none;
+            --user-select: none;
             display: inline-block;
         }
         .sort-indicator:hover { background: #d0d7de; border-radius: 12px; padding: 0 0.1rem; }
@@ -118,6 +136,7 @@
             flex-wrap: wrap;
             align-items: center;
             gap: 0.5rem;
+            overflow-x: auto;
         }
         .filter-tag-btn {
             background: #f0f2f5;
@@ -126,11 +145,12 @@
             padding: 0.2rem 0.7rem;
             font-size: 0.75rem;
             cursor: pointer;
+            white-space: nowrap;
         }
         .filter-tag-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
 
         /* 详情样式 */
-        .problem-detail { background: var(--card-bg); border-radius: 4px; padding: 1.2rem; box-shadow: var(--shadow-sm); }
+        .problem-detail { background: var(--card-bg); border-radius: 4px; padding: 1.2rem; box-shadow: var(--shadow-sm); overflow-x: auto; max-width: 100%; box-sizing: border-box; }
         .detail-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
         .back-btn { background: none; border: 1px solid var(--border-color); border-radius: 4px; padding: 0.3rem 0.7rem; cursor: pointer; font-size: 0.85rem; }
         .problem-id-badge {
@@ -142,17 +162,33 @@
             font-size: 0.8rem;
             color: var(--text-primary);
         }
-        .problem-name-detail { font-size: 1.2rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem; }
+        .problem-name-detail { font-size: 1.2rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
         .answer-area { margin: 1rem 0; display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
-        .answer-input { padding: 0.4rem 0.7rem; border: 1px solid var(--border-color); border-radius: 4px; width: 160px; }
+        .answer-input { padding: 0.4rem 0.7rem; border: 1px solid var(--border-color); border-radius: 4px; width: 160px; max-width: 100%; box-sizing: border-box; }
         .check-btn, .submissions-btn { border: none; border-radius: 4px; padding: 0.4rem 1rem; cursor: pointer; font-weight: 500; }
         .check-btn { background: var(--accent); color: white; }
+        .check-btn:disabled {
+            opacity: 0.6;
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+        .check-btn.cooldown:disabled {
+            background-color: #5a6e8a;
+            opacity: 1;
+            cursor: not-allowed;
+        }
         .submissions-btn { background: #6c757d; color: white; }
         .feedback { margin-left: 0.5rem; }
         .feedback.correct { color: #2e7d32; }
         .feedback.wrong { color: var(--danger); }
-        .statement-content { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border-color); }
+        .statement-content { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border-color); overflow-x: auto; }
         .loading-msg { text-align: center; padding: 2rem; color: var(--text-secondary); }
+        
+        /* 确保主容器内的所有元素都不会导致全局滚动 */
+        #appContainer, .sidebar, .topbar {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
     </style>
 </head>
 <body class="index-body">
@@ -454,8 +490,8 @@
                         const state = states[prob.id] || 'not_started';
                         const stateClass = getStateClass(state);
                         let statusEmoji = '';
-                        if (state === 'passed') statusEmoji = ' ✅';
-                        else if (state === 'failed') statusEmoji = ' ❌';
+                        if (state === 'passed') statusEmoji = ' ';
+                        else if (state === 'failed') statusEmoji = ' ';
                         const nameWithStatus = `${escapeHtml(prob.name)}${statusEmoji}`;
                         html += `<div class="problem-item ${stateClass}" data-id="${prob.id}">
                                     <div class="problem-id">${prob.id}</div>
@@ -506,7 +542,19 @@
                 bindScrollListener();
             }
 
-            // 题目详情渲染（与之前相同，无筛选相关改动）
+            /**
+             * 判断一个字符串是否严格表示一个有效数字（整数、浮点数、科学计数法）
+             * 不允许包含除数字、小数点、正负号、e/E 以外的任何字符
+             */
+            function isStrictNumericString(str) {
+                if (typeof str !== 'string') str = String(str);
+                str = str.trim();
+                if (str === '') return false;
+                const numericRegex = /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?$/;
+                return numericRegex.test(str);
+            }
+
+            // 题目详情渲染（核心：根据答案字符串能否转为数字来决定按钮是否永久禁用）
             function renderProblemDetail(problemId) {
                 if (window.currentCooldownTimer) {
                     clearInterval(window.currentCooldownTimer);
@@ -561,45 +609,102 @@
                 const checkBtn = document.getElementById('checkAnswerBtn');
                 const input = document.getElementById('answerInput');
                 const fb = document.getElementById('feedbackMsg');
-                if (checkBtn && input) {
-                    checkBtn.addEventListener('click', () => {
-                        if (checkBtn.disabled) return;
-                        const val = input.value.trim();
-                        if (val === "") { fb.textContent = "Enter answer"; fb.className = "feedback wrong"; return; }
-                        const num = parseFloat(val);
-                        if (isNaN(num)) { fb.textContent = "Enter a number"; fb.className = "feedback wrong"; return; }
-                        const isCorrect = Math.abs(num - prob.ans) < 1e-6;
-                        addSubmission(prob.id, val, isCorrect);
-                        if (isCorrect) {
-                            if (currentState !== 'passed') updateProblemState(prob.id, 'passed');
-                            fb.textContent = currentState === 'passed' ? "Accepted (Already solved)" : "Accepted";
-                            fb.className = "feedback correct";
-                        } else {
-                            if (currentState !== 'passed') updateProblemState(prob.id, 'failed');
-                            fb.textContent = "Wrong Answer";
-                            fb.className = "feedback wrong";
-                        }
-                        // 冷却
-                        if (window.currentCooldownTimer) clearInterval(window.currentCooldownTimer);
-                        const startTime = Date.now();
-                        const COOLDOWN_MS = 5000;
+
+                if (!checkBtn || !input) return;
+
+                // 将题目答案转为字符串，检查其是否为严格的数字字符串
+                const answerStr = String(prob.ans);
+                const isAnswerNumeric = isStrictNumericString(answerStr);
+                
+                // 如果答案不是有效的数字字符串 -> 永久禁用提交按钮
+                if (!isAnswerNumeric) {
+                    checkBtn.disabled = true;
+                    checkBtn.title = "本题答案不是数字，无法提交";
+                    if (fb) {
+                        fb.textContent = "System Error 01";
+                        fb.className = "feedback wrong";
+                    }
+                    return;
+                }
+                
+                // 解析出正确的数字值（用于比较）
+                const correctNumeric = parseFloat(answerStr);
+                
+                // ------------------- 以下为答案可转为数字的正常逻辑 -------------------
+                let isCooldown = false;
+                
+                // 更新按钮状态：仅根据冷却标志决定是否禁用（答案可数字时按钮始终可用，仅冷却时禁用）
+                function updateSubmitButton() {
+                    if (!checkBtn) return;
+                    if (isCooldown) {
                         checkBtn.disabled = true;
-                        const updateCooldown = () => {
-                            const elapsed = Date.now() - startTime;
-                            const remaining = Math.max(0, (COOLDOWN_MS - elapsed) / 1000);
-                            if (remaining <= 0) {
-                                clearInterval(window.currentCooldownTimer);
-                                window.currentCooldownTimer = null;
-                                checkBtn.disabled = false;
+                        checkBtn.classList.add('cooldown');
+                    } else {
+                        checkBtn.disabled = false;
+                        checkBtn.classList.remove('cooldown');
+                        if (checkBtn.textContent !== "Submit") {
+                            checkBtn.textContent = "Submit";
+                        }
+                    }
+                }
+                
+                // 初始化按钮状态（非冷却，可用）
+                updateSubmitButton();
+                
+                // 提交点击事件
+                checkBtn.addEventListener('click', () => {
+                    if (checkBtn.disabled) return;
+                    const val = input.value.trim();
+                    if (val === "") {
+                        fb.textContent = "Enter answer";
+                        fb.className = "feedback wrong";
+                        return;
+                    }
+                    const num = parseFloat(val);
+                    if (isNaN(num)) {
+                        fb.textContent = "Enter a number";
+                        fb.className = "feedback wrong";
+                        return;
+                    }
+                    const isCorrect = Math.abs(num - correctNumeric) < 1e-6;
+                    addSubmission(prob.id, val, isCorrect);
+                    if (isCorrect) {
+                        if (currentState !== 'passed') updateProblemState(prob.id, 'passed');
+                        fb.textContent = currentState === 'passed' ? "Accepted (Already solved)" : "Accepted";
+                        fb.className = "feedback correct";
+                    } else {
+                        if (currentState !== 'passed') updateProblemState(prob.id, 'failed');
+                        fb.textContent = "Wrong Answer";
+                        fb.className = "feedback wrong";
+                    }
+                    
+                    // 开始冷却（5秒）
+                    if (window.currentCooldownTimer) clearInterval(window.currentCooldownTimer);
+                    isCooldown = true;
+                    updateSubmitButton();
+                    const startTime = Date.now();
+                    const COOLDOWN_MS = 5000;
+                    
+                    const updateCooldownDisplay = () => {
+                        const elapsed = Date.now() - startTime;
+                        const remaining = Math.max(0, (COOLDOWN_MS - elapsed) / 1000);
+                        if (remaining <= 0) {
+                            clearInterval(window.currentCooldownTimer);
+                            window.currentCooldownTimer = null;
+                            isCooldown = false;
+                            if (checkBtn) {
                                 checkBtn.textContent = "Submit";
-                            } else {
+                                updateSubmitButton();
+                            }
+                        } else {
+                            if (checkBtn) {
                                 checkBtn.textContent = `Wait ${remaining.toFixed(2)}s`;
                             }
-                        };
-                        updateCooldown();
-                        window.currentCooldownTimer = setInterval(updateCooldown, 100);
-                    });
-                }
+                        }
+                    };
+                    updateCooldownDisplay();
+                    window.currentCooldownTimer = setInterval(updateCooldownDisplay, 100);
+                });
             }
 
             function initRouting() {
@@ -639,7 +744,7 @@
                     problemsData = window.problemsData;
                     dataLoaded = true;
                     loadSortMode();
-                    loadFilterTags();      // 加载筛选状态
+                    loadFilterTags();
                     initRouting();
                     return;
                 }
