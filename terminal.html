@@ -92,7 +92,7 @@
                 
                 <div class="terminal-container">
                     <div class="terminal-output" id="terminalOutput">
-                        > Terminal ready. Type 'help' for commands.<br>
+                        > Terminal ready. Loading problems data...<br>
                     </div>
                     <div class="terminal-line">
                         <span class="terminal-prompt">$&nbsp;</span>
@@ -202,14 +202,12 @@
         }
 
         // ---------- 解析 remove 命令 ----------
-        // 格式示例: remove() , remove().status , remove().sub , remove().status.qn(5) , remove().sub(3)
         function parseRemoveCommand(cmd) {
-            // 匹配主模式
             const mainMatch = cmd.match(/^remove\(\)(?:\.(status|sub)(?:\.qn\((\d+)\)|\((\d+)\)))?$/);
             if (!mainMatch) return null;
-            const type = mainMatch[1];        // 'status' 或 'sub' 或 undefined
-            const qnId = mainMatch[2];        // 来自 .qn(#)
-            const subId = mainMatch[3];        // 来自 .sub(#) 中的 #
+            const type = mainMatch[1];
+            const qnId = mainMatch[2];
+            const subId = mainMatch[3];
             let id = null;
             if (qnId !== undefined) id = parseInt(qnId);
             if (subId !== undefined) id = parseInt(subId);
@@ -228,6 +226,61 @@
             return lines.join('\n');
         }
 
+        // ========== 新增：加载题目数据并判断答案是否为数字 ==========
+        let problemsData = [];
+        let problemsLoaded = false;
+        const PROBLEMS_DATA_URL = './qs.json';
+
+        // 与 problems.html 一致的严格数字判断
+        function isStrictNumericString(str) {
+            if (typeof str !== 'string') str = String(str);
+            str = str.trim();
+            if (str === '') return false;
+            const numericRegex = /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?$/;
+            return numericRegex.test(str);
+        }
+
+        function loadProblemsData() {
+            return fetch(PROBLEMS_DATA_URL)
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    return response.json();
+                })
+                .then(data => {
+                    if (Array.isArray(data) && data.length) {
+                        problemsData = data;
+                    } else {
+                        throw new Error('Invalid data format');
+                    }
+                    problemsLoaded = true;
+                    appendOutput("> Problems data loaded successfully.");
+                })
+                .catch(err => {
+                    console.warn('Failed to load problems data:', err);
+                    appendOutput("> Warning: Could not load problems data. 'list err' will not work.");
+                    problemsLoaded = false;
+                });
+        }
+
+        // 列出所有答案非数字的题目 ID
+        function listNonNumericProblems() {
+            if (!problemsLoaded) {
+                return "Problems data not loaded yet. Please wait or reload the page.";
+            }
+            const nonNumericIds = [];
+            for (const prob of problemsData) {
+                const ansStr = String(prob.ans);
+                if (!isStrictNumericString(ansStr)) {
+                    nonNumericIds.push(prob.id);
+                }
+            }
+            if (nonNumericIds.length === 0) {
+                return "All problems have numeric answers.";
+            }
+            return `Problems with non-numeric answers (IDs): ${nonNumericIds.join(', ')}`;
+        }
+
+        // ---------- 终端 UI ----------
         const outputDiv = document.getElementById('terminalOutput');
         const inputField = document.getElementById('terminalInput');
 
@@ -240,9 +293,18 @@
             const cmd = cmdLine.trim();
             if (cmd === "") return;
 
-            // 处理常规命令
+            // 帮助
             if (cmd === 'help') {
-                appendOutput("Available commands:\n  remove()                - Delete ALL data (states + submissions)\n  remove().status         - Delete all problem states\n  remove().sub             - Delete all submissions\n  remove().status.qn(#)   - Delete state for problem #\n  remove().sub(#)         - Delete submissions for problem #\n  list                    - Show current user's problem states\n  clear                   - Clear terminal output\n  help                    - Show this help");
+                appendOutput("Available commands:\n" +
+                    "  remove()                - Delete ALL data (states + submissions)\n" +
+                    "  remove().status         - Delete all problem states\n" +
+                    "  remove().sub             - Delete all submissions\n" +
+                    "  remove().status.qn(#)   - Delete state for problem #\n" +
+                    "  remove().sub(#)         - Delete submissions for problem #\n" +
+                    "  list                    - Show current user's problem states\n" +
+                    "  list err                - Show all problem IDs with non-numeric answers\n" +
+                    "  clear                   - Clear terminal output\n" +
+                    "  help                    - Show this help");
                 return;
             }
             if (cmd === 'clear') {
@@ -254,30 +316,29 @@
                 appendOutput(listStates());
                 return;
             }
+            if (cmd === 'list err') {
+                appendOutput(listNonNumericProblems());
+                return;
+            }
 
             // 尝试解析 remove 类命令
             const parsed = parseRemoveCommand(cmd);
             if (parsed) {
                 const { type, id } = parsed;
                 if (type === undefined) {
-                    // remove()
                     deleteAllData();
                     appendOutput("All data (states + submissions) deleted for current user.");
                 } else if (type === 'status' && id === null) {
-                    // remove().status
                     deleteAllStates();
                     appendOutput("All problem states deleted for current user.");
                 } else if (type === 'sub' && id === null) {
-                    // remove().sub
                     deleteAllSubmissions();
                     appendOutput("All submissions deleted for current user.");
                 } else if (type === 'status' && id !== null) {
-                    // remove().status.qn(#)
                     const success = deleteStateByProblemId(id);
                     if (success) appendOutput(`State for problem #${id} deleted.`);
                     else appendOutput(`Problem #${id} not found in states.`);
                 } else if (type === 'sub' && id !== null) {
-                    // remove().sub(#)
                     const success = deleteSubmissionsByProblemId(id);
                     if (success) appendOutput(`Submissions for problem #${id} deleted.`);
                     else appendOutput(`No submissions found for problem #${id}.`);
@@ -299,6 +360,9 @@
                 inputField.value = "";
             }
         });
+
+        // 启动时加载题目数据
+        loadProblemsData();
     </script>
 </body>
 </html>
