@@ -20,7 +20,6 @@
             margin: 0;
             padding: 0;
         }
-        /* 主内容区域也禁止左右滑动 */
         .main-content {
             overflow-x: hidden;
             width: 100%;
@@ -36,7 +35,6 @@
             overflow: hidden;
             width: 100%;
         }
-        /* 表头样式 */
         .problems-header {
             display: grid;
             grid-template-columns: 60px 1fr 1.2fr 70px;
@@ -46,7 +44,6 @@
             border-bottom: 1px solid var(--border-color);
             font-size: 0.85rem;
         }
-        /* 题目条目样式 */
         .problem-item {
             display: grid;
             grid-template-columns: 60px 1fr 1.2fr 70px;
@@ -84,19 +81,14 @@
             text-overflow: ellipsis;
             color: var(--text-primary);
             font-size: 0.9rem;
-            min-width: 0;  /* 允许收缩防止溢出 */
-        }
-        .problem-name span {
-            display: inline-block;
-            margin-left: 0.3rem;
-            font-size: 0.85rem;
+            min-width: 0;
         }
         .tags-container {
             display: flex;
             gap: 0.4rem;
             flex-wrap: wrap;
             justify-content: flex-start;
-            overflow-x: auto;  /* 标签过多时内部滚动，不影响整体 */
+            overflow-x: auto;
         }
         .tag {
             background: #f0f0f0;
@@ -112,7 +104,7 @@
         }
         .sort-indicator {
             cursor: pointer;
-            --user-select: none;
+            user-select: none;
             display: inline-block;
         }
         .sort-indicator:hover { background: #d0d7de; border-radius: 12px; padding: 0 0.1rem; }
@@ -125,7 +117,6 @@
             .problem-name { max-width: 80px; }
         }
 
-        /* 筛选栏 */
         .filter-bar {
             background: var(--card-bg);
             border-radius: 4px;
@@ -149,7 +140,6 @@
         }
         .filter-tag-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
 
-        /* 详情样式 */
         .problem-detail { background: var(--card-bg); border-radius: 4px; padding: 1.2rem; box-shadow: var(--shadow-sm); overflow-x: auto; max-width: 100%; box-sizing: border-box; }
         .detail-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; }
         .back-btn { background: none; border: 1px solid var(--border-color); border-radius: 4px; padding: 0.3rem 0.7rem; cursor: pointer; font-size: 0.85rem; }
@@ -184,10 +174,61 @@
         .statement-content { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px solid var(--border-color); overflow-x: auto; }
         .loading-msg { text-align: center; padding: 2rem; color: var(--text-secondary); }
         
-        /* 确保主容器内的所有元素都不会导致全局滚动 */
-        #appContainer, .sidebar, .topbar {
-            max-width: 100%;
-            overflow-x: hidden;
+        #appContainer, .sidebar, .topbar { max-width: 100%; overflow-x: hidden; }
+        
+        /* 画板样式 */
+        .drawing-board {
+            margin-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+        .drawing-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            align-items: center;
+            margin-bottom: 1rem;
+            background: #f8f9fa;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        .drawing-tools button {
+            font-size: 1.2rem;
+            width: 36px;
+            height: 36px;
+            padding: 0;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .drawing-tools button.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        .drawing-tools button:not(.active):hover { background: #e9ecef; }
+        .drawing-tools label { font-weight: 500; margin-right: 0.2rem; }
+        .drawing-tools input, .drawing-tools select {
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            background: white;
+            cursor: pointer;
+        }
+        .drawing-board canvas {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background: white;
+            cursor: crosshair;
+            touch-action: none;
         }
     </style>
 </head>
@@ -225,7 +266,6 @@
         <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">☰</button>
     </div>
 
-    <!-- 登录模态框 -->
     <div id="loginModal" class="modal-overlay" style="display: none;">
         <div class="modal-card">
             <div class="modal-header"><h2>Sign In Required</h2><button class="modal-close" id="closeModalBtn">&times;</button></div>
@@ -240,30 +280,24 @@
     </div>
 
     <script>
-        // ========== 登录检查 ==========
         if (typeof isLoggedIn === 'function' && !isLoggedIn()) {
             window.location.href = 'index.html';
         }
 
-        // ========== 获取当前用户名（用于数据隔离）==========
         function getCurrentUserName() {
             if (typeof getCurrentUser === 'function') {
                 const user = getCurrentUser();
-                if (user && (user.username || user.displayName)) {
-                    return user.username || user.displayName;
-                }
+                if (user && (user.username || user.displayName)) return user.username || user.displayName;
             }
             return 'guest';
         }
 
-        // ========== 配置外部数据路径 ==========
         const PROBLEMS_DATA_URL = './qs.json';
 
         (function() {
             let problemsData = [];
             let dataLoaded = false;
 
-            // 默认后备数据
             const fallbackData = [
                 { id: 1, name: "Quadratic Equation", statement: "Solve $x^2 - 5x + 6 = 0$. Enter the **positive** root.", ans: 3, difficulty: 2.5, tags: ["algebra", "quadratic"] },
                 { id: 2, name: "Limit", statement: "Evaluate $\\lim_{x \\to 0} \\frac{\\sin x}{x}$.", ans: 1, difficulty: 3.0, tags: ["calculus", "limit"] },
@@ -272,32 +306,15 @@
                 { id: 5, name: "Matrix Multiplication", statement: "$A=\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}, B=\\begin{pmatrix}2&0\\\\1&2\\end{pmatrix}$, find (1,1) entry of AB.", ans: 4, difficulty: 3.5, tags: ["linear algebra", "matrix"] }
             ];
 
-            // ---------- 用户相关存储键 ----------
-            function getUserKey(baseKey) {
-                const username = getCurrentUserName();
-                return `${baseKey}_${username}`;
-            }
-
-            // 状态管理（用户隔离）
-            function getDefaultStates() {
-                const s = {};
-                problemsData.forEach(p => s[p.id] = 'not_started');
-                return s;
-            }
+            function getUserKey(baseKey) { return `${baseKey}_${getCurrentUserName()}`; }
+            function getDefaultStates() { const s = {}; problemsData.forEach(p => s[p.id] = 'not_started'); return s; }
             function loadStates() {
                 const key = getUserKey('problemStates');
                 const stored = localStorage.getItem(key);
                 if (!stored) return getDefaultStates();
-                try {
-                    return { ...getDefaultStates(), ...JSON.parse(stored) };
-                } catch(e) {
-                    return getDefaultStates();
-                }
+                try { return { ...getDefaultStates(), ...JSON.parse(stored) }; } catch(e) { return getDefaultStates(); }
             }
-            function saveStates(states) {
-                const key = getUserKey('problemStates');
-                localStorage.setItem(key, JSON.stringify(states));
-            }
+            function saveStates(states) { localStorage.setItem(getUserKey('problemStates'), JSON.stringify(states)); }
             function updateProblemState(pid, newState) {
                 const s = loadStates();
                 if (s[pid] === 'passed' && newState !== 'passed') return false;
@@ -305,94 +322,56 @@
                 saveStates(s);
                 return true;
             }
-            function getProblemState(pid) {
-                return loadStates()[pid] || 'not_started';
-            }
+            function getProblemState(pid) { return loadStates()[pid] || 'not_started'; }
             function addSubmission(pid, answer, isCorrect) {
-                const key = getUserKey('submissions');
                 const subs = getSubmissions();
                 subs.push({ problemId: pid, answer: answer, isCorrect: isCorrect, timestamp: new Date().toISOString() });
-                localStorage.setItem(key, JSON.stringify(subs));
+                localStorage.setItem(getUserKey('submissions'), JSON.stringify(subs));
             }
             function getSubmissions() {
-                const key = getUserKey('submissions');
-                const stored = localStorage.getItem(key);
+                const stored = localStorage.getItem(getUserKey('submissions'));
                 if (!stored) return [];
-                try {
-                    return JSON.parse(stored);
-                } catch(e) {
-                    return [];
-                }
+                try { return JSON.parse(stored); } catch(e) { return []; }
             }
 
-            // ---------- 多标签筛选存储（用户隔离，且不导出）----------
             const FILTER_TAGS_KEY = getUserKey('problemFilterTags');
-            let activeTags = new Set();   // 存储当前激活的标签
-
+            let activeTags = new Set();
             function loadFilterTags() {
                 const stored = localStorage.getItem(FILTER_TAGS_KEY);
-                if (stored) {
-                    try {
-                        const arr = JSON.parse(stored);
-                        if (Array.isArray(arr)) {
-                            activeTags = new Set(arr);
-                        }
-                    } catch(e) {}
-                }
+                if (stored) try { const arr = JSON.parse(stored); if (Array.isArray(arr)) activeTags = new Set(arr); } catch(e) {}
             }
-            function saveFilterTags() {
-                const arr = Array.from(activeTags);
-                localStorage.setItem(FILTER_TAGS_KEY, JSON.stringify(arr));
-            }
-
-            // 切换标签激活状态
+            function saveFilterTags() { localStorage.setItem(FILTER_TAGS_KEY, JSON.stringify(Array.from(activeTags))); }
             function toggleTag(tag) {
-                if (activeTags.has(tag)) {
-                    activeTags.delete(tag);
-                } else {
-                    activeTags.add(tag);
-                }
+                if (activeTags.has(tag)) activeTags.delete(tag);
+                else activeTags.add(tag);
                 saveFilterTags();
             }
 
-            // ---------- 排序模式存储（用户隔离）----------
             const SORT_MODE_KEY = getUserKey('problemSortMode');
-            let sortMode = 0;  // 0: id升序, 1: 难度升序(0视为无穷大), 2: 难度降序(0视为0)
+            let sortMode = 0;
             function loadSortMode() {
                 const saved = localStorage.getItem(SORT_MODE_KEY);
-                if (saved !== null) {
-                    const mode = parseInt(saved);
-                    if (!isNaN(mode) && mode >= 0 && mode <= 2) sortMode = mode;
-                }
+                if (saved !== null) { const mode = parseInt(saved); if (!isNaN(mode) && mode >= 0 && mode <= 2) sortMode = mode; }
             }
-            function saveSortMode() {
-                localStorage.setItem(SORT_MODE_KEY, sortMode.toString());
-            }
-
-            // 排序函数
+            function saveSortMode() { localStorage.setItem(SORT_MODE_KEY, sortMode.toString()); }
             function sortProblems(problems) {
                 const sorted = [...problems];
-                if (sortMode === 0) {
-                    sorted.sort((a, b) => a.id - b.id);
-                } else if (sortMode === 1) {
-                    sorted.sort((a, b) => {
-                        let da = a.difficulty === 0 ? Infinity : a.difficulty;
-                        let db = b.difficulty === 0 ? Infinity : b.difficulty;
-                        if (da === db) return a.id - b.id;
-                        return da - db;
-                    });
-                } else if (sortMode === 2) {
-                    sorted.sort((a, b) => {
-                        let da = a.difficulty === 0 ? 0 : a.difficulty;
-                        let db = b.difficulty === 0 ? 0 : b.difficulty;
-                        if (da === db) return a.id - b.id;
-                        return db - da;
-                    });
-                }
+                if (sortMode === 0) sorted.sort((a, b) => a.id - b.id);
+                else if (sortMode === 1) sorted.sort((a, b) => {
+                    let da = a.difficulty === 0 ? Infinity : a.difficulty;
+                    let db = b.difficulty === 0 ? Infinity : b.difficulty;
+                    if (da === db) return a.id - b.id;
+                    return da - db;
+                });
+                else if (sortMode === 2) sorted.sort((a, b) => {
+                    let da = a.difficulty === 0 ? 0 : a.difficulty;
+                    let db = b.difficulty === 0 ? 0 : b.difficulty;
+                    if (da === db) return a.id - b.id;
+                    return db - da;
+                });
                 return sorted;
             }
 
-            // URL 参数处理
             function getUrlParam(param) {
                 const urlParams = new URLSearchParams(window.location.search);
                 return urlParams.get(param);
@@ -403,55 +382,28 @@
                 window.history.pushState({}, '', url);
             }
 
-            // 渲染逻辑
             let mainContainer = document.getElementById('mainContent');
-
-            // ========== 滚动位置记忆 (window.scrollY) ==========
             const SCROLL_KEY = 'problemsListScrollY';
-            function saveScrollPosition() {
-                sessionStorage.setItem(SCROLL_KEY, window.scrollY);
-            }
+            function saveScrollPosition() { sessionStorage.setItem(SCROLL_KEY, window.scrollY); }
             function restoreScrollPosition() {
                 const saved = sessionStorage.getItem(SCROLL_KEY);
-                if (saved !== null) {
-                    setTimeout(() => {
-                        window.scrollTo(0, parseInt(saved));
-                    }, 50);
-                }
+                if (saved !== null) setTimeout(() => window.scrollTo(0, parseInt(saved)), 50);
             }
-            function clearScrollPosition() {
-                sessionStorage.removeItem(SCROLL_KEY);
-                window.scrollTo(0, 0);
-            }
+            function clearScrollPosition() { sessionStorage.removeItem(SCROLL_KEY); window.scrollTo(0, 0); }
             let scrollListenerActive = false;
-            function bindScrollListener() {
-                if (!scrollListenerActive) {
-                    window.addEventListener('scroll', saveScrollPosition);
-                    scrollListenerActive = true;
-                }
-            }
-            function unbindScrollListener() {
-                if (scrollListenerActive) {
-                    window.removeEventListener('scroll', saveScrollPosition);
-                    scrollListenerActive = false;
-                }
-            }
-            function resetScrollOnFilterOrSort() {
-                clearScrollPosition();
-            }
+            function bindScrollListener() { if (!scrollListenerActive) { window.addEventListener('scroll', saveScrollPosition); scrollListenerActive = true; } }
+            function unbindScrollListener() { if (scrollListenerActive) { window.removeEventListener('scroll', saveScrollPosition); scrollListenerActive = false; } }
+            function resetScrollOnFilterOrSort() { clearScrollPosition(); }
 
             function getAllTags() {
                 const set = new Set();
                 problemsData.forEach(p => p.tags.forEach(t => set.add(t)));
                 return Array.from(set).sort();
             }
-
-            // 多标签筛选：题目必须包含至少一个激活的标签（并集）
             function getFilteredProblems() {
                 if (activeTags.size === 0) return problemsData;
                 return problemsData.filter(p => p.tags.some(tag => activeTags.has(tag)));
             }
-
             function getStateClass(state) {
                 if (state === 'failed') return 'state-failed';
                 if (state === 'passed') return 'state-passed';
@@ -459,10 +411,7 @@
             }
 
             function renderProblemList() {
-                if (!problemsData.length) {
-                    mainContainer.innerHTML = `<div class="loading-msg">No problems available.</div>`;
-                    return;
-                }
+                if (!problemsData.length) { mainContainer.innerHTML = `<div class="loading-msg">No problems available.</div>`; return; }
                 let filtered = getFilteredProblems();
                 filtered = sortProblems(filtered);
                 const allTags = getAllTags();
@@ -471,7 +420,6 @@
                 let html = `<div class="updates-panel" style="padding:0.5rem;">
                             <div class="updates-header"><h2>Problem Set</h2></div>
                             <div class="filter-bar"><span style="font-weight:600;">Filter tags:</span>`;
-                // 生成所有标签按钮
                 allTags.forEach(tag => {
                     const isActive = activeTags.has(tag);
                     html += `<button class="filter-tag-btn ${isActive ? 'active' : ''}" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</button>`;
@@ -488,14 +436,10 @@
                 } else {
                     filtered.forEach(prob => {
                         const state = states[prob.id] || 'not_started';
-                        const stateClass = getStateClass(state);
-                        let statusEmoji = '';
-                        if (state === 'passed') statusEmoji = ' ';
-                        else if (state === 'failed') statusEmoji = ' ';
-                        const nameWithStatus = `${escapeHtml(prob.name)}${statusEmoji}`;
-                        html += `<div class="problem-item ${stateClass}" data-id="${prob.id}">
+                        const statusEmoji = state === 'passed' ? ' ✅' : (state === 'failed' ? ' ❌' : '');
+                        html += `<div class="problem-item ${getStateClass(state)}" data-id="${prob.id}">
                                     <div class="problem-id">${prob.id}</div>
-                                    <div class="problem-name" title="${escapeHtml(prob.name)}">${nameWithStatus}</div>
+                                    <div class="problem-name" title="${escapeHtml(prob.name)}">${escapeHtml(prob.name)}${statusEmoji}</div>
                                     <div class="tags-container">${prob.tags.map(t => `<span class="tag">${escapeHtml(t)}</span>`).join('')}</div>
                                     <div class="difficulty">${prob.difficulty === 0 ? '∞' : prob.difficulty.toFixed(1)}</div>
                                 </div>`;
@@ -504,18 +448,10 @@
                 html += `</div></div>`;
                 mainContainer.innerHTML = html;
 
-                // 绑定卡片点击
                 document.querySelectorAll('.problem-item').forEach(el => {
                     const id = parseInt(el.getAttribute('data-id'));
-                    if (id) {
-                        el.addEventListener('click', () => {
-                            saveScrollPosition();
-                            window.location.href = `problems.html?problem_id=${id}`;
-                        });
-                    }
+                    if (id) el.addEventListener('click', () => { saveScrollPosition(); window.location.href = `problems.html?problem_id=${id}`; });
                 });
-
-                // 绑定标签按钮点击（多选）
                 document.querySelectorAll('.filter-tag-btn').forEach(btn => {
                     btn.addEventListener('click', (e) => {
                         e.stopPropagation();
@@ -525,27 +461,12 @@
                         renderProblemList();
                     });
                 });
-
-                // 绑定排序按钮事件
                 const sortBtn = document.getElementById('levelSortBtn');
-                if (sortBtn) {
-                    sortBtn.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        sortMode = (sortMode + 1) % 3;
-                        saveSortMode();
-                        resetScrollOnFilterOrSort();
-                        renderProblemList();
-                    });
-                }
-
+                if (sortBtn) sortBtn.addEventListener('click', (e) => { e.stopPropagation(); sortMode = (sortMode + 1) % 3; saveSortMode(); resetScrollOnFilterOrSort(); renderProblemList(); });
                 restoreScrollPosition();
                 bindScrollListener();
             }
 
-            /**
-             * 判断一个字符串是否严格表示一个有效数字（整数、浮点数、科学计数法）
-             * 不允许包含除数字、小数点、正负号、e/E 以外的任何字符
-             */
             function isStrictNumericString(str) {
                 if (typeof str !== 'string') str = String(str);
                 str = str.trim();
@@ -554,25 +475,244 @@
                 return numericRegex.test(str);
             }
 
-            // 题目详情渲染（核心：根据答案字符串能否转为数字来决定按钮是否永久禁用）
-            function renderProblemDetail(problemId) {
-                if (window.currentCooldownTimer) {
-                    clearInterval(window.currentCooldownTimer);
-                    window.currentCooldownTimer = null;
+            let currentCanvas = null;
+            let currentDrawingCtx = null;
+            let drawing = false;
+            let currentProblemIdForCanvas = null;
+            let resizeObserver = null;
+
+            // 调整 canvas 实际分辨率（让实际像素尺寸为 CSS 宽度的 2 倍）
+            function resizeCanvasToDisplaySize(canvas) {
+                const rect = canvas.getBoundingClientRect();
+                if (rect.width === 0) return;
+                const ratio=5;
+                // 目标分辨率：CSS 宽度的 2 倍，高度按比例（保持宽高比）
+                const targetWidth = Math.max(rect.width*ratio, 1);
+                const targetHeight = Math.round(targetWidth * (400 / 600)); // 维持 600:400 比例
+                if (canvas.width !== targetWidth || canvas.height !== targetHeight) {
+                    const imgData = canvas.toDataURL(); // 保存当前内容
+                    canvas.width = targetWidth;
+                    canvas.height = targetHeight;
+                    // 恢复之前的内容（缩放绘制）
+                    if (imgData !== 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==') {
+                        const img = new Image();
+                        img.onload = () => {
+                            const ctx = canvas.getContext('2d');
+                            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                            saveCanvasToLocalStorage(currentProblemIdForCanvas);
+                        };
+                        img.src = imgData;
+                    }
+                    // 重新设置绘图上下文属性（笔触样式等）
+                    const ctx = canvas.getContext('2d');
+                    ctx.lineCap = 'round';
+                    // 根据当前模式恢复设置（需要在外部调用 setPen/setEraser，但为了简单，让用户重新选择工具触发样式更新）
+                    // 这里简单触发一下模式重设
+                    const brushBtn = document.getElementById('brushBtn');
+                    const eraserBtn = document.getElementById('eraserBtn');
+                    if (brushBtn && brushBtn.classList.contains('active')) {
+                        ctx.globalCompositeOperation = 'source-over';
+                        ctx.strokeStyle = document.getElementById('penColor')?.value || '#000000';
+                        ctx.lineWidth = parseInt(document.getElementById('penSize')?.value || 3, 10);
+                    } else if (eraserBtn && eraserBtn.classList.contains('active')) {
+                        const eraserMode = document.getElementById('eraserModeSelect')?.value === 'pixel' ? 'pixel' : 'component';
+                        if (eraserMode === 'pixel') {
+                            ctx.globalCompositeOperation = 'destination-out';
+                            ctx.strokeStyle = 'rgba(0,0,0,1)';
+                        }
+                        ctx.lineWidth = parseInt(document.getElementById('penSize')?.value || 3, 10);
+                    }
                 }
+            }
+
+            function saveCanvasToLocalStorage(problemId) {
+                if (!currentCanvas) return;
+                const username = getCurrentUserName();
+                const key = `drawing_${username}_${problemId}`;
+                try {
+                    const dataURL = currentCanvas.toDataURL();
+                    localStorage.setItem(key, dataURL);
+                } catch(e) { console.warn('Failed to save drawing:', e); }
+            }
+
+            function loadCanvasFromLocalStorage(problemId) {
+                if (!currentCanvas) return;
+                const username = getCurrentUserName();
+                const key = `drawing_${username}_${problemId}`;
+                const saved = localStorage.getItem(key);
+                if (saved && saved !== 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==') {
+                    const img = new Image();
+                    img.onload = () => {
+                        const ctx = currentCanvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, currentCanvas.width, currentCanvas.height);
+                    };
+                    img.src = saved;
+                }
+            }
+
+            function clearCanvasStorage(problemId) {
+                const username = getCurrentUserName();
+                const key = `drawing_${username}_${problemId}`;
+                localStorage.removeItem(key);
+            }
+
+            function initDrawingBoard(canvasId, problemId) {
+                const canvas = document.getElementById(canvasId);
+                if (!canvas) return;
+                if (currentCanvas === canvas) return;
+                if (currentCanvas) {
+                    currentCanvas.removeEventListener('mousedown', startDraw);
+                    currentCanvas.removeEventListener('mousemove', draw);
+                    currentCanvas.removeEventListener('mouseup', endDraw);
+                    currentCanvas.removeEventListener('mouseleave', endDraw);
+                    currentCanvas.removeEventListener('touchstart', startDraw);
+                    currentCanvas.removeEventListener('touchmove', draw);
+                    currentCanvas.removeEventListener('touchend', endDraw);
+                    currentCanvas.removeEventListener('touchcancel', endDraw);
+                    if (resizeObserver) resizeObserver.disconnect();
+                }
+                currentCanvas = canvas;
+                currentProblemIdForCanvas = problemId;
+                const ctx = canvas.getContext('2d');
+                currentDrawingCtx = ctx;
+
+                // 初始分辨率调整
+                resizeCanvasToDisplaySize(canvas);
+                // 监听窗口大小变化，动态调整分辨率
+                if (resizeObserver) resizeObserver.disconnect();
+                resizeObserver = new ResizeObserver(() => {
+                    resizeCanvasToDisplaySize(canvas);
+                    loadCanvasFromLocalStorage(problemId);
+                });
+                resizeObserver.observe(canvas.parentElement);
+
+                const brushBtn = document.getElementById('brushBtn');
+                const eraserBtn = document.getElementById('eraserBtn');
+                const eraserModeSelect = document.getElementById('eraserModeSelect');
+                const penColorPicker = document.getElementById('penColor');
+                const penSizeSlider = document.getElementById('penSize');
+                const clearBtn = document.getElementById('clearCanvasBtn');
+
+                let currentMode = 'pen';
+                let eraserMode = 'pixel';
+
+                function setPen() {
+                    currentMode = 'pen';
+                    ctx.globalCompositeOperation = 'source-over';
+                    ctx.strokeStyle = penColorPicker.value;
+                    ctx.lineWidth = parseInt(penSizeSlider.value, 10);
+                    ctx.lineCap = 'round';
+                    brushBtn.classList.add('active');
+                    eraserBtn.classList.remove('active');
+                }
+                function setEraser() {
+                    currentMode = 'eraser';
+                    if (eraserMode === 'pixel') {
+                        ctx.globalCompositeOperation = 'destination-out';
+                        ctx.strokeStyle = 'rgba(0,0,0,1)';
+                    } else if (eraserMode === 'component') {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        saveCanvasToLocalStorage(problemId);
+                        setPen();
+                        return;
+                    }
+                    ctx.lineWidth = parseInt(penSizeSlider.value, 10);
+                    ctx.lineCap = 'round';
+                    brushBtn.classList.remove('active');
+                    eraserBtn.classList.add('active');
+                }
+
+                brushBtn.addEventListener('click', setPen);
+                eraserBtn.addEventListener('click', () => {
+                    eraserMode = eraserModeSelect.value;
+                    setEraser();
+                });
+                eraserModeSelect.addEventListener('change', (e) => {
+                    eraserMode = e.target.value;
+                    if (currentMode === 'eraser') setEraser();
+                });
+                penColorPicker.addEventListener('input', () => {
+                    if (currentMode === 'pen') ctx.strokeStyle = penColorPicker.value;
+                });
+                penSizeSlider.addEventListener('input', () => {
+                    ctx.lineWidth = parseInt(penSizeSlider.value, 10);
+                });
+                clearBtn.addEventListener('click', () => {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    saveCanvasToLocalStorage(problemId);
+                });
+
+                setPen();
+
+                // 恢复保存的内容（如有）
+                loadCanvasFromLocalStorage(problemId);
+
+                function startDraw(e) {
+                    e.preventDefault();
+                    drawing = true;
+                    const pos = getMousePos(canvas, e);
+                    ctx.beginPath();
+                    ctx.moveTo(pos.x, pos.y);
+                    ctx.lineTo(pos.x, pos.y);
+                    ctx.stroke();
+                }
+                function draw(e) {
+                    if (!drawing) return;
+                    e.preventDefault();
+                    const pos = getMousePos(canvas, e);
+                    ctx.lineTo(pos.x, pos.y);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.moveTo(pos.x, pos.y);
+                }
+                function endDraw(e) {
+                    if (drawing) {
+                        drawing = false;
+                        ctx.beginPath();
+                        saveCanvasToLocalStorage(problemId);
+                    }
+                }
+                function getMousePos(canvas, evt) {
+                    const rect = canvas.getBoundingClientRect();
+                    const scaleX = canvas.width / rect.width;
+                    const scaleY = canvas.height / rect.height;
+                    let clientX, clientY;
+                    if (evt.touches) {
+                        clientX = evt.touches[0].clientX;
+                        clientY = evt.touches[0].clientY;
+                    } else {
+                        clientX = evt.clientX;
+                        clientY = evt.clientY;
+                    }
+                    let x = (clientX - rect.left) * scaleX;
+                    let y = (clientY - rect.top) * scaleY;
+                    x = Math.min(Math.max(0, x), canvas.width);
+                    y = Math.min(Math.max(0, y), canvas.height);
+                    return { x, y };
+                }
+
+                canvas.addEventListener('mousedown', startDraw);
+                canvas.addEventListener('mousemove', draw);
+                canvas.addEventListener('mouseup', endDraw);
+                canvas.addEventListener('mouseleave', endDraw);
+                canvas.addEventListener('touchstart', startDraw);
+                canvas.addEventListener('touchmove', draw);
+                canvas.addEventListener('touchend', endDraw);
+                canvas.addEventListener('touchcancel', endDraw);
+            }
+
+            function renderProblemDetail(problemId) {
+                if (window.currentCooldownTimer) clearInterval(window.currentCooldownTimer);
                 unbindScrollListener();
                 const prob = problemsData.find(p => p.id === problemId);
-                if (!prob) {
-                    renderProblemList();
-                    return;
-                }
+                if (!prob) { renderProblemList(); return; }
                 const currentState = getProblemState(problemId);
                 const diffStr = prob.difficulty === 0 ? '∞' : prob.difficulty.toFixed(1);
                 const tagsStr = prob.tags.join(', ');
-                let statusEmoji = '';
-                if (currentState === 'passed') statusEmoji = ' ✅';
-                else if (currentState === 'failed') statusEmoji = ' ❌';
+                const statusEmoji = currentState === 'passed' ? ' ✅' : (currentState === 'failed' ? ' ❌' : '');
                 const nameWithStatus = `${escapeHtml(prob.name)}${statusEmoji}`;
+                const canvasId = `canvas_${problemId}`;
+
                 const html = `<div class="problem-detail">
                     <div class="detail-header">
                         <button class="back-btn" id="backToListBtn">← Back</button>
@@ -589,6 +729,21 @@
                         <span id="feedbackMsg" class="feedback"></span>
                     </div>
                     <div class="statement-content" id="statementContent">${prob.statement}</div>
+                    <div class="drawing-board">
+                        <div class="drawing-tools">
+                            <button id="brushBtn" class="active" title="Brush">P</button>
+                            <button id="eraserBtn" class="" title="Eraser">E</button>
+                            <select id="eraserModeSelect">
+                                <option value="pixel">Pixel Erase</option>
+                            </select>
+                            <label>Color:</label>
+                            <input type="color" id="penColor" value="#000000">
+                            <label>Size:</label>
+                            <input type="range" id="penSize" min="10" max="50" value="12">
+                            <button id="clearCanvasBtn" title="Clear All">🗑️</button>
+                        </div>
+                        <canvas id="${canvasId}" style="width:100%; height:auto; background:white; touch-action:none;"></canvas>
+                    </div>
                 </div>`;
                 mainContainer.innerHTML = html;
 
@@ -597,14 +752,8 @@
                     renderMathInElement(stmtDiv, { delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}] });
                 }
 
-                const backBtn = document.getElementById('backToListBtn');
-                if (backBtn) backBtn.addEventListener('click', () => { 
-                    removeUrlParam('problem_id'); 
-                    renderProblemList(); 
-                });
-
-                const subBtn = document.getElementById('submissionsBtn');
-                if (subBtn) subBtn.addEventListener('click', () => { window.location.href = `submissions.html?problem_id=${problemId}`; });
+                document.getElementById('backToListBtn')?.addEventListener('click', () => { removeUrlParam('problem_id'); renderProblemList(); });
+                document.getElementById('submissionsBtn')?.addEventListener('click', () => { window.location.href = `submissions.html?problem_id=${problemId}`; });
 
                 const checkBtn = document.getElementById('checkAnswerBtn');
                 const input = document.getElementById('answerInput');
@@ -612,28 +761,19 @@
 
                 if (!checkBtn || !input) return;
 
-                // 将题目答案转为字符串，检查其是否为严格的数字字符串
                 const answerStr = String(prob.ans);
                 const isAnswerNumeric = isStrictNumericString(answerStr);
-                
-                // 如果答案不是有效的数字字符串 -> 永久禁用提交按钮
                 if (!isAnswerNumeric) {
                     checkBtn.disabled = true;
                     checkBtn.title = "本题答案不是数字，无法提交";
-                    if (fb) {
-                        fb.textContent = "System Error 01";
-                        fb.className = "feedback wrong";
-                    }
+                    if (fb) { fb.textContent = "System Error 01"; fb.className = "feedback wrong"; }
+                    initDrawingBoard(canvasId, problemId);
                     return;
                 }
-                
-                // 解析出正确的数字值（用于比较）
+
                 const correctNumeric = parseFloat(answerStr);
-                
-                // ------------------- 以下为答案可转为数字的正常逻辑 -------------------
                 let isCooldown = false;
-                
-                // 更新按钮状态：仅根据冷却标志决定是否禁用（答案可数字时按钮始终可用，仅冷却时禁用）
+
                 function updateSubmitButton() {
                     if (!checkBtn) return;
                     if (isCooldown) {
@@ -642,30 +782,17 @@
                     } else {
                         checkBtn.disabled = false;
                         checkBtn.classList.remove('cooldown');
-                        if (checkBtn.textContent !== "Submit") {
-                            checkBtn.textContent = "Submit";
-                        }
+                        if (checkBtn.textContent !== "Submit") checkBtn.textContent = "Submit";
                     }
                 }
-                
-                // 初始化按钮状态（非冷却，可用）
                 updateSubmitButton();
-                
-                // 提交点击事件
+
                 checkBtn.addEventListener('click', () => {
                     if (checkBtn.disabled) return;
                     const val = input.value.trim();
-                    if (val === "") {
-                        fb.textContent = "Enter answer";
-                        fb.className = "feedback wrong";
-                        return;
-                    }
+                    if (val === "") { fb.textContent = "Enter answer"; fb.className = "feedback wrong"; return; }
                     const num = parseFloat(val);
-                    if (isNaN(num)) {
-                        fb.textContent = "Enter a number";
-                        fb.className = "feedback wrong";
-                        return;
-                    }
+                    if (isNaN(num)) { fb.textContent = "Enter a number"; fb.className = "feedback wrong"; return; }
                     const isCorrect = Math.abs(num - correctNumeric) < 1e-6;
                     addSubmission(prob.id, val, isCorrect);
                     if (isCorrect) {
@@ -677,14 +804,12 @@
                         fb.textContent = "Wrong Answer";
                         fb.className = "feedback wrong";
                     }
-                    
-                    // 开始冷却（5秒）
+
                     if (window.currentCooldownTimer) clearInterval(window.currentCooldownTimer);
                     isCooldown = true;
                     updateSubmitButton();
                     const startTime = Date.now();
                     const COOLDOWN_MS = 5000;
-                    
                     const updateCooldownDisplay = () => {
                         const elapsed = Date.now() - startTime;
                         const remaining = Math.max(0, (COOLDOWN_MS - elapsed) / 1000);
@@ -692,89 +817,44 @@
                             clearInterval(window.currentCooldownTimer);
                             window.currentCooldownTimer = null;
                             isCooldown = false;
-                            if (checkBtn) {
-                                checkBtn.textContent = "Submit";
-                                updateSubmitButton();
-                            }
+                            if (checkBtn) { checkBtn.textContent = "Submit"; updateSubmitButton(); }
                         } else {
-                            if (checkBtn) {
-                                checkBtn.textContent = `Wait ${remaining.toFixed(2)}s`;
-                            }
+                            if (checkBtn) checkBtn.textContent = `Wait ${remaining.toFixed(2)}s`;
                         }
                     };
                     updateCooldownDisplay();
                     window.currentCooldownTimer = setInterval(updateCooldownDisplay, 100);
                 });
+
+                initDrawingBoard(canvasId, problemId);
             }
 
             function initRouting() {
-                const problemIdParam = getUrlParam('problem_id');
-                if (problemIdParam) {
-                    const pid = parseInt(problemIdParam);
-                    if (!isNaN(pid) && problemsData.some(p => p.id === pid)) {
-                        renderProblemDetail(pid);
-                    } else {
-                        renderProblemList();
-                    }
-                } else {
-                    renderProblemList();
-                }
+                const pid = getUrlParam('problem_id');
+                if (pid && !isNaN(parseInt(pid)) && problemsData.some(p => p.id == pid)) renderProblemDetail(parseInt(pid));
+                else renderProblemList();
                 window.addEventListener('popstate', () => {
-                    const newParam = getUrlParam('problem_id');
-                    if (newParam) {
-                        const newPid = parseInt(newParam);
-                        if (!isNaN(newPid) && problemsData.some(p => p.id === newPid)) {
-                            renderProblemDetail(newPid);
-                        } else {
-                            renderProblemList();
-                        }
-                    } else {
-                        renderProblemList();
-                    }
+                    const newPid = getUrlParam('problem_id');
+                    if (newPid && !isNaN(parseInt(newPid)) && problemsData.some(p => p.id == newPid)) renderProblemDetail(parseInt(newPid));
+                    else renderProblemList();
                 });
             }
 
-            function escapeHtml(str) {
-                return String(str).replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
-            }
+            function escapeHtml(str) { return String(str).replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m])); }
 
-            // 加载外部数据
             function loadExternalData() {
                 if (window.problemsData && Array.isArray(window.problemsData) && window.problemsData.length) {
                     problemsData = window.problemsData;
-                    dataLoaded = true;
                     loadSortMode();
                     loadFilterTags();
                     initRouting();
                     return;
                 }
-
                 fetch(PROBLEMS_DATA_URL)
-                    .then(response => {
-                        if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                        return response.json();
-                    })
-                    .then(data => {
-                        if (Array.isArray(data) && data.length) {
-                            problemsData = data;
-                        } else {
-                            throw new Error('Invalid data format');
-                        }
-                        dataLoaded = true;
-                        loadSortMode();
-                        loadFilterTags();
-                        initRouting();
-                    })
-                    .catch(err => {
-                        console.warn('Failed to load external problems data, using fallback:', err);
-                        problemsData = fallbackData;
-                        dataLoaded = true;
-                        loadSortMode();
-                        loadFilterTags();
-                        initRouting();
-                    });
+                    .then(response => response.json())
+                    .then(data => { if (Array.isArray(data) && data.length) problemsData = data; else throw new Error('Invalid data'); loadSortMode(); loadFilterTags(); initRouting(); })
+                    .catch(err => { console.warn('Failed to load external problems data, using fallback:', err); problemsData = fallbackData; loadSortMode(); loadFilterTags(); initRouting(); });
             }
-
             loadExternalData();
         })();
     </script>
