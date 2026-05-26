@@ -154,6 +154,17 @@
         }
         .problem-name-detail { font-size: 1.2rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
         .answer-area { margin: 1rem 0; display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
+        .nav-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 0.4rem 0.8rem;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+        .nav-btn:hover { background: var(--accent-hover); }
         .answer-input { padding: 0.4rem 0.7rem; border: 1px solid var(--border-color); border-radius: 4px; width: 160px; max-width: 100%; box-sizing: border-box; }
         .check-btn, .submissions-btn { border: none; border-radius: 4px; padding: 0.4rem 1rem; cursor: pointer; font-weight: 500; }
         .check-btn { background: var(--accent); color: white; }
@@ -375,6 +386,11 @@
             function getUrlParam(param) {
                 const urlParams = new URLSearchParams(window.location.search);
                 return urlParams.get(param);
+            }
+            function setUrlParam(param, value) {
+                const url = new URL(window.location);
+                url.searchParams.set(param, value);
+                window.history.pushState({}, '', url);
             }
             function removeUrlParam(param) {
                 const url = new URL(window.location);
@@ -701,6 +717,25 @@
                 canvas.addEventListener('touchcancel', endDraw);
             }
 
+            // 导航函数：切换到上一个/下一个存在的题目ID（基于problemsData中存在的id）
+            function navigateProblem(delta) {
+                if (!problemsData.length) return;
+                const currentId = parseInt(getUrlParam('problem_id'));
+                if (isNaN(currentId)) return;
+                // 获取所有存在的ID并排序
+                const allIds = problemsData.map(p => p.id).sort((a,b) => a-b);
+                const currentIndex = allIds.indexOf(currentId);
+                if (currentIndex === -1) return;
+                let newIndex = currentIndex + delta;
+                if (newIndex < 0) newIndex = allIds.length - 1;   // 循环到最后一个
+                if (newIndex >= allIds.length) newIndex = 0;       // 循环到第一个
+                const newId = allIds[newIndex];
+                if (newId !== currentId) {
+                    setUrlParam('problem_id', newId);
+                    renderProblemDetail(newId);
+                }
+            }
+
             function renderProblemDetail(problemId) {
                 if (window.currentCooldownTimer) clearInterval(window.currentCooldownTimer);
                 unbindScrollListener();
@@ -722,6 +757,8 @@
                         <span style="font-size:0.8rem;">${escapeHtml(tagsStr)}</span>
                     </div>
                     <div class="answer-area">
+                        <button id="prevProblemBtn" class="nav-btn" title="Previous problem">←</button>
+                        <button id="nextProblemBtn" class="nav-btn" title="Next problem">→</button>
                         <label style="font-weight:500;">Your Answer:</label>
                         <input type="text" id="answerInput" class="answer-input" placeholder="Enter answer" autocomplete="off">
                         <button id="checkAnswerBtn" class="check-btn">Submit</button>
@@ -754,6 +791,8 @@
 
                 document.getElementById('backToListBtn')?.addEventListener('click', () => { removeUrlParam('problem_id'); renderProblemList(); });
                 document.getElementById('submissionsBtn')?.addEventListener('click', () => { window.location.href = `submissions.html?problem_id=${problemId}`; });
+                document.getElementById('prevProblemBtn')?.addEventListener('click', () => navigateProblem(-1));
+                document.getElementById('nextProblemBtn')?.addEventListener('click', () => navigateProblem(1));
 
                 const checkBtn = document.getElementById('checkAnswerBtn');
                 const input = document.getElementById('answerInput');
@@ -765,7 +804,7 @@
                 const isAnswerNumeric = isStrictNumericString(answerStr);
                 if (!isAnswerNumeric) {
                     checkBtn.disabled = true;
-                    checkBtn.title = "本题答案不是数字，无法提交";
+                    checkBtn.title = "ans is NaN";
                     if (fb) { fb.textContent = "System Error 01"; fb.className = "feedback wrong"; }
                     initDrawingBoard(canvasId, problemId);
                     return;
