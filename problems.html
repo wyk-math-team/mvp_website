@@ -858,7 +858,7 @@
                             isCooldown = false;
                             if (checkBtn) { checkBtn.textContent = "Submit"; updateSubmitButton(); }
                         } else {
-                            if (checkBtn) checkBtn.textContent = `Wait ${remaining.toFixed(2)}s`;
+                            if (checkBtn) checkBtn.textContent = `${remaining.toFixed(2)}`;
                         }
                     };
                     updateCooldownDisplay();
